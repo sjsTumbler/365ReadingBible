@@ -11,7 +11,7 @@
 #import "FMDatabaseQueue.h"
 #import "TestModel.h"
 
-#define GetDataBasePath [SandboxFile GetPathForDocuments:@"HolyBible.db" inDir:@"DataBase"]
+#define GetDataBasePath [SandboxFile GetPathForDocuments:@"test.db" inDir:@"DataBase"]
 
 @interface DataFactory : NSObject
 @property(retain,nonatomic)id classValues;

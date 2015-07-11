@@ -30,20 +30,20 @@ static FMDatabaseQueue* queue;
 }
 -(void)CreateDataBase
 {
-    queue=[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath];
+    queue=[[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath]autorelease];
 }
 -(void)CreateTable
 {
-    [[TestModelBase alloc]initWithDBQueue:queue];
+    [[[TestModelBase alloc]initWithDBQueue:queue]autorelease];
 }
 -(id)Factory:(FSO)type
 {
     id result;
-    queue=[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath];
+    queue=[[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath]autorelease];
     switch (type)
     {
         case test:
-            result=[[TestModelBase alloc]initWithDBQueue:queue];
+            result=[[[TestModelBase alloc]initWithDBQueue:queue]autorelease];
             break;
         default:
             break;
@@ -96,10 +96,10 @@ static FMDatabaseQueue* queue;
          result(array);
      }];
 }
-//-(void)dealloc
-//{
-//    [classValues release];
-//    NSLog(@"DataFactory dealloc");
-//    [super dealloc];
-//}
+-(void)dealloc
+{
+    [classValues release];
+    NSLog(@"DataFactory dealloc");
+    [super dealloc];
+}
 @end

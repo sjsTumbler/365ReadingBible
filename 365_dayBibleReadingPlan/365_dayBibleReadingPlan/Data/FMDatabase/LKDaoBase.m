@@ -6,6 +6,7 @@
 
 #import "LKDAOBase.h"
 #import <objc/runtime.h>
+#import <UIKit/UIImage.h>
 @implementation LKDAOBase
 @synthesize columeNames;
 @synthesize columeTypes;
@@ -280,7 +281,7 @@ static NSMutableDictionary* onceCreateTable;
          NSString* updateSQL;
          if(model.rowid > 0)
          {
-             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where rowid=%d",[self.class getTableName],updateKey,model.rowid];
+             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where rowid=%lld",[self.class getTableName],updateKey,model.rowid];
          }
          else
          {
@@ -295,7 +296,7 @@ static NSMutableDictionary* onceCreateTable;
          }
          if(execute == NO)
          {
-             NSLog(@"database update fail %@   ----->rowid: %d",NSStringFromClass(model.class),model.rowid);
+             NSLog(@"database update fail %@   ----->rowid: %lld",NSStringFromClass(model.class),model.rowid);
          }
      }];
     
@@ -309,7 +310,7 @@ static NSMutableDictionary* onceCreateTable;
          BOOL result;
          if(model.rowid > 0)
          {
-             delete = [NSString stringWithFormat:@"DELETE FROM %@ where rowid=%d",[self.class getTableName],model.rowid];
+             delete = [NSString stringWithFormat:@"DELETE FROM %@ where rowid=%lld",[self.class getTableName],model.rowid];
              result = [db executeUpdate:delete];
          }
          else

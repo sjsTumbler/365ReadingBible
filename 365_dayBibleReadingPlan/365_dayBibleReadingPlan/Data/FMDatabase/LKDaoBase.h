@@ -27,12 +27,14 @@
 //使用借口继承 来当 实体  要手动添加下面两个属性
 @protocol LKModelBaseInteface <NSObject>
 @property(copy,nonatomic)NSString* primaryKey;//主键名称 如果没有rowid 则跟据此名称update 和delete
-@property int rowid;  //数据库的 rowid
+//@property int rowid;  //数据库的 rowid
+@property long long rowid;  //数据库的 rowid
 @end
 
 @interface LKModelBase : NSObject<LKModelBaseInteface>
 @property(copy,nonatomic)NSString* primaryKey;
-@property int rowid;
+//@property int rowid;
+@property long long rowid;  //数据库的 rowid
 +(NSDictionary*)getPropertys; //还回 该类的所有属性 会添加父类属性
 @end
 

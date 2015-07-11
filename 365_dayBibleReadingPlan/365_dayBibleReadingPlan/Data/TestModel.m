@@ -44,17 +44,17 @@ const static NSString* tablename = @"Test";//表名
     }
     return self;
 }
-////===========================================================
-//// dealloc
-////===========================================================
-//-(void)dealloc
-//{
-//    [Bid release];
-//    [StoreName release];
-//    [Longitude release];
-//    [Latitude release];
-//    NSLog(@"TestModel dealloc");
-//    [super dealloc];
-//}
+//===========================================================
+// dealloc
+//===========================================================
+-(void)dealloc
+{
+    [Bid release];
+    [StoreName release];
+    [Longitude release];
+    [Latitude release];
+    NSLog(@"TestModel dealloc");
+    [super dealloc];
+}
 @end
 

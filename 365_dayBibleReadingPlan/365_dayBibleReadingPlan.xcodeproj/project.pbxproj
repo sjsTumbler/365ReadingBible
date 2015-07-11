@@ -14,15 +14,17 @@
 		E4F93E7C1B4EC9AD0040C8E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F93E7B1B4EC9AD0040C8E9 /* Images.xcassets */; };
 		E4F93E7F1B4EC9AD0040C8E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F93E7D1B4EC9AD0040C8E9 /* LaunchScreen.xib */; };
 		E4F93E8B1B4EC9AD0040C8E9 /* _65_dayBibleReadingPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E8A1B4EC9AD0040C8E9 /* _65_dayBibleReadingPlanTests.m */; };
-		E4F93EA91B4ECA710040C8E9 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E961B4ECA710040C8E9 /* DataFactory.m */; };
+		E4F93EA91B4ECA710040C8E9 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E961B4ECA710040C8E9 /* DataFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E4F93EAA1B4ECA710040C8E9 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E991B4ECA710040C8E9 /* FMDatabase.m */; };
 		E4F93EAB1B4ECA710040C8E9 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E9B1B4ECA710040C8E9 /* FMDatabaseAdditions.m */; };
 		E4F93EAC1B4ECA710040C8E9 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E9D1B4ECA710040C8E9 /* FMDatabasePool.m */; };
 		E4F93EAD1B4ECA710040C8E9 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E9F1B4ECA710040C8E9 /* FMDatabaseQueue.m */; };
 		E4F93EAE1B4ECA710040C8E9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA11B4ECA710040C8E9 /* FMResultSet.m */; };
-		E4F93EAF1B4ECA710040C8E9 /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA31B4ECA710040C8E9 /* LKDaoBase.m */; };
+		E4F93EAF1B4ECA710040C8E9 /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA31B4ECA710040C8E9 /* LKDaoBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E4F93EB01B4ECA710040C8E9 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA61B4ECA710040C8E9 /* SandboxFile.m */; };
-		E4F93EB11B4ECA710040C8E9 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA81B4ECA710040C8E9 /* TestModel.m */; };
+		E4F93EB11B4ECA710040C8E9 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA81B4ECA710040C8E9 /* TestModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4F93EB61B5020110040C8E9 /* HolyBible.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */; };
+		E4F93EB81B50AAFD0040C8E9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F93EB71B50AAFD0040C8E9 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E4F93EA61B4ECA710040C8E9 /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
 		E4F93EA71B4ECA710040C8E9 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		E4F93EA81B4ECA710040C8E9 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HolyBible.sqlite3; sourceTree = "<group>"; };
+		E4F93EB71B50AAFD0040C8E9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F93EB81B50AAFD0040C8E9 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 		E4F93E621B4EC9AD0040C8E9 = {
 			isa = PBXGroup;
 			children = (
+				E4F93EB71B50AAFD0040C8E9 /* libsqlite3.0.dylib */,
 				E4F93E6D1B4EC9AD0040C8E9 /* 365_dayBibleReadingPlan */,
 				E4F93E871B4EC9AD0040C8E9 /* 365_dayBibleReadingPlanTests */,
 				E4F93E6C1B4EC9AD0040C8E9 /* Products */,
@@ -108,6 +114,7 @@
 		E4F93E6D1B4EC9AD0040C8E9 /* 365_dayBibleReadingPlan */ = {
 			isa = PBXGroup;
 			children = (
+				E4F93EB41B5020110040C8E9 /* sqlite3 */,
 				E4F93E941B4ECA710040C8E9 /* Data */,
 				E4F93E721B4EC9AD0040C8E9 /* AppDelegate.h */,
 				E4F93E731B4EC9AD0040C8E9 /* AppDelegate.m */,
@@ -186,6 +193,14 @@
 				E4F93EA61B4ECA710040C8E9 /* SandboxFile.m */,
 			);
 			path = Sandbox;
+			sourceTree = "<group>";
+		};
+		E4F93EB41B5020110040C8E9 /* sqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */,
+			);
+			path = sqlite3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +285,7 @@
 			files = (
 				E4F93E7A1B4EC9AD0040C8E9 /* Main.storyboard in Resources */,
 				E4F93E7F1B4EC9AD0040C8E9 /* LaunchScreen.xib in Resources */,
+				E4F93EB61B5020110040C8E9 /* HolyBible.sqlite3 in Resources */,
 				E4F93E7C1B4EC9AD0040C8E9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +510,7 @@
 				E4F93E901B4EC9AD0040C8E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4F93E911B4EC9AD0040C8E9 /* Build configuration list for PBXNativeTarget "365_dayBibleReadingPlanTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +519,7 @@
 				E4F93E931B4EC9AD0040C8E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
