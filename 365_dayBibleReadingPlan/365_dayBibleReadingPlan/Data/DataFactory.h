@@ -9,15 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "SandboxFile.h"
 #import "FMDatabaseQueue.h"
-#import "TestModel.h"
 
-#define GetDataBasePath [SandboxFile GetPathForDocuments:@"test.db" inDir:@"DataBase"]
+
+#define GetDataBasePath [SandboxFile GetPathForDocuments:@"HolyBible.db" inDir:@"DataBase"]
 
 @interface DataFactory : NSObject
 @property(retain,nonatomic)id classValues;
 typedef enum
 {
-    test,
+    new_cuv,//和合本新约
+    new_ncv,//新译本新约
+    new_niv,//英文版新约
+    old_cuv,//和合本旧约
+    old_ncv,//新译本旧约
+    old_niv,//引文版旧约
 }
 FSO;//这个是枚举是区别不同的实体,我这边就写一个test;
 +(DataFactory *)shardDataFactory;

@@ -7,6 +7,14 @@
 //
 
 #import "DataFactory.h"
+#import "new_cuvModel.h"
+#import "new_ncvModel.h"
+#import "new_nivModel.h"
+#import "old_cuvModel.h"
+#import "old_ncvModel.h"
+#import "old_nivModel.h"
+#import "Manager.h"
+
 static FMDatabaseQueue* queue;
 @implementation DataFactory
 @synthesize classValues;
@@ -34,7 +42,12 @@ static FMDatabaseQueue* queue;
 }
 -(void)CreateTable
 {
-    [[[TestModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[new_cuvModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[new_ncvModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[new_nivModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[old_cuvModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[old_ncvModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[old_nivModelBase alloc]initWithDBQueue:queue]autorelease];
 }
 -(id)Factory:(FSO)type
 {
@@ -42,8 +55,23 @@ static FMDatabaseQueue* queue;
     queue=[[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath]autorelease];
     switch (type)
     {
-        case test:
-            result=[[[TestModelBase alloc]initWithDBQueue:queue]autorelease];
+        case new_cuv:
+            result=[[[new_cuvModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case new_ncv:
+            result=[[[new_ncvModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case new_niv:
+            result=[[[new_nivModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case old_cuv:
+            result=[[[old_cuvModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case old_ncv:
+            result=[[[old_ncvModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case old_niv:
+            result=[[[old_nivModelBase alloc]initWithDBQueue:queue]autorelease];
             break;
         default:
             break;
