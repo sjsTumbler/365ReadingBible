@@ -15,6 +15,7 @@
 		E47FD2711B52790C0024B777 /* old_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E47FD26A1B52790C0024B777 /* old_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E47FD2721B52790C0024B777 /* old_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E47FD26C1B52790C0024B777 /* old_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E47FD2731B52790C0024B777 /* old_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E47FD26E1B52790C0024B777 /* old_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4802CDD1B571E2F00B8C1BC /* HolyBible.db in Resources */ = {isa = PBXBuildFile; fileRef = E4802CDC1B571E2F00B8C1BC /* HolyBible.db */; };
 		E4F93E711B4EC9AD0040C8E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E701B4EC9AD0040C8E9 /* main.m */; };
 		E4F93E741B4EC9AD0040C8E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E731B4EC9AD0040C8E9 /* AppDelegate.m */; };
 		E4F93E771B4EC9AD0040C8E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93E761B4EC9AD0040C8E9 /* ViewController.m */; };
@@ -29,7 +30,6 @@
 		E4F93EAE1B4ECA710040C8E9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA11B4ECA710040C8E9 /* FMResultSet.m */; };
 		E4F93EAF1B4ECA710040C8E9 /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA31B4ECA710040C8E9 /* LKDaoBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E4F93EB01B4ECA710040C8E9 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F93EA61B4ECA710040C8E9 /* SandboxFile.m */; };
-		E4F93EB61B5020110040C8E9 /* HolyBible.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */; };
 		E4F93EB81B50AAFD0040C8E9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F93EB71B50AAFD0040C8E9 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +59,7 @@
 		E47FD26D1B52790C0024B777 /* old_nivModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_nivModel.h; sourceTree = "<group>"; };
 		E47FD26E1B52790C0024B777 /* old_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_nivModel.m; sourceTree = "<group>"; };
 		E47FD2751B52876A0024B777 /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		E4802CDC1B571E2F00B8C1BC /* HolyBible.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = HolyBible.db; sourceTree = "<group>"; };
 		E4F93E6B1B4EC9AD0040C8E9 /* 365_dayBibleReadingPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 365_dayBibleReadingPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F93E6F1B4EC9AD0040C8E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4F93E701B4EC9AD0040C8E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		E4F93EA31B4ECA710040C8E9 /* LKDaoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDaoBase.m; sourceTree = "<group>"; };
 		E4F93EA51B4ECA710040C8E9 /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
 		E4F93EA61B4ECA710040C8E9 /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
-		E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HolyBible.sqlite3; sourceTree = "<group>"; };
 		E4F93EB71B50AAFD0040C8E9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -126,6 +126,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		E4802CDB1B571E2F00B8C1BC /* db */ = {
+			isa = PBXGroup;
+			children = (
+				E4802CDC1B571E2F00B8C1BC /* HolyBible.db */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		E4F93E621B4EC9AD0040C8E9 = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +156,9 @@
 		E4F93E6D1B4EC9AD0040C8E9 /* 365_dayBibleReadingPlan */ = {
 			isa = PBXGroup;
 			children = (
+				E4802CDB1B571E2F00B8C1BC /* db */,
 				E47FD2741B5286DB0024B777 /* Tools */,
 				E47FD25F1B5254D50024B777 /* Image */,
-				E4F93EB41B5020110040C8E9 /* Sqlite3 */,
 				E4F93E941B4ECA710040C8E9 /* Data */,
 				E4F93E721B4EC9AD0040C8E9 /* AppDelegate.h */,
 				E4F93E731B4EC9AD0040C8E9 /* AppDelegate.m */,
@@ -241,15 +249,6 @@
 			path = Sandbox;
 			sourceTree = "<group>";
 		};
-		E4F93EB41B5020110040C8E9 /* Sqlite3 */ = {
-			isa = PBXGroup;
-			children = (
-				E4F93EB51B5020110040C8E9 /* HolyBible.sqlite3 */,
-			);
-			name = Sqlite3;
-			path = sqlite3;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,7 +331,7 @@
 			files = (
 				E47FD25E1B5253AA0024B777 /* LaunchScreen.xib in Resources */,
 				E4F93E7A1B4EC9AD0040C8E9 /* Main.storyboard in Resources */,
-				E4F93EB61B5020110040C8E9 /* HolyBible.sqlite3 in Resources */,
+				E4802CDD1B571E2F00B8C1BC /* HolyBible.db in Resources */,
 				E47FD2611B5254D50024B777 /* Default-568h@2x.png in Resources */,
 				E4F93E7C1B4EC9AD0040C8E9 /* Images.xcassets in Resources */,
 			);

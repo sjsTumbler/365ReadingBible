@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "DataFactory.h"//数据库
 #import "Manager.h"
-
+#import "SandboxFile.h"
 @interface ViewController ()
 
 @end
@@ -29,16 +29,16 @@
  */
 - (void)readHolyBible
 {
-   NSString *numberPlist = [[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"sqlites"];
+   NSLog(@"找到数据库了 %@", [[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"db"]);
     //从本地读取数据库
     if ([[DataFactory shardDataFactory]IsDataBase]) {
-        NSLog(@"找到数据库了");
+        NSLog(@"找到数据库了 ");
     }
-//    NSMutableDictionary * searchDic = [NSMutableDictionary dictionary];
-//    [searchDic setValue:@"太" forKey:@"Col001"];
-//    [[DataFactory shardDataFactory]searchWhere:searchDic orderBy:@"o_id" offset:0 count:1000 Classtype:new_cuv callback:^(NSArray *resultArray) {
-//        NSLog(@"测试搜索结果输出 %d",resultArray.count);
-//    }];
+    NSMutableDictionary * searchDic = [NSMutableDictionary dictionary];
+    [searchDic setValue:@"太" forKey:@"Col001"];
+    [[DataFactory shardDataFactory]searchWhere:searchDic orderBy:@"o_id" offset:0 count:10 Classtype:new_cuv callback:^(NSArray *resultArray) {
+        NSLog(@"测试搜索结果输出 %lu",(unsigned long)resultArray.count);
+    }];
     
     
 }

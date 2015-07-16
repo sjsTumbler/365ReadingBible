@@ -31,8 +31,20 @@
         
         //获取绑定的 Model 并 保存 Model 的属性信息
         NSDictionary* dic  = [[self.class getBindingModelClass] getPropertys];
+        //对出错的model获取进行暂时的修改
+        
         NSArray* pronames = [dic objectForKey:@"name"];
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:pronames];
+        [tempArray removeObjectsInRange:NSMakeRange(8, pronames.count-8)];
+        pronames = [NSArray arrayWithArray:tempArray];
+        
         NSArray* protypes = [dic objectForKey:@"type"];
+        NSMutableArray *temp = [NSMutableArray arrayWithArray:protypes];
+        [temp removeObjectsInRange:NSMakeRange(8, protypes.count-8)];
+        protypes = [NSArray arrayWithArray:temp];
+        
+        
+        
         self.propertys = [NSMutableDictionary dictionaryWithObjects:protypes forKeys:pronames];
         for (int i =0; i<pronames.count; i++) {
             [self addColume:[pronames objectAtIndex:i] type:[protypes objectAtIndex:i]];
