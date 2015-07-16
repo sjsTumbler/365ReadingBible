@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6E717515-2740-46BD-83AD-E00BFF75FF0F</string>
+	<string>0A04590A-BF4D-4046-8012-716FD2C7E955</string>
 	<key>IDESourceControlProjectName</key>
-	<string>365_dayBibleReadingPlan</string>
+	<string>365_readingBible</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>
 		<string>https://github.com/sjsTumbler/365-dayBibleReadingPlan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>365_dayBibleReadingPlan/365_dayBibleReadingPlan.xcodeproj</string>
+	<string>365_readingBible/365_readingBible.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>

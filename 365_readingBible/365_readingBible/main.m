@@ -1,8 +1,8 @@
 //
 //  main.m
-//  365_dayBibleReadingPlan
+//  365_readingBible
 //
-//  Created by Sun jishuai on 15/7/9.
+//  Created by Sun jishuai on 15/7/16.
 //  Copyright (c) 2015年 SunJishuai. All rights reserved.
 //
 
