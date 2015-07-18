@@ -11,7 +11,7 @@
 #import "FMDatabaseQueue.h"
 
 
-#define GetDataBasePath [[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"db"]
+#define GetDataBasePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
 //[SandboxFile GetPathForDocuments:@"HolyBible.sqlite3" inDir:@"DataBase"]
 
 @interface DataFactory : NSObject

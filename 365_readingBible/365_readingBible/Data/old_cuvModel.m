@@ -11,7 +11,7 @@
 @implementation old_cuvModelBase
 +(Class)getBindingModelClass
 {
-    return [old_cuvModel class];//返回商家实体
+    return [old_cuvModel class];//返回model实体
 }
 const static NSString* tablename = @"old_cuv";//表名
 +(const NSString *)getTableName
@@ -21,14 +21,15 @@ const static NSString* tablename = @"old_cuv";//表名
 @end
 
 @implementation old_cuvModel
-@synthesize shortTitle;
-@synthesize chapterSection;
-@synthesize scripture;
-@synthesize chapter;
-@synthesize section;
-@synthesize book;
-@synthesize generalNum;
-@synthesize generalNum2;
+@synthesize Col001;
+@synthesize Col002;
+@synthesize Col003;
+@synthesize col_004;
+@synthesize col_005;
+@synthesize col_006;
+@synthesize o_id;
+@synthesize k_id;
+
 
 -(id)init
 {
@@ -44,27 +45,27 @@ const static NSString* tablename = @"old_cuv";//表名
     self = [super init];
     if (self)
     {
-        self.shortTitle      =  [dic objectForKey:@"Col001"];
-        self.chapterSection  =  [dic objectForKey:@"Col002"];
-        self.scripture       =  [dic objectForKey:@"Col003"];
-        self.chapter         =  [dic objectForKey:@"col004"];
-        self.section         =  [dic objectForKey:@"col005"];
-        self.book            =  [dic objectForKey:@"col006"];
-        self.generalNum      =  [dic objectForKey:@"o_id"];
-        self.generalNum2     =  [dic objectForKey:@"k_id"];
+        self.Col001      =  [dic objectForKey:@"Col001"];
+        self.Col002  =  [dic objectForKey:@"Col002"];
+        self.Col003       =  [dic objectForKey:@"Col003"];
+        self.col_004         =  [dic objectForKey:@"col004"];
+        self.col_005         =  [dic objectForKey:@"col005"];
+        self.col_006            =  [dic objectForKey:@"col006"];
+        self.o_id      =  [dic objectForKey:@"o_id"];
+        self.k_id     =  [dic objectForKey:@"k_id"];
     }
     return self;
 }
 -(void)dealloc
 {
-    [shortTitle release];
-    [chapterSection release];
-    [scripture release];
-    [chapter release];
-    [section release];
-    [book release];
-    [generalNum release];
-    [generalNum2 release];
+    [Col001 release];
+    [Col002 release];
+    [Col003 release];
+    [col_004 release];
+    [col_005 release];
+    [col_006 release];
+    [o_id release];
+    [k_id release];
     [super dealloc];
 }
 
