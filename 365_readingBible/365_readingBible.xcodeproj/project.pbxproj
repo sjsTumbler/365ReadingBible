@@ -32,6 +32,7 @@
 		E4802D481B575AC700B8C1BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4802D361B575AC700B8C1BC /* Default-568h@2x.png */; };
 		E4802D4A1B575B6A00B8C1BC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4802D491B575B6A00B8C1BC /* libsqlite3.0.dylib */; };
 		E49F97721B59E3A800DFBE87 /* 项目策划 in Resources */ = {isa = PBXBuildFile; fileRef = E49F97711B59E3A800DFBE87 /* 项目策划 */; };
+		E4A091191B5E98BB001B6683 /* SNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A091181B5E98BB001B6683 /* SNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		E4802D381B575AC700B8C1BC /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		E4802D491B575B6A00B8C1BC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		E49F97711B59E3A800DFBE87 /* 项目策划 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目策划"; sourceTree = "<group>"; };
+		E4A091171B5E98BB001B6683 /* SNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationBar.h; sourceTree = "<group>"; };
+		E4A091181B5E98BB001B6683 /* SNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				E4802D381B575AC700B8C1BC /* Manager.h */,
+				E4A091171B5E98BB001B6683 /* SNavigationBar.h */,
+				E4A091181B5E98BB001B6683 /* SNavigationBar.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				E4802D431B575AC700B8C1BC /* old_cuvModel.m in Sources */,
 				E4802D451B575AC700B8C1BC /* old_nivModel.m in Sources */,
 				E4802D441B575AC700B8C1BC /* old_ncvModel.m in Sources */,
+				E4A091191B5E98BB001B6683 /* SNavigationBar.m in Sources */,
 				E4802D391B575AC700B8C1BC /* DataFactory.m in Sources */,
 				E4802D3A1B575AC700B8C1BC /* FMDatabase.m in Sources */,
 				E4802D411B575AC700B8C1BC /* new_ncvModel.m in Sources */,

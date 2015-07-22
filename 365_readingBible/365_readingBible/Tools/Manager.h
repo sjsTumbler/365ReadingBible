@@ -16,4 +16,15 @@
 #define NSLog(...)
 #endif
 
+//尺寸
+#define navigationBarHight 44.0 
+#define viewWidth 320.0
+#define titleFontOfSize 24.0
+#define btnFontOfSize 20.0
+
+
+//按钮的Tag值
+#define nav_right_tag 101
+#define nav_left_tag 102
+
 #endif
