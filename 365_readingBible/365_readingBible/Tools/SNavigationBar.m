@@ -110,7 +110,28 @@
 {
 
 }
+#pragma  mark  “ < 返回 ”
+/**
+ @author SunJishuai , 15-08-04 19:08:44
+ 
+ @brief  “ < 返回 ”
+ */
+-(void)setLeftBtn_bacK
+{
 
+}
+#pragma  mark 左侧按钮返回图片+上级标题创建
+/**
+ @author SunJishuai , 15-08-04 19:08:44
+ 
+ @brief  左侧按钮返回图片+上级标题创建
+ 
+ */
+-(void)setLeftBtn_parentName
+{
+
+}
+//按钮的代理链接
 -(void)leftBtnAction:(UIButton *)sender{
     if (_delegate != nil && [_delegate respondsToSelector:@selector(SJSNavigationLeftAction:)]) {
         [_delegate SJSNavigationLeftAction:sender];

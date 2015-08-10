@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0A04590A-BF4D-4046-8012-716FD2C7E955</string>
 	<key>IDESourceControlProjectName</key>
-	<string>365_readingBible</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>
 		<string>https://github.com/sjsTumbler/365-dayBibleReadingPlan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>365_readingBible/365_readingBible.xcodeproj</string>
+	<string>365_readingBible/365_readingBible.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>

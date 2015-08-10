@@ -39,9 +39,9 @@
 //左侧按钮图片创建
 -(void)setLeftBtnImage:(NSString *)imageName;
 //左侧按钮返回创建
-
-//左侧按钮返回图片+上级标题创建
-
+-(void)setLeftBtn_bacK;
+//左侧按钮返回图片+上级标题创建   ???
+-(void)setLeftBtn_parentName;
 
 
 @end
