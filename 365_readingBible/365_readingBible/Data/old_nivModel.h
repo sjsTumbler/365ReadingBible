@@ -23,4 +23,6 @@
 @property(copy,nonatomic)    NSString   * o_id;     //书章节编号（9位，每三位对应书、章、节）
 @property(copy,nonatomic)    NSString   * k_id;     //书章编号（6位，每三位对应书章）
 
+-(id)init;
+- (id)initWithJsonDictionary:(NSDictionary*)dic;
 @end

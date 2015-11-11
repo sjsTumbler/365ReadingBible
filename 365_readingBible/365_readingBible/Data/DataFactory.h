@@ -23,9 +23,9 @@ typedef enum
     new_niv,//英文版新约
     old_cuv,//和合本旧约
     old_ncv,//新译本旧约
-    old_niv,//引文版旧约
+    old_niv,//英文版旧约
 }
-FSO;//这个是枚举是区别不同的实体,我这边就写一个test;
+FSO;//这个是枚举是区别不同的实体
 +(DataFactory *)shardDataFactory;
 //是否存在数据库
 -(BOOL)IsDataBase;
