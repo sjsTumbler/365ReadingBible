@@ -17,10 +17,10 @@
 #endif
 
 //尺寸
-#define navigationBarHight 44.0 
+#define navigationBarHight 64.0
 #define viewWidth 320.0
-#define titleFontOfSize 24.0
-#define btnFontOfSize 20.0
+#define titleFontOfSize 17.0
+#define btnFontOfSize 14.0
 
 
 //按钮的Tag值

@@ -44,8 +44,10 @@
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont systemFontOfSize:titleFontOfSize];
         self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.frame = CGRectMake(85, 13, 150, 21);
+        self.titleLabel.frame = CGRectMake(85, 33, 150, 21);
         self.titleLabel.text = title;
+        
+        self.titleLabel.backgroundColor = [UIColor yellowColor];
         
         self.backgroundColor = [UIColor blueColor];
         [self addSubview:self.titleLabel];

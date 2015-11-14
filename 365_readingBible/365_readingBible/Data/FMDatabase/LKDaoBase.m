@@ -19,6 +19,41 @@
 {
     return [LKModelBase class];
 }
+//-(id)initWithDBQueue:(FMDatabaseQueue *)queue
+//{
+//    self = [super init];
+//    if (self)
+//    {
+//        self.bindingQueue = queue;
+//        
+//        self.columeNames = [NSMutableArray arrayWithCapacity:16];
+//        self.columeTypes = [NSMutableArray arrayWithCapacity:16];
+//        
+//        //获取绑定的 Model 并 保存 Model 的属性信息
+//        NSDictionary* dic  = [[self.class getBindingModelClass] getPropertys];
+//        NSArray* pronames = [dic objectForKey:@"name"];
+//        NSArray* protypes = [dic objectForKey:@"type"];
+//        self.propertys = [NSMutableDictionary dictionaryWithObjects:protypes forKeys:pronames];
+//        for (int i =0; i<pronames.count; i++) {
+//            [self addColume:[pronames objectAtIndex:i] type:[protypes objectAtIndex:i]];
+//        }
+//        static dispatch_once_t onceToken;
+//        
+//        dispatch_once(&onceToken, ^{
+//            onceCreateTable = [[NSMutableDictionary  alloc]init];
+//        });
+//        NSString* className = NSStringFromClass(self.class);
+//        NSNumber* onceToCreate = [onceCreateTable objectForKey:className];
+//        if(onceToCreate.boolValue == NO)
+//        {
+//            [self createTable];
+//            onceToCreate = [NSNumber numberWithBool:YES];
+//            [onceCreateTable setObject:onceToCreate forKey:className];
+//        }
+//    }
+//    return self;
+//    
+//}
 -(id)initWithDBQueue:(FMDatabaseQueue *)queue
 {
     self = [super init];

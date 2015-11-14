@@ -29,19 +29,19 @@
 //初始化
 - (id)init;
 //标题初始化
--(id)initWithTitle:(NSString*)title;
+- (id)initWithTitle:(NSString*)title;
 //右侧按钮文字创建
--(void)setRightBtnTitle:(NSString *)title;
+- (void)setRightBtnTitle:(NSString *)title;
 //右侧按钮图片创建
--(void)setRightBtnImage:(NSString *)imageName;
+- (void)setRightBtnImage:(NSString *)imageName;
 //左侧按钮文字创建
--(void)setLeftBtnTitle:(NSString *)title;
+- (void)setLeftBtnTitle:(NSString *)title;
 //左侧按钮图片创建
--(void)setLeftBtnImage:(NSString *)imageName;
+- (void)setLeftBtnImage:(NSString *)imageName;
 //左侧按钮返回创建
--(void)setLeftBtn_bacK;
+- (void)setLeftBtn_bacK;
 //左侧按钮返回图片+上级标题创建   ???
--(void)setLeftBtn_parentName;
+- (void)setLeftBtn_parentName;
 
 
 @end

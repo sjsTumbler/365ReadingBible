@@ -23,6 +23,9 @@
     [super viewDidLoad];
     //读取数据库
     [self readHolyBible];
+    //set navigationBar
+    [self setNavigationBar];
+    
     
     NSMutableDictionary * searchDic = [NSMutableDictionary dictionary];
     [searchDic setValue:@"太" forKey:@"Col001"];
@@ -70,6 +73,26 @@
         
     }
     NSLog(@"isExist =%d",isExist);
+}
+ #pragma mark 设置导航栏
+/**
+ @author Jesus , 15-11-14 18:11:12
+ 
+ @brief  设置导航栏
+ */
+- (void)setNavigationBar {
+    SNavigationBar * naviBar = [[SNavigationBar alloc]initWithTitle:@"365读经"];
+    [naviBar setRightBtnTitle:@"典"];
+    [naviBar setLeftBtnTitle:@"持"];
+    naviBar.delegate = self;
+    [self.view addSubview:naviBar];
+}
+
+- (void)SJSNavigationLeftAction:(UIButton *)sender {
+    NSLog(@"主的恩典够我用");
+}
+- (void)SJSNavigationRightAction:(UIButton *)sender {
+    NSLog(@"Jesus love you");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

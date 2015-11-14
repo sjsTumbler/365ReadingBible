@@ -21,14 +21,14 @@ const static NSString* tablename = @"old_niv";//表名
 @end
 
 @implementation old_nivModel
-@synthesize Col001;
-@synthesize Col002;
-@synthesize Col003;
-@synthesize col_004;
-@synthesize col_005;
-@synthesize col_006;
-@synthesize o_id;
-@synthesize k_id;
+//@synthesize Col001;
+//@synthesize Col002;
+//@synthesize Col003;
+//@synthesize col_004;
+//@synthesize col_005;
+//@synthesize col_006;
+//@synthesize o_id;
+//@synthesize k_id;
 
 
 -(id)init
@@ -40,33 +40,33 @@ const static NSString* tablename = @"old_niv";//表名
     }
     return self;
 }
-- (id)initWithJsonDictionary:(NSDictionary*)dic
-{
-    self = [super init];
-    if (self)
-    {
-        self.Col001      =  [dic objectForKey:@"Col001"];
-        self.Col002  =  [dic objectForKey:@"Col002"];
-        self.Col003       =  [dic objectForKey:@"Col003"];
-        self.col_004         =  [dic objectForKey:@"col004"];
-        self.col_005         =  [dic objectForKey:@"col005"];
-        self.col_006            =  [dic objectForKey:@"col006"];
-        self.o_id      =  [dic objectForKey:@"o_id"];
-        self.k_id     =  [dic objectForKey:@"k_id"];
-    }
-    return self;
-}
--(void)dealloc
-{
-    [Col001 release];
-    [Col002 release];
-    [Col003 release];
-    [col_004 release];
-    [col_005 release];
-    [col_006 release];
-    [o_id release];
-    [k_id release];
-    [super dealloc];
-}
+//- (id)initWithJsonDictionary:(NSDictionary*)dic
+//{
+//    self = [super init];
+//    if (self)
+//    {
+//        self.Col001      =  [dic objectForKey:@"Col001"];
+//        self.Col002  =  [dic objectForKey:@"Col002"];
+//        self.Col003       =  [dic objectForKey:@"Col003"];
+//        self.col_004         =  [dic objectForKey:@"col004"];
+//        self.col_005         =  [dic objectForKey:@"col005"];
+//        self.col_006            =  [dic objectForKey:@"col006"];
+//        self.o_id      =  [dic objectForKey:@"o_id"];
+//        self.k_id     =  [dic objectForKey:@"k_id"];
+//    }
+//    return self;
+//}
+//-(void)dealloc
+//{
+//    [Col001 release];
+//    [Col002 release];
+//    [Col003 release];
+//    [col_004 release];
+//    [col_005 release];
+//    [col_006 release];
+//    [o_id release];
+//    [k_id release];
+//    [super dealloc];
+//}
 
 @end

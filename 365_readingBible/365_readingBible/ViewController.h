@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SNavigationBar.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SJSNavigationDelegate>
 
 
 @end

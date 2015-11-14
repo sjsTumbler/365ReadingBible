@@ -21,14 +21,14 @@ const static NSString* tablename = @"new_niv";//表名
 @end
 
 @implementation new_nivModel
-@synthesize Col001;
-@synthesize Col002;
-@synthesize Col003;
-@synthesize col_004;
-@synthesize col_005;
-@synthesize col_006;
-@synthesize o_id;
-@synthesize k_id;
+//@synthesize Col001;
+//@synthesize Col002;
+//@synthesize Col003;
+//@synthesize col_004;
+//@synthesize col_005;
+//@synthesize col_006;
+//@synthesize o_id;
+//@synthesize k_id;
 
 
 -(id)init
@@ -45,28 +45,28 @@ const static NSString* tablename = @"new_niv";//表名
     self = [super init];
     if (self)
     {
-        self.Col001      =  [dic objectForKey:@"Col001"];
-        self.Col002  =  [dic objectForKey:@"Col002"];
-        self.Col003       =  [dic objectForKey:@"Col003"];
-        self.col_004         =  [dic objectForKey:@"col004"];
-        self.col_005         =  [dic objectForKey:@"col005"];
-        self.col_006            =  [dic objectForKey:@"col006"];
-        self.o_id      =  [dic objectForKey:@"o_id"];
-        self.k_id     =  [dic objectForKey:@"k_id"];
+        _Col001       =  [dic objectForKey:@"Col001"];
+        _Col002       =  [dic objectForKey:@"Col002"];
+        _Col003       =  [dic objectForKey:@"Col003"];
+        _col_004      =  [dic objectForKey:@"col004"];
+        _col_005      =  [dic objectForKey:@"col005"];
+        _col_006      =  [dic objectForKey:@"col006"];
+        _o_id         =  [dic objectForKey:@"o_id"];
+        _k_id         =  [dic objectForKey:@"k_id"];
     }
     return self;
 }
 -(void)dealloc
 {
-    [Col001 release];
-    [Col002 release];
-    [Col003 release];
-    [col_004 release];
-    [col_005 release];
-    [col_006 release];
-    [o_id release];
-    [k_id release];
-    [super dealloc];
+    [_Col001   release];
+    [_Col002   release];
+    [_Col003   release];
+    [_col_004  release];
+    [_col_005  release];
+    [_col_006  release];
+    [_o_id     release];
+    [_k_id     release];
+    [super     dealloc];
 }
 
 @end
