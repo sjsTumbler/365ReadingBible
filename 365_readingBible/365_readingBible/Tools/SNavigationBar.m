@@ -65,7 +65,7 @@
  */
 -(void)setRightBtnTitle:(NSString *)title{
     self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightBtn.frame = CGRectMake(270, 13, 30, 21);
+    self.rightBtn.frame = CGRectMake(270, 33, 30, 21);
     self.rightBtn.tag = nav_right_tag;
     [self.rightBtn setTitle:title forState:UIControlStateNormal];
     [self.rightBtn addTarget:self action:@selector(rightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -94,7 +94,7 @@
 -(void)setLeftBtnTitle:(NSString *)title
 {
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftBtn.frame = CGRectMake(20, 13, 30, 21);
+    self.leftBtn.frame = CGRectMake(20, 33, 30, 21);
     self.leftBtn.tag = nav_left_tag;
     [self.leftBtn setTitle:title forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
