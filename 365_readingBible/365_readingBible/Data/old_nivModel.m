@@ -40,33 +40,33 @@ const static NSString* tablename = @"old_niv";//表名
     }
     return self;
 }
-//- (id)initWithJsonDictionary:(NSDictionary*)dic
-//{
-//    self = [super init];
-//    if (self)
-//    {
-//        self.Col001      =  [dic objectForKey:@"Col001"];
-//        self.Col002  =  [dic objectForKey:@"Col002"];
-//        self.Col003       =  [dic objectForKey:@"Col003"];
-//        self.col_004         =  [dic objectForKey:@"col004"];
-//        self.col_005         =  [dic objectForKey:@"col005"];
-//        self.col_006            =  [dic objectForKey:@"col006"];
-//        self.o_id      =  [dic objectForKey:@"o_id"];
-//        self.k_id     =  [dic objectForKey:@"k_id"];
-//    }
-//    return self;
-//}
-//-(void)dealloc
-//{
-//    [Col001 release];
-//    [Col002 release];
-//    [Col003 release];
-//    [col_004 release];
-//    [col_005 release];
-//    [col_006 release];
-//    [o_id release];
-//    [k_id release];
-//    [super dealloc];
-//}
+- (id)initWithJsonDictionary:(NSDictionary*)dic
+{
+    self = [super init];
+    if (self)
+    {
+        _Col001       =  [dic objectForKey:@"Col001"];
+        _Col002       =  [dic objectForKey:@"Col002"];
+        _Col003       =  [dic objectForKey:@"Col003"];
+        _col_004      =  [dic objectForKey:@"col004"];
+        _col_005      =  [dic objectForKey:@"col005"];
+        _col_006      =  [dic objectForKey:@"col006"];
+        _o_id         =  [dic objectForKey:@"o_id"];
+        _k_id         =  [dic objectForKey:@"k_id"];
+    }
+    return self;
+}
+-(void)dealloc
+{
+    [_Col001   release];
+    [_Col002   release];
+    [_Col003   release];
+    [_col_004  release];
+    [_col_005  release];
+    [_col_006  release];
+    [_o_id     release];
+    [_k_id     release];
+    [super     dealloc];
+}
 
 @end
