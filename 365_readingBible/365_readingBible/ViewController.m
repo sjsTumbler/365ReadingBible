@@ -82,8 +82,11 @@
  */
 - (void)setNavigationBar {
     SNavigationBar * naviBar = [[SNavigationBar alloc]initWithTitle:@"365读经"];
-    [naviBar setRightBtnTitle:@"典"];
-    [naviBar setLeftBtnTitle:@"持"];
+//    [naviBar setRightBtnTitle:@"统计"];
+//    [naviBar setLeftBtnTitle:@"目录"];
+//    [naviBar setLeftBtnImage:@"testNav"];
+    [naviBar setLeftBtn_bacK];
+    [naviBar setRightBtnImage:@"testNav"];
     naviBar.delegate = self;
     [self.view addSubview:naviBar];
 }

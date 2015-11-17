@@ -12,6 +12,8 @@
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>
 		<string>https://github.com/sjsTumbler/365-dayBibleReadingPlan.git</string>
+		<key>c406b459-e392-1e46-b2a0-e82348dff825++8524</key>
+		<string>https://220.161.221.4/svn/Web/mobile/newCat/CatBase/CatBase/CatPublic/FMDatabase</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>365_readingBible/365_readingBible.xcodeproj</string>
@@ -19,6 +21,13 @@
 	<dict>
 		<key>C829B74E4C73F99A50C8201B06D0205105B2D278</key>
 		<string>../../..</string>
+		<key>c406b459-e392-1e46-b2a0-e82348dff825++8524</key>
+		<string>../../../365_readingBible/365_readingBible/Data/FMDatabase/</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>c406b459-e392-1e46-b2a0-e82348dff825++8524</key>
+		<string>https://220.161.221.4/svn/Web</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sjsTumbler/365-dayBibleReadingPlan.git</string>
@@ -35,6 +44,14 @@
 			<string>C829B74E4C73F99A50C8201B06D0205105B2D278</string>
 			<key>IDESourceControlWCCName</key>
 			<string>365-dayBibleReadingPlan</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>c406b459-e392-1e46-b2a0-e82348dff825++8524</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FMDatabase</string>
 		</dict>
 	</array>
 </dict>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Manager.h"
+#import "PublicFunctions.h"
 
 @protocol SJSNavigationDelegate <NSObject>
 @optional
@@ -40,8 +41,8 @@
 - (void)setLeftBtnImage:(NSString *)imageName;
 //左侧按钮返回创建
 - (void)setLeftBtn_bacK;
-//左侧按钮返回图片+上级标题创建   ???
-- (void)setLeftBtn_parentName;
+//左侧按钮返回图片+上级标题创建
+- (void)setLeftBtn_parentName:(NSString *)parentName;
 
 
 @end

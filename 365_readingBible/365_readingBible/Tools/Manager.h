@@ -19,12 +19,15 @@
 //尺寸
 #define navigationBarHight 64.0
 #define viewWidth 320.0
-#define titleFontOfSize 17.0
+#define titleFontOfSize 20.0
 #define btnFontOfSize 14.0
 
 
 //按钮的Tag值
 #define nav_right_tag 101
 #define nav_left_tag 102
+
+//颜色
+#define navColor @"199fff"
 
 #endif
