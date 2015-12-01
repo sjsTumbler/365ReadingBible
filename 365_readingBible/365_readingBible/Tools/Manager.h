@@ -27,7 +27,17 @@
 #define nav_right_tag 101
 #define nav_left_tag 102
 
-//颜色
+
+
+// 颜色
+// 参数格式为：0xFFFFFF
+#define iColorWithHex(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+// 参数格式为：222,222,222
+#define iColorWithRGB(r, g, b) [UIColor colorWithRed:(r) / 255.f green:(g) / 255.f blue:(b) / 255.f alpha:1.0f]
+
 #define navColor @"199fff"
 
 #endif

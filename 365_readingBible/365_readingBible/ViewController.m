@@ -26,6 +26,10 @@
     //set navigationBar
     [self setNavigationBar];
     
+    //背景色
+    self.view.backgroundColor = iColorWithHex(0x199111);
+    
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
     NSMutableDictionary * searchDic = [NSMutableDictionary dictionary];
     [searchDic setValue:@"太" forKey:@"Col001"];
