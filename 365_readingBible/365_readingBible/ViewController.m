@@ -4,7 +4,7 @@
 //
 //  Created by Sun jishuai on 15/7/9.
 //  Copyright (c) 2015年 SunJishuai. All rights reserved.
-//
+//  rootView
 
 #import "ViewController.h"
 #import "DataFactory.h"//数据库

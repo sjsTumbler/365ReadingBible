@@ -55,10 +55,10 @@
 		E4802CEB1B575A6100B8C1BC /* 365_readingBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 365_readingBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4802CEF1B575A6100B8C1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4802CF01B575A6100B8C1BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E4802CF21B575A6100B8C1BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E4802CF31B575A6100B8C1BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4802CF51B575A6100B8C1BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4802CF61B575A6100B8C1BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4802CF21B575A6100B8C1BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		E4802CF31B575A6100B8C1BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		E4802CF51B575A6100B8C1BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = 365_readingBible/ViewController.h; sourceTree = SOURCE_ROOT; };
+		E4802CF61B575A6100B8C1BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = 365_readingBible/ViewController.m; sourceTree = SOURCE_ROOT; };
 		E4802CF91B575A6100B8C1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4802CFB1B575A6100B8C1BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4802CFE1B575A6100B8C1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -150,14 +150,13 @@
 		E4802CED1B575A6100B8C1BC /* 365_readingBible */ = {
 			isa = PBXGroup;
 			children = (
+				EA77D7AE1C45D35600C8C19C /* Manager */,
+				EA77D7AB1C4527E700C8C19C /* Delegate */,
+				EA77D7AC1C4527E700C8C19C /* View */,
 				E4802D141B575AC700B8C1BC /* Data */,
 				E4802D331B575AC700B8C1BC /* db */,
 				E4802D351B575AC700B8C1BC /* Image */,
 				E4802D371B575AC700B8C1BC /* Tools */,
-				E4802CF21B575A6100B8C1BC /* AppDelegate.h */,
-				E4802CF31B575A6100B8C1BC /* AppDelegate.m */,
-				E4802CF51B575A6100B8C1BC /* ViewController.h */,
-				E4802CF61B575A6100B8C1BC /* ViewController.m */,
 				E4802CF81B575A6100B8C1BC /* Main.storyboard */,
 				E4802CFB1B575A6100B8C1BC /* Images.xcassets */,
 				E4802CFD1B575A6100B8C1BC /* LaunchScreen.xib */,
@@ -275,6 +274,31 @@
 				E4A091181B5E98BB001B6683 /* SNavigationBar.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		EA77D7AB1C4527E700C8C19C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E4802CF21B575A6100B8C1BC /* AppDelegate.h */,
+				E4802CF31B575A6100B8C1BC /* AppDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		EA77D7AC1C4527E700C8C19C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4802CF51B575A6100B8C1BC /* ViewController.h */,
+				E4802CF61B575A6100B8C1BC /* ViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA77D7AE1C45D35600C8C19C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

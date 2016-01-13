@@ -11,6 +11,16 @@
 @implementation PublicFunctions
 #define PLIST_FILE_NAME @"CRM_refreshDateList.plist"
 
+
++ (PublicFunctions *)sharedPublicFunctions{
+    static PublicFunctions *sharedPublicFunctionsInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedPublicFunctionsInstance = [[self alloc] init];
+    });
+    return sharedPublicFunctionsInstance;
+}
+
 #pragma  mark HexColor转化为iOS颜色数组或数值string
 /**
  @author SunJishuai , 15-07-01 14:07:31
@@ -25,8 +35,8 @@
  NSArray *colorArray = [PublicFunctions colorForHex:@"217dd9"];
  XXXX.textColor = [UIColor colorWithRed:[[colorArray objectAtIndex:0]floatValue] green:[[colorArray objectAtIndex:1]floatValue] blue:[[colorArray objectAtIndex:2]floatValue] alpha:1];
  */
-//+ (NSArray*)colorForHex:(NSString *)hexColor
-+ (UIColor *)colorForHex:(NSString *)hexColor
+//- (NSArray*)colorForHex:(NSString *)hexColor
+- (UIColor *)colorForHex:(NSString *)hexColor
 {
     hexColor = [[hexColor stringByTrimmingCharactersInSet:
                  [NSCharacterSet whitespaceAndNewlineCharacterSet]
@@ -57,7 +67,7 @@
 }
 
 #pragma mark - 判断字符串是否为空
-+ (BOOL) isBlankString:(NSString *)string {
+- (BOOL) isBlankString:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;
     }
@@ -82,7 +92,7 @@
  
  @return 是--YES;  不是——NO
  */
-+ (BOOL) isPhoneNumber:(NSString *)phone
+- (BOOL) isPhoneNumber:(NSString *)phone
 {
     NSString * MOBILE = @"(^1+\\d{10})|(^1+\\d{2}-(\\d{4})-(\\d{4}))|(((86)|(\\+86))1+((\\d{10})|(\\d{2}-(\\d{4})-(\\d{4}))))$";
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
@@ -98,7 +108,7 @@
  
  @return 是--YES;  不是——NO
  */
-+ (BOOL) isTelNumber:(NSString *)tel
+- (BOOL) isTelNumber:(NSString *)tel
 {
     NSString *TEL = @"((^(\\d{3,4})-(\\d{7,8}))|(^(\\d{7,8}))|(^(\\d{3,4})(\\d{7,8})))$";
     NSPredicate *regextesttel = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", TEL];
@@ -115,7 +125,7 @@
  
  @return 存储的data
  */
-+ (NSData*)loadImageDataWithPath:(NSString *) directoryPath andName: (NSString *)imageName
+- (NSData*)loadImageDataWithPath:(NSString *) directoryPath andName: (NSString *)imageName
 {
     BOOL isDir = NO;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -136,7 +146,7 @@
     }
 }
 //006 get file from caches dir or Documents
-+ (BOOL)getFileWithPath:(NSString *) directoryPath andName: (NSString *)fileName
+- (BOOL)getFileWithPath:(NSString *) directoryPath andName: (NSString *)fileName
 {
     BOOL isDir = NO;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -165,7 +175,7 @@
  
  @return YES or NO
  */
-+ (BOOL) isIncludeNumberAndChar:(NSString *)password
+- (BOOL) isIncludeNumberAndChar:(NSString *)password
 {
     NSString *PD = @"^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$";
     NSPredicate *regextesttel = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", PD];
@@ -181,7 +191,7 @@
  
  @return YES or NO
  */
-+ (BOOL) isJuestIncludeNumber:(NSString *)password
+- (BOOL) isJuestIncludeNumber:(NSString *)password
 {
     NSString *PD = @"^[0-9]*$";
     NSPredicate *regextesttel = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", PD];
@@ -197,7 +207,7 @@
  
  @return 除去符号后的字符串
  */
-+ (NSString *)deleteCharactersOfstring:(NSString *)str
+- (NSString *)deleteCharactersOfstring:(NSString *)str
 {
     //由于NSString中有全角符号和半角符号, 因此有些符号要包括全角和半角的
     NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"，,。.?？！!"];
@@ -214,7 +224,7 @@
  
  @return 要在页面上显示的时间
  */
-+ (NSString *)editDate:(double)idate{
+- (NSString *)editDate:(double)idate{
     NSDate *nowDate=[NSDate date];
     NSDate *editDate=[NSDate dateWithTimeIntervalSince1970:idate];
     NSDateFormatter *df=[[NSDateFormatter alloc]init];
@@ -246,7 +256,7 @@
  
  @return 时间戳
  */
-+ (double)needRefreshDate:(double)refreshDate AndProtocol:(int)protocolNum AndType:(dataType)datatype
+- (double)needRefreshDate:(double)refreshDate AndProtocol:(int)protocolNum AndType:(dataType)datatype
 {
     // 首先判断在Documents里面是否存在PLIST文件，如果没有，创建
     //获取应用程序的路径
@@ -315,7 +325,7 @@
 }
 #pragma  mark 按提醒时间顺序排序记录
 
-+ (NSMutableArray *)sortingArrayByTime:(NSMutableArray *)recordsArray
+- (NSMutableArray *)sortingArrayByTime:(NSMutableArray *)recordsArray
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"warnTime" ascending:NO];//其中，price为数组中的对象的属性，这个针对数组中存放对象比较更简洁方便
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
@@ -333,7 +343,7 @@
  @param fileName  文件名
  @param path      文件路径
  */
-+ (void)showAnnexWith:(UIImageView *)imgView FileName:(NSString *)fileName FilePath:(NSString *)filePath
+- (void)showAnnexWith:(UIImageView *)imgView FileName:(NSString *)fileName FilePath:(NSString *)filePath
 {
     NSArray *fileType=[[NSArray alloc] initWithObjects:@".png",@".gif",@".jpg",@".mp3",@".doc",@".docx",@".pdf",@".mp4",@".wav",@".txt",@".xls",@".xlsx",@".ppt",@".pptx",@".bmp",nil];
     //根据不同的文件类型，设置不同类型的文件图片
@@ -399,7 +409,7 @@
  
  @param fileName 文件名称
  */
-+ (int)getTypeOfFileName:(NSString *)fileName
+- (int)getTypeOfFileName:(NSString *)fileName
 {
     NSArray *fileType=[[NSArray alloc] initWithObjects:@".png",@".gif",@".jpg",@".mp3",@".doc",@".docx",@".pdf",@".mp4",@".wav",@".txt",@".xls",@".xlsx",@".ppt",@".pptx",@".bmp",nil];
     for (int i=0; i<fileType.count; i++) {

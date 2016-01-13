@@ -46,6 +46,7 @@
         self.titleLabel.font = [UIFont systemFontOfSize:titleFontOfSize];
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.frame = CGRectMake(85, 33, 150, 21);
+        self.titleLabel.center = CGPointMake(viewWidth*0.5, self.titleLabel.center.y);
         self.titleLabel.text = title;
         
         self.backgroundColor = [PublicFunctions colorForHex:navColor];
@@ -64,7 +65,7 @@
  */
 -(void)setRightBtnTitle:(NSString *)title{
     self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightBtn.frame = CGRectMake(270, 33, 30, 21);
+    self.rightBtn.frame = CGRectMake(viewWidth-50, 33, 30, 21);
     self.rightBtn.tag = nav_right_tag;
     [self.rightBtn setTitle:title forState:UIControlStateNormal];
     [self.rightBtn.titleLabel setFont:[UIFont systemFontOfSize: btnFontOfSize]];
@@ -82,7 +83,7 @@
 -(void)setRightBtnImage:(NSString *)imageName
 {
     self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightBtn.frame = CGRectMake(270, 20, 44, 44);
+    self.rightBtn.frame = CGRectMake(viewWidth-50, 20, 44, 44);
     self.rightBtn.tag = nav_right_tag;
     [self.rightBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [self.rightBtn addTarget:self action:@selector(rightBtnAction:) forControlEvents:UIControlEventTouchUpInside];

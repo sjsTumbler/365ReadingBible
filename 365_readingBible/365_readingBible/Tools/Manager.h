@@ -18,7 +18,7 @@
 
 //尺寸
 #define navigationBarHight 64.0
-#define viewWidth 320.0
+#define viewWidth [[UIScreen mainScreen] bounds].size.width
 #define titleFontOfSize 20.0
 #define btnFontOfSize 14.0
 
