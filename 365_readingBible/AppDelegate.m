@@ -7,16 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+{
+    UITabBarController  * _iTabBar;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _iTabBar = [[UITabBarController alloc]init];
+    UINavigationController * readNav = [[UINavigationController alloc]initWithRootViewController:[[SJSReadingViewController alloc]init]];
+    UINavigationController * setNav = [[UINavigationController alloc]initWithRootViewController:[[SJSSettingViewController alloc]init]];
+    UINavigationController * noteNav = [[UINavigationController alloc]initWithRootViewController:[[SJSNoteViewController alloc]init]];
+    _iTabBar.viewControllers = [[NSArray alloc]initWithObjects:noteNav,readNav,setNav, nil];
+    self.window.rootViewController = _iTabBar;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

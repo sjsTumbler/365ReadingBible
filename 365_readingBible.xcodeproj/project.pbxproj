@@ -31,9 +31,20 @@
 		E4802D471B575AC700B8C1BC /* HolyBible.db in Resources */ = {isa = PBXBuildFile; fileRef = E4802D341B575AC700B8C1BC /* HolyBible.db */; };
 		E4802D481B575AC700B8C1BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4802D361B575AC700B8C1BC /* Default-568h@2x.png */; };
 		E49F97721B59E3A800DFBE87 /* 项目策划 in Resources */ = {isa = PBXBuildFile; fileRef = E49F97711B59E3A800DFBE87 /* 项目策划 */; };
-		E4A091191B5E98BB001B6683 /* SNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A091181B5E98BB001B6683 /* SNavigationBar.m */; };
 		EA26CE641BF9EC5800C398CE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA26CE631BF9EC5800C398CE /* libsqlite3.0.dylib */; };
 		EA26CE671BF9EF7300C398CE /* PublicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA26CE661BF9EF7300C398CE /* PublicFunctions.m */; };
+		EA68F2481C53716C0052EB08 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F2461C53716C0052EB08 /* RootViewController.m */; };
+		EA68F2491C53716C0052EB08 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68F2471C53716C0052EB08 /* RootViewController.xib */; };
+		EA68F24D1C5372240052EB08 /* SJSReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F24B1C5372240052EB08 /* SJSReadingViewController.m */; };
+		EA68F24E1C5372240052EB08 /* SJSReadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68F24C1C5372240052EB08 /* SJSReadingViewController.xib */; };
+		EA68F2521C53725F0052EB08 /* SJSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F2501C53725F0052EB08 /* SJSSettingViewController.m */; };
+		EA68F2531C53725F0052EB08 /* SJSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68F2511C53725F0052EB08 /* SJSSettingViewController.xib */; };
+		EA68F2571C5372F00052EB08 /* SJSNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F2551C5372F00052EB08 /* SJSNoteViewController.m */; };
+		EA68F2581C5372F00052EB08 /* SJSNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68F2561C5372F00052EB08 /* SJSNoteViewController.xib */; };
+		EA68F2621C537C8D0052EB08 /* SNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F25D1C537C8D0052EB08 /* SNavigationBar.m */; };
+		EA68F2631C537C8D0052EB08 /* MyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F2601C537C8D0052EB08 /* MyTabbar.m */; };
+		EA68F2641C537C8D0052EB08 /* STabbar.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA68F2611C537C8D0052EB08 /* STabbar.plist */; };
+		EA68F2671C537CDB0052EB08 /* STabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68F2661C537CDB0052EB08 /* STabbar.m */; };
 		EA7C1FA71BFB3C8800BF2D15 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7C1FA61BFB3C8800BF2D15 /* icon.png */; };
 		EA7C1FAA1BFB40EA00BF2D15 /* testNav.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7C1FA81BFB40EA00BF2D15 /* testNav.png */; };
 		EA7C1FAB1BFB40EA00BF2D15 /* testNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7C1FA91BFB40EA00BF2D15 /* testNav@2x.png */; };
@@ -97,11 +108,29 @@
 		E4802D361B575AC700B8C1BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E4802D381B575AC700B8C1BC /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		E49F97711B59E3A800DFBE87 /* 项目策划 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目策划"; sourceTree = "<group>"; };
-		E4A091171B5E98BB001B6683 /* SNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationBar.h; sourceTree = "<group>"; };
-		E4A091181B5E98BB001B6683 /* SNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNavigationBar.m; sourceTree = "<group>"; };
 		EA26CE631BF9EC5800C398CE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		EA26CE651BF9EF7300C398CE /* PublicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicFunctions.h; sourceTree = "<group>"; };
 		EA26CE661BF9EF7300C398CE /* PublicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicFunctions.m; sourceTree = "<group>"; };
+		EA68F2451C53716C0052EB08 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		EA68F2461C53716C0052EB08 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		EA68F2471C53716C0052EB08 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		EA68F24A1C5372240052EB08 /* SJSReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadingViewController.h; sourceTree = "<group>"; };
+		EA68F24B1C5372240052EB08 /* SJSReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadingViewController.m; sourceTree = "<group>"; };
+		EA68F24C1C5372240052EB08 /* SJSReadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSReadingViewController.xib; sourceTree = "<group>"; };
+		EA68F24F1C53725F0052EB08 /* SJSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSSettingViewController.h; sourceTree = "<group>"; };
+		EA68F2501C53725F0052EB08 /* SJSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSSettingViewController.m; sourceTree = "<group>"; };
+		EA68F2511C53725F0052EB08 /* SJSSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSSettingViewController.xib; sourceTree = "<group>"; };
+		EA68F2541C5372F00052EB08 /* SJSNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSNoteViewController.h; sourceTree = "<group>"; };
+		EA68F2551C5372F00052EB08 /* SJSNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSNoteViewController.m; sourceTree = "<group>"; };
+		EA68F2561C5372F00052EB08 /* SJSNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSNoteViewController.xib; sourceTree = "<group>"; };
+		EA68F25A1C53762A0052EB08 /* ViewsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewsHeader.h; sourceTree = "<group>"; };
+		EA68F25C1C537C8D0052EB08 /* SNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationBar.h; sourceTree = "<group>"; };
+		EA68F25D1C537C8D0052EB08 /* SNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNavigationBar.m; sourceTree = "<group>"; };
+		EA68F25F1C537C8D0052EB08 /* MyTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabbar.h; sourceTree = "<group>"; };
+		EA68F2601C537C8D0052EB08 /* MyTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbar.m; sourceTree = "<group>"; };
+		EA68F2611C537C8D0052EB08 /* STabbar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = STabbar.plist; sourceTree = "<group>"; };
+		EA68F2651C537CDB0052EB08 /* STabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STabbar.h; sourceTree = "<group>"; };
+		EA68F2661C537CDB0052EB08 /* STabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STabbar.m; sourceTree = "<group>"; };
 		EA7C1FA61BFB3C8800BF2D15 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		EA7C1FA81BFB40EA00BF2D15 /* testNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testNav.png; sourceTree = "<group>"; };
 		EA7C1FA91BFB40EA00BF2D15 /* testNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNav@2x.png"; sourceTree = "<group>"; };
@@ -267,13 +296,34 @@
 		E4802D371B575AC700B8C1BC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA68F25B1C537C8D0052EB08 /* Navigation */,
+				EA68F25E1C537C8D0052EB08 /* Tabbar */,
 				EA26CE651BF9EF7300C398CE /* PublicFunctions.h */,
 				EA26CE661BF9EF7300C398CE /* PublicFunctions.m */,
 				E4802D381B575AC700B8C1BC /* Manager.h */,
-				E4A091171B5E98BB001B6683 /* SNavigationBar.h */,
-				E4A091181B5E98BB001B6683 /* SNavigationBar.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		EA68F25B1C537C8D0052EB08 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EA68F25C1C537C8D0052EB08 /* SNavigationBar.h */,
+				EA68F25D1C537C8D0052EB08 /* SNavigationBar.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		EA68F25E1C537C8D0052EB08 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EA68F25F1C537C8D0052EB08 /* MyTabbar.h */,
+				EA68F2601C537C8D0052EB08 /* MyTabbar.m */,
+				EA68F2611C537C8D0052EB08 /* STabbar.plist */,
+				EA68F2651C537CDB0052EB08 /* STabbar.h */,
+				EA68F2661C537CDB0052EB08 /* STabbar.m */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		EA77D7AB1C4527E700C8C19C /* Delegate */ = {
@@ -290,6 +340,19 @@
 			children = (
 				E4802CF51B575A6100B8C1BC /* ViewController.h */,
 				E4802CF61B575A6100B8C1BC /* ViewController.m */,
+				EA68F2451C53716C0052EB08 /* RootViewController.h */,
+				EA68F2461C53716C0052EB08 /* RootViewController.m */,
+				EA68F2471C53716C0052EB08 /* RootViewController.xib */,
+				EA68F24A1C5372240052EB08 /* SJSReadingViewController.h */,
+				EA68F24B1C5372240052EB08 /* SJSReadingViewController.m */,
+				EA68F24C1C5372240052EB08 /* SJSReadingViewController.xib */,
+				EA68F24F1C53725F0052EB08 /* SJSSettingViewController.h */,
+				EA68F2501C53725F0052EB08 /* SJSSettingViewController.m */,
+				EA68F2511C53725F0052EB08 /* SJSSettingViewController.xib */,
+				EA68F2541C5372F00052EB08 /* SJSNoteViewController.h */,
+				EA68F2551C5372F00052EB08 /* SJSNoteViewController.m */,
+				EA68F2561C5372F00052EB08 /* SJSNoteViewController.xib */,
+				EA68F25A1C53762A0052EB08 /* ViewsHeader.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,13 +445,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA7C1FAF1BFB43E400BF2D15 /* back@2x.png in Resources */,
+				EA68F24E1C5372240052EB08 /* SJSReadingViewController.xib in Resources */,
 				E4802CFA1B575A6100B8C1BC /* Main.storyboard in Resources */,
+				EA68F2491C53716C0052EB08 /* RootViewController.xib in Resources */,
 				EA7C1FA71BFB3C8800BF2D15 /* icon.png in Resources */,
+				EA68F2581C5372F00052EB08 /* SJSNoteViewController.xib in Resources */,
 				E4802CFF1B575A6100B8C1BC /* LaunchScreen.xib in Resources */,
 				EA7C1FAA1BFB40EA00BF2D15 /* testNav.png in Resources */,
 				EA7C1FAB1BFB40EA00BF2D15 /* testNav@2x.png in Resources */,
 				E4802D471B575AC700B8C1BC /* HolyBible.db in Resources */,
+				EA68F2641C537C8D0052EB08 /* STabbar.plist in Resources */,
 				EA7C1FAE1BFB43E400BF2D15 /* back.png in Resources */,
+				EA68F2531C53725F0052EB08 /* SJSSettingViewController.xib in Resources */,
 				E49F97721B59E3A800DFBE87 /* 项目策划 in Resources */,
 				E4802D481B575AC700B8C1BC /* Default-568h@2x.png in Resources */,
 				E4802CFC1B575A6100B8C1BC /* Images.xcassets in Resources */,
@@ -409,25 +477,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA68F24D1C5372240052EB08 /* SJSReadingViewController.m in Sources */,
 				E4802D3F1B575AC700B8C1BC /* LKDaoBase.m in Sources */,
 				E4802CF71B575A6100B8C1BC /* ViewController.m in Sources */,
+				EA68F2671C537CDB0052EB08 /* STabbar.m in Sources */,
 				E4802D3D1B575AC700B8C1BC /* FMDatabaseQueue.m in Sources */,
 				E4802CF41B575A6100B8C1BC /* AppDelegate.m in Sources */,
 				E4802D431B575AC700B8C1BC /* old_cuvModel.m in Sources */,
+				EA68F2571C5372F00052EB08 /* SJSNoteViewController.m in Sources */,
 				E4802D451B575AC700B8C1BC /* old_nivModel.m in Sources */,
 				E4802D441B575AC700B8C1BC /* old_ncvModel.m in Sources */,
-				E4A091191B5E98BB001B6683 /* SNavigationBar.m in Sources */,
 				E4802D391B575AC700B8C1BC /* DataFactory.m in Sources */,
 				E4802D3A1B575AC700B8C1BC /* FMDatabase.m in Sources */,
 				E4802D411B575AC700B8C1BC /* new_ncvModel.m in Sources */,
+				EA68F2521C53725F0052EB08 /* SJSSettingViewController.m in Sources */,
+				EA68F2621C537C8D0052EB08 /* SNavigationBar.m in Sources */,
 				E4802D401B575AC700B8C1BC /* new_cuvModel.m in Sources */,
 				E4802D3C1B575AC700B8C1BC /* FMDatabasePool.m in Sources */,
 				E4802D3E1B575AC700B8C1BC /* FMResultSet.m in Sources */,
+				EA68F2481C53716C0052EB08 /* RootViewController.m in Sources */,
 				E4802D461B575AC700B8C1BC /* SandboxFile.m in Sources */,
 				E4802CF11B575A6100B8C1BC /* main.m in Sources */,
 				E4802D3B1B575AC700B8C1BC /* FMDatabaseAdditions.m in Sources */,
 				EA26CE671BF9EF7300C398CE /* PublicFunctions.m in Sources */,
 				E4802D421B575AC700B8C1BC /* new_nivModel.m in Sources */,
+				EA68F2631C537C8D0052EB08 /* MyTabbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

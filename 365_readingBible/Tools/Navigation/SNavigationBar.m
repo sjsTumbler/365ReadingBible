@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, viewWidth, navigationBarHight);
-        self.backgroundColor = [PublicFunctions colorForHex:navColor];
+        self.backgroundColor = iColorWithHex(navColor);
     }
     return self;
 }
@@ -49,7 +49,7 @@
         self.titleLabel.center = CGPointMake(viewWidth*0.5, self.titleLabel.center.y);
         self.titleLabel.text = title;
         
-        self.backgroundColor = [PublicFunctions colorForHex:navColor];
+        self.backgroundColor = iColorWithHex(navColor);
         [self addSubview:self.titleLabel];
     }
     
@@ -132,15 +132,13 @@
  */
 -(void)setLeftBtn_bacK
 {
-    UIImageView * back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"back"]];
-    back.frame = CGRectMake(15, 23, 35, 40);
-    [self addSubview:back];
-    
+    CGSize titleSize = [@"返回" sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:btnFontOfSize]}];
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftBtn.frame = CGRectMake(20, 33, 35, 21);
+    self.leftBtn.frame = CGRectMake(20, 33, 15+titleSize.width, 21);
     self.leftBtn.tag = nav_left_tag;
-    [self.leftBtn setTitle:@" 返回" forState:UIControlStateNormal];
+    [self.leftBtn setTitle:@"返回" forState:UIControlStateNormal];
     [self.leftBtn.titleLabel setFont:[UIFont systemFontOfSize: btnFontOfSize]];
+    [self.leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftBtn];
 }
@@ -153,15 +151,14 @@
  */
 -(void)setLeftBtn_parentName:(NSString *)parentName
 {
-    UIImageView * back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"back"]];
-    back.frame = CGRectMake(15, 23, 35, 40);
-    [self addSubview:back];
+    CGSize titleSize = [parentName sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:btnFontOfSize]}];
     
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftBtn.frame = CGRectMake(20, 33, 35, 21);
+    self.leftBtn.frame = CGRectMake(15, 33, 15+titleSize.width, 21);
     self.leftBtn.tag = nav_left_tag;
     [self.leftBtn setTitle:[NSString stringWithFormat:@" %@",parentName] forState:UIControlStateNormal];
     [self.leftBtn.titleLabel setFont:[UIFont systemFontOfSize: btnFontOfSize]];
+    [self.leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftBtn];
 }

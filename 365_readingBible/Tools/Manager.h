@@ -20,7 +20,7 @@
 #define navigationBarHight 64.0
 #define viewWidth [[UIScreen mainScreen] bounds].size.width
 #define titleFontOfSize 20.0
-#define btnFontOfSize 14.0
+#define btnFontOfSize 15.0
 
 
 //按钮的Tag值
@@ -38,6 +38,6 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 // 参数格式为：222,222,222
 #define iColorWithRGB(r, g, b) [UIColor colorWithRed:(r) / 255.f green:(g) / 255.f blue:(b) / 255.f alpha:1.0f]
 
-#define navColor @"199fff"
+#define navColor 0x199fff
 
 #endif
