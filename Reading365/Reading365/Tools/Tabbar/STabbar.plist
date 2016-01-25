@@ -2,41 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bgImage</key>
-	<string>bgImage.png</string>
 	<key>items</key>
 	<array>
 		<dict>
 			<key>title</key>
 			<string>读经</string>
 			<key>image</key>
-			<string>tabbar_limitfree.png</string>
-			<key>image_press</key>
-			<string>tabbar_limitfree_press.png</string>
+			<string>reading_tabbar.png</string>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>收藏</string>
 			<key>image</key>
-			<string>tabbar_reduceprice.png</string>
-			<key>image_press</key>
-			<string>tabbar_reduceprice_press.png</string>
+			<string>collection_tabbar.png</string>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>搜索</string>
 			<key>image</key>
-			<string>tabbar_appfree.png</string>
-			<key>image_press</key>
-			<string>tabbar_appfree_press.png</string>
+			<string>search_tabbar.png</string>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>设置</string>
 			<key>image</key>
-			<string>tabbar_subject.png</string>
-			<key>image_press</key>
-			<string>tabbar_subject_press.png</string>
+			<string>setting_tabbar.png</string>
 		</dict>
 	</array>
 </dict>

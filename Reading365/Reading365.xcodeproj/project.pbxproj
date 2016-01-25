@@ -14,12 +14,6 @@
 		EAE086711C5621AB007D699E /* Reading365Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086701C5621AB007D699E /* Reading365Tests.m */; };
 		EAE086BE1C562240007D699E /* 项目策划 in Resources */ = {isa = PBXBuildFile; fileRef = EAE0867A1C562240007D699E /* 项目策划 */; };
 		EAE086BF1C562240007D699E /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0867D1C562240007D699E /* DataFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086C01C562240007D699E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086801C562240007D699E /* FMDatabase.m */; };
-		EAE086C11C562240007D699E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086821C562240007D699E /* FMDatabaseAdditions.m */; };
-		EAE086C21C562240007D699E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086841C562240007D699E /* FMDatabasePool.m */; };
-		EAE086C31C562240007D699E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086861C562240007D699E /* FMDatabaseQueue.m */; };
-		EAE086C41C562240007D699E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086881C562240007D699E /* FMResultSet.m */; };
-		EAE086C51C562240007D699E /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0868A1C562240007D699E /* LKDaoBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086C61C562240007D699E /* new_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0868C1C562240007D699E /* new_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086C71C562240007D699E /* new_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0868E1C562240007D699E /* new_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086C81C562240007D699E /* new_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086901C562240007D699E /* new_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -35,13 +29,10 @@
 		EAE086D21C562240007D699E /* testNav.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE086A11C562240007D699E /* testNav.png */; };
 		EAE086D31C562240007D699E /* testNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE086A21C562240007D699E /* testNav@2x.png */; };
 		EAE086D41C562240007D699E /* SNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086A71C562240007D699E /* SNavigationBar.m */; };
-		EAE086D51C562240007D699E /* PublicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086A91C562240007D699E /* PublicFunctions.m */; };
-		EAE086D61C562240007D699E /* MyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086AC1C562240007D699E /* MyTabbar.m */; };
 		EAE086D71C562240007D699E /* STabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086AE1C562240007D699E /* STabbar.m */; };
 		EAE086D81C562240007D699E /* STabbar.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAE086AF1C562240007D699E /* STabbar.plist */; };
 		EAE086D91C562240007D699E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086B21C562240007D699E /* RootViewController.m */; };
 		EAE086DA1C562240007D699E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE086B31C562240007D699E /* RootViewController.xib */; };
-		EAE086DB1C562240007D699E /* SJSNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086B51C562240007D699E /* SJSNoteViewController.m */; };
 		EAE086DC1C562240007D699E /* SJSNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE086B61C562240007D699E /* SJSNoteViewController.xib */; };
 		EAE086DD1C562240007D699E /* SJSReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086B81C562240007D699E /* SJSReadingViewController.m */; };
 		EAE086DE1C562240007D699E /* SJSReadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE086B91C562240007D699E /* SJSReadingViewController.xib */; };
@@ -50,6 +41,27 @@
 		EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086E31C5622CE007D699E /* AppDelegate.m */; };
 		EAE086E71C562375007D699E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086E61C562375007D699E /* ViewController.m */; };
 		EAE086E91C562444007D699E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE086E81C562444007D699E /* libsqlite3.0.dylib */; };
+		EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086EC1C5629F9007D699E /* FMDatabase.m */; };
+		EAE086F91C5629F9007D699E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086EE1C5629F9007D699E /* FMDatabaseAdditions.m */; };
+		EAE086FA1C5629F9007D699E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086F01C5629F9007D699E /* FMDatabasePool.m */; };
+		EAE086FB1C5629F9007D699E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086F21C5629F9007D699E /* FMDatabaseQueue.m */; };
+		EAE086FC1C5629F9007D699E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086F51C5629F9007D699E /* FMResultSet.m */; };
+		EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086F71C5629F9007D699E /* LKDaoBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EAE0870B1C5650CA007D699E /* collection_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE086FF1C5650CA007D699E /* collection_tabbar.png */; };
+		EAE0870C1C5650CA007D699E /* collection_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087001C5650CA007D699E /* collection_tabbar@2x.png */; };
+		EAE0870D1C5650CA007D699E /* collection_tabbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087011C5650CA007D699E /* collection_tabbar@3x.png */; };
+		EAE0870E1C5650CA007D699E /* reading_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087021C5650CA007D699E /* reading_tabbar.png */; };
+		EAE0870F1C5650CA007D699E /* reading_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087031C5650CA007D699E /* reading_tabbar@2x.png */; };
+		EAE087101C5650CA007D699E /* reading_tabbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087041C5650CA007D699E /* reading_tabbar@3x.png */; };
+		EAE087111C5650CA007D699E /* search_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087051C5650CA007D699E /* search_tabbar.png */; };
+		EAE087121C5650CA007D699E /* search_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087061C5650CA007D699E /* search_tabbar@2x.png */; };
+		EAE087131C5650CA007D699E /* search_tabbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087071C5650CA007D699E /* search_tabbar@3x.png */; };
+		EAE087141C5650CA007D699E /* setting_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087081C5650CA007D699E /* setting_tabbar.png */; };
+		EAE087151C5650CA007D699E /* setting_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE087091C5650CA007D699E /* setting_tabbar@2x.png */; };
+		EAE087161C5650CA007D699E /* setting_tabbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE0870A1C5650CA007D699E /* setting_tabbar@3x.png */; };
+		EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE087191C565AC2007D699E /* PublicFunctions.m */; };
+		EAE0871D1C566218007D699E /* SJSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0871C1C566218007D699E /* SJSCollectionViewController.m */; };
+		EAE087231C566321007D699E /* SJSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE087221C566321007D699E /* SJSSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,18 +87,6 @@
 		EAE0867A1C562240007D699E /* 项目策划 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目策划"; sourceTree = "<group>"; };
 		EAE0867C1C562240007D699E /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
 		EAE0867D1C562240007D699E /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
-		EAE0867F1C562240007D699E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		EAE086801C562240007D699E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		EAE086811C562240007D699E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		EAE086821C562240007D699E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		EAE086831C562240007D699E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		EAE086841C562240007D699E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		EAE086851C562240007D699E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		EAE086861C562240007D699E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		EAE086871C562240007D699E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		EAE086881C562240007D699E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		EAE086891C562240007D699E /* LKDaoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDaoBase.h; sourceTree = "<group>"; };
-		EAE0868A1C562240007D699E /* LKDaoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDaoBase.m; sourceTree = "<group>"; };
 		EAE0868B1C562240007D699E /* new_cuvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_cuvModel.h; sourceTree = "<group>"; };
 		EAE0868C1C562240007D699E /* new_cuvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_cuvModel.m; sourceTree = "<group>"; };
 		EAE0868D1C562240007D699E /* new_ncvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_ncvModel.h; sourceTree = "<group>"; };
@@ -108,21 +108,14 @@
 		EAE086A01C562240007D699E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		EAE086A11C562240007D699E /* testNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testNav.png; sourceTree = "<group>"; };
 		EAE086A21C562240007D699E /* testNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNav@2x.png"; sourceTree = "<group>"; };
-		EAE086A41C562240007D699E /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		EAE086A61C562240007D699E /* SNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationBar.h; sourceTree = "<group>"; };
 		EAE086A71C562240007D699E /* SNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNavigationBar.m; sourceTree = "<group>"; };
-		EAE086A81C562240007D699E /* PublicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicFunctions.h; sourceTree = "<group>"; };
-		EAE086A91C562240007D699E /* PublicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicFunctions.m; sourceTree = "<group>"; };
-		EAE086AB1C562240007D699E /* MyTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabbar.h; sourceTree = "<group>"; };
-		EAE086AC1C562240007D699E /* MyTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbar.m; sourceTree = "<group>"; };
 		EAE086AD1C562240007D699E /* STabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STabbar.h; sourceTree = "<group>"; };
 		EAE086AE1C562240007D699E /* STabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STabbar.m; sourceTree = "<group>"; };
 		EAE086AF1C562240007D699E /* STabbar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = STabbar.plist; sourceTree = "<group>"; };
 		EAE086B11C562240007D699E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		EAE086B21C562240007D699E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		EAE086B31C562240007D699E /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		EAE086B41C562240007D699E /* SJSNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSNoteViewController.h; sourceTree = "<group>"; };
-		EAE086B51C562240007D699E /* SJSNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSNoteViewController.m; sourceTree = "<group>"; };
 		EAE086B61C562240007D699E /* SJSNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSNoteViewController.xib; sourceTree = "<group>"; };
 		EAE086B71C562240007D699E /* SJSReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadingViewController.h; sourceTree = "<group>"; };
 		EAE086B81C562240007D699E /* SJSReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadingViewController.m; sourceTree = "<group>"; };
@@ -136,6 +129,38 @@
 		EAE086E51C562375007D699E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EAE086E61C562375007D699E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EAE086E81C562444007D699E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EAE086EB1C5629F9007D699E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		EAE086EC1C5629F9007D699E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		EAE086ED1C5629F9007D699E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		EAE086EE1C5629F9007D699E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		EAE086EF1C5629F9007D699E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		EAE086F01C5629F9007D699E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		EAE086F11C5629F9007D699E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		EAE086F21C5629F9007D699E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		EAE086F31C5629F9007D699E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		EAE086F41C5629F9007D699E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		EAE086F51C5629F9007D699E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		EAE086F61C5629F9007D699E /* LKDaoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDaoBase.h; sourceTree = "<group>"; };
+		EAE086F71C5629F9007D699E /* LKDaoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDaoBase.m; sourceTree = "<group>"; };
+		EAE086FF1C5650CA007D699E /* collection_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_tabbar.png; sourceTree = "<group>"; };
+		EAE087001C5650CA007D699E /* collection_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collection_tabbar@2x.png"; sourceTree = "<group>"; };
+		EAE087011C5650CA007D699E /* collection_tabbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collection_tabbar@3x.png"; sourceTree = "<group>"; };
+		EAE087021C5650CA007D699E /* reading_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reading_tabbar.png; sourceTree = "<group>"; };
+		EAE087031C5650CA007D699E /* reading_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reading_tabbar@2x.png"; sourceTree = "<group>"; };
+		EAE087041C5650CA007D699E /* reading_tabbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reading_tabbar@3x.png"; sourceTree = "<group>"; };
+		EAE087051C5650CA007D699E /* search_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_tabbar.png; sourceTree = "<group>"; };
+		EAE087061C5650CA007D699E /* search_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_tabbar@2x.png"; sourceTree = "<group>"; };
+		EAE087071C5650CA007D699E /* search_tabbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_tabbar@3x.png"; sourceTree = "<group>"; };
+		EAE087081C5650CA007D699E /* setting_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_tabbar.png; sourceTree = "<group>"; };
+		EAE087091C5650CA007D699E /* setting_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_tabbar@2x.png"; sourceTree = "<group>"; };
+		EAE0870A1C5650CA007D699E /* setting_tabbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_tabbar@3x.png"; sourceTree = "<group>"; };
+		EAE087171C5651F4007D699E /* DefineUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineUI.h; sourceTree = "<group>"; };
+		EAE087181C565AC2007D699E /* PublicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicFunctions.h; sourceTree = "<group>"; };
+		EAE087191C565AC2007D699E /* PublicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicFunctions.m; sourceTree = "<group>"; };
+		EAE0871B1C566218007D699E /* SJSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSCollectionViewController.h; sourceTree = "<group>"; };
+		EAE0871C1C566218007D699E /* SJSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSCollectionViewController.m; sourceTree = "<group>"; };
+		EAE087211C566321007D699E /* SJSSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSSearchViewController.h; sourceTree = "<group>"; };
+		EAE087221C566321007D699E /* SJSSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,9 +248,9 @@
 		EAE0867B1C562240007D699E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EAE086EA1C5629E9007D699E /* FMDB */,
 				EAE0867C1C562240007D699E /* DataFactory.h */,
 				EAE0867D1C562240007D699E /* DataFactory.m */,
-				EAE0867E1C562240007D699E /* FMDatabase */,
 				EAE0868B1C562240007D699E /* new_cuvModel.h */,
 				EAE0868C1C562240007D699E /* new_cuvModel.m */,
 				EAE0868D1C562240007D699E /* new_ncvModel.h */,
@@ -241,25 +266,6 @@
 				EAE086971C562240007D699E /* Sandbox */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		EAE0867E1C562240007D699E /* FMDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				EAE0867F1C562240007D699E /* FMDatabase.h */,
-				EAE086801C562240007D699E /* FMDatabase.m */,
-				EAE086811C562240007D699E /* FMDatabaseAdditions.h */,
-				EAE086821C562240007D699E /* FMDatabaseAdditions.m */,
-				EAE086831C562240007D699E /* FMDatabasePool.h */,
-				EAE086841C562240007D699E /* FMDatabasePool.m */,
-				EAE086851C562240007D699E /* FMDatabaseQueue.h */,
-				EAE086861C562240007D699E /* FMDatabaseQueue.m */,
-				EAE086871C562240007D699E /* FMResultSet.h */,
-				EAE086881C562240007D699E /* FMResultSet.m */,
-				EAE086891C562240007D699E /* LKDaoBase.h */,
-				EAE0868A1C562240007D699E /* LKDaoBase.m */,
-			);
-			path = FMDatabase;
 			sourceTree = "<group>";
 		};
 		EAE086971C562240007D699E /* Sandbox */ = {
@@ -282,6 +288,7 @@
 		EAE0869C1C562240007D699E /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EAE086FE1C5650BE007D699E /* Tabbar */,
 				EAE0869D1C562240007D699E /* back.png */,
 				EAE0869E1C562240007D699E /* back@2x.png */,
 				EAE0869F1C562240007D699E /* Default-568h@2x.png */,
@@ -295,11 +302,11 @@
 		EAE086A31C562240007D699E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				EAE086A41C562240007D699E /* Manager.h */,
+				EAE087181C565AC2007D699E /* PublicFunctions.h */,
+				EAE087191C565AC2007D699E /* PublicFunctions.m */,
 				EAE086A51C562240007D699E /* Navigation */,
-				EAE086A81C562240007D699E /* PublicFunctions.h */,
-				EAE086A91C562240007D699E /* PublicFunctions.m */,
 				EAE086AA1C562240007D699E /* Tabbar */,
+				EAE087171C5651F4007D699E /* DefineUI.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -316,8 +323,6 @@
 		EAE086AA1C562240007D699E /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				EAE086AB1C562240007D699E /* MyTabbar.h */,
-				EAE086AC1C562240007D699E /* MyTabbar.m */,
 				EAE086AD1C562240007D699E /* STabbar.h */,
 				EAE086AE1C562240007D699E /* STabbar.m */,
 				EAE086AF1C562240007D699E /* STabbar.plist */,
@@ -333,8 +338,6 @@
 				EAE086B11C562240007D699E /* RootViewController.h */,
 				EAE086B21C562240007D699E /* RootViewController.m */,
 				EAE086B31C562240007D699E /* RootViewController.xib */,
-				EAE086B41C562240007D699E /* SJSNoteViewController.h */,
-				EAE086B51C562240007D699E /* SJSNoteViewController.m */,
 				EAE086B61C562240007D699E /* SJSNoteViewController.xib */,
 				EAE086B71C562240007D699E /* SJSReadingViewController.h */,
 				EAE086B81C562240007D699E /* SJSReadingViewController.m */,
@@ -343,6 +346,10 @@
 				EAE086BB1C562240007D699E /* SJSSettingViewController.m */,
 				EAE086BC1C562240007D699E /* SJSSettingViewController.xib */,
 				EAE086BD1C562240007D699E /* ViewsHeader.h */,
+				EAE0871B1C566218007D699E /* SJSCollectionViewController.h */,
+				EAE0871C1C566218007D699E /* SJSCollectionViewController.m */,
+				EAE087211C566321007D699E /* SJSSearchViewController.h */,
+				EAE087221C566321007D699E /* SJSSearchViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +361,45 @@
 				EAE086E31C5622CE007D699E /* AppDelegate.m */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		EAE086EA1C5629E9007D699E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				EAE086EB1C5629F9007D699E /* FMDatabase.h */,
+				EAE086EC1C5629F9007D699E /* FMDatabase.m */,
+				EAE086ED1C5629F9007D699E /* FMDatabaseAdditions.h */,
+				EAE086EE1C5629F9007D699E /* FMDatabaseAdditions.m */,
+				EAE086EF1C5629F9007D699E /* FMDatabasePool.h */,
+				EAE086F01C5629F9007D699E /* FMDatabasePool.m */,
+				EAE086F11C5629F9007D699E /* FMDatabaseQueue.h */,
+				EAE086F21C5629F9007D699E /* FMDatabaseQueue.m */,
+				EAE086F31C5629F9007D699E /* FMDB.h */,
+				EAE086F41C5629F9007D699E /* FMResultSet.h */,
+				EAE086F51C5629F9007D699E /* FMResultSet.m */,
+				EAE086F61C5629F9007D699E /* LKDaoBase.h */,
+				EAE086F71C5629F9007D699E /* LKDaoBase.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		EAE086FE1C5650BE007D699E /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EAE086FF1C5650CA007D699E /* collection_tabbar.png */,
+				EAE087001C5650CA007D699E /* collection_tabbar@2x.png */,
+				EAE087011C5650CA007D699E /* collection_tabbar@3x.png */,
+				EAE087021C5650CA007D699E /* reading_tabbar.png */,
+				EAE087031C5650CA007D699E /* reading_tabbar@2x.png */,
+				EAE087041C5650CA007D699E /* reading_tabbar@3x.png */,
+				EAE087051C5650CA007D699E /* search_tabbar.png */,
+				EAE087061C5650CA007D699E /* search_tabbar@2x.png */,
+				EAE087071C5650CA007D699E /* search_tabbar@3x.png */,
+				EAE087081C5650CA007D699E /* setting_tabbar.png */,
+				EAE087091C5650CA007D699E /* setting_tabbar@2x.png */,
+				EAE0870A1C5650CA007D699E /* setting_tabbar@3x.png */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,22 +482,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE087101C5650CA007D699E /* reading_tabbar@3x.png in Resources */,
 				EAE086601C5621AB007D699E /* Main.storyboard in Resources */,
+				EAE087141C5650CA007D699E /* setting_tabbar.png in Resources */,
+				EAE087131C5650CA007D699E /* search_tabbar@3x.png in Resources */,
 				EAE086651C5621AB007D699E /* LaunchScreen.xib in Resources */,
+				EAE087151C5650CA007D699E /* setting_tabbar@2x.png in Resources */,
 				EAE086D81C562240007D699E /* STabbar.plist in Resources */,
 				EAE086D11C562240007D699E /* icon.png in Resources */,
+				EAE0870C1C5650CA007D699E /* collection_tabbar@2x.png in Resources */,
+				EAE0870B1C5650CA007D699E /* collection_tabbar.png in Resources */,
+				EAE0870F1C5650CA007D699E /* reading_tabbar@2x.png in Resources */,
+				EAE0870D1C5650CA007D699E /* collection_tabbar@3x.png in Resources */,
+				EAE087161C5650CA007D699E /* setting_tabbar@3x.png in Resources */,
 				EAE086DA1C562240007D699E /* RootViewController.xib in Resources */,
+				EAE087121C5650CA007D699E /* search_tabbar@2x.png in Resources */,
 				EAE086DC1C562240007D699E /* SJSNoteViewController.xib in Resources */,
 				EAE086D21C562240007D699E /* testNav.png in Resources */,
 				EAE086CE1C562240007D699E /* back.png in Resources */,
 				EAE086CF1C562240007D699E /* back@2x.png in Resources */,
 				EAE086CD1C562240007D699E /* HolyBible.db in Resources */,
 				EAE086E01C562240007D699E /* SJSSettingViewController.xib in Resources */,
+				EAE0870E1C5650CA007D699E /* reading_tabbar.png in Resources */,
 				EAE086D01C562240007D699E /* Default-568h@2x.png in Resources */,
 				EAE086621C5621AB007D699E /* Images.xcassets in Resources */,
 				EAE086D31C562240007D699E /* testNav@2x.png in Resources */,
 				EAE086DE1C562240007D699E /* SJSReadingViewController.xib in Resources */,
 				EAE086BE1C562240007D699E /* 项目策划 in Resources */,
+				EAE087111C5650CA007D699E /* search_tabbar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,29 +527,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE086C51C562240007D699E /* LKDaoBase.m in Sources */,
-				EAE086C31C562240007D699E /* FMDatabaseQueue.m in Sources */,
-				EAE086D61C562240007D699E /* MyTabbar.m in Sources */,
+				EAE087231C566321007D699E /* SJSSearchViewController.m in Sources */,
 				EAE086C91C562240007D699E /* old_cuvModel.m in Sources */,
 				EAE086DD1C562240007D699E /* SJSReadingViewController.m in Sources */,
-				EAE086DB1C562240007D699E /* SJSNoteViewController.m in Sources */,
+				EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */,
+				EAE086FA1C5629F9007D699E /* FMDatabasePool.m in Sources */,
+				EAE086FC1C5629F9007D699E /* FMResultSet.m in Sources */,
+				EAE086F91C5629F9007D699E /* FMDatabaseAdditions.m in Sources */,
 				EAE086CB1C562240007D699E /* old_nivModel.m in Sources */,
 				EAE086CA1C562240007D699E /* old_ncvModel.m in Sources */,
 				EAE086BF1C562240007D699E /* DataFactory.m in Sources */,
 				EAE086DF1C562240007D699E /* SJSSettingViewController.m in Sources */,
-				EAE086C01C562240007D699E /* FMDatabase.m in Sources */,
 				EAE086C71C562240007D699E /* new_ncvModel.m in Sources */,
+				EAE086FB1C5629F9007D699E /* FMDatabaseQueue.m in Sources */,
 				EAE086C61C562240007D699E /* new_cuvModel.m in Sources */,
 				EAE086D71C562240007D699E /* STabbar.m in Sources */,
 				EAE086D41C562240007D699E /* SNavigationBar.m in Sources */,
-				EAE086C21C562240007D699E /* FMDatabasePool.m in Sources */,
-				EAE086C41C562240007D699E /* FMResultSet.m in Sources */,
+				EAE0871D1C566218007D699E /* SJSCollectionViewController.m in Sources */,
 				EAE086CC1C562240007D699E /* SandboxFile.m in Sources */,
 				EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */,
 				EAE086571C5621AB007D699E /* main.m in Sources */,
+				EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */,
+				EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */,
 				EAE086D91C562240007D699E /* RootViewController.m in Sources */,
-				EAE086C11C562240007D699E /* FMDatabaseAdditions.m in Sources */,
-				EAE086D51C562240007D699E /* PublicFunctions.m in Sources */,
 				EAE086C81C562240007D699E /* new_nivModel.m in Sources */,
 				EAE086E71C562375007D699E /* ViewController.m in Sources */,
 			);

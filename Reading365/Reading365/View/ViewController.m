@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "DataFactory.h"//数据库
-#import "Manager.h"
+#import "DefineUI.h"
 #import "SandboxFile.h"
 
 #define DATABASE_FILE_NAME @"HolyBible.db"

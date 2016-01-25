@@ -8,11 +8,31 @@
 
 #import "PublicFunctions.h"
 #import "DataFactory.h"
+
+
+#define REGULAREXPRESSION_OPTION(regularExpression,regex,option) \
+\
+static inline NSRegularExpression * k##regularExpression() { \
+static NSRegularExpression *_##regularExpression = nil; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+_##regularExpression = [[NSRegularExpression alloc] initWithPattern:(regex) options:(option) error:nil];\
+});\
+\
+return _##regularExpression;\
+}\
+
+
+#define REGULAREXPRESSION(regularExpression,regex) REGULAREXPRESSION_OPTION(regularExpression,regex,NSRegularExpressionCaseInsensitive)
+
+
+REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)")
+
 @implementation PublicFunctions
-#define PLIST_FILE_NAME @"CRM_refreshDateList.plist"
+//#define PLIST_FILE_NAME @"CRM_refreshDateList.plist"
 
-
-+ (PublicFunctions *)sharedPublicFunctions{
+//单例化
++ (PublicFunctions *)sharedPublicFunctions {
     static PublicFunctions *sharedPublicFunctionsInstance = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
@@ -21,7 +41,7 @@
     return sharedPublicFunctionsInstance;
 }
 
-#pragma  mark HexColor转化为iOS颜色数组或数值string
+#pragma  mark HexColor转化为UIColor
 /**
  @author SunJishuai , 15-07-01 14:07:31
  
@@ -29,13 +49,8 @@
  
  @param hexColor    16进制
  
- @return 数组 或  写好的字符串
+ @return UIColor
  */
-/*   使用范例
- NSArray *colorArray = [PublicFunctions colorForHex:@"217dd9"];
- XXXX.textColor = [UIColor colorWithRed:[[colorArray objectAtIndex:0]floatValue] green:[[colorArray objectAtIndex:1]floatValue] blue:[[colorArray objectAtIndex:2]floatValue] alpha:1];
- */
-//- (NSArray*)colorForHex:(NSString *)hexColor
 - (UIColor *)colorForHex:(NSString *)hexColor
 {
     hexColor = [[hexColor stringByTrimmingCharactersInSet:
@@ -60,10 +75,7 @@
     [[NSScanner scannerWithString:gString] scanHexInt:&g];
     [[NSScanner scannerWithString:bString] scanHexInt:&b];
     
-//    NSArray *components = [NSArray arrayWithObjects:[NSNumber numberWithFloat:((float) r / 255.0f)],[NSNumber numberWithFloat:((float) g / 255.0f)],[NSNumber numberWithFloat:((float) b / 255.0f)],[NSNumber numberWithFloat:1.0],nil];
-//    return components;
-    
-    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0];
+    return   [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0];
 }
 
 #pragma mark - 判断字符串是否为空
@@ -110,9 +122,14 @@
  */
 - (BOOL) isTelNumber:(NSString *)tel
 {
-    NSString *TEL = @"((^(\\d{3,4})-(\\d{7,8}))|(^(\\d{7,8}))|(^(\\d{3,4})(\\d{7,8})))$";
-    NSPredicate *regextesttel = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", TEL];
-    return  [regextesttel evaluateWithObject:tel];
+    //优化：手机号码被判断为电话号码的BUG  
+    if ([self isPhoneNumber:tel]) {
+        return NO;
+    }else {
+        NSString *TEL = @"((^(\\d{3,4})-(\\d{7,8}))|(^(\\d{7,8}))|(^(\\d{3,4})(\\d{7,8})))$";
+        NSPredicate *regextesttel = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", TEL];
+        return  [regextesttel evaluateWithObject:tel];
+    }
 }
 #pragma  mark 005 load Image from caches dir or Documents to imageview
 /**
@@ -239,90 +256,310 @@
         return [[[editArray objectAtIndex:0]componentsSeparatedByString:@"年"]lastObject];
     }
 }
-
-
-
-
-
-#pragma  mark 100 CRM数据刷新专用 - 存取数据库和界面的数据进行刷新的时间戳
-/**
- @author SunJishuai , 15-08-03 16:08:47
- 
- @brief  CRM数据刷新专用 - 存取数据库和界面的数据进行刷新的时间戳,当获取时date填0，type填getData
- 当保存时，把协议回来的时间保存，type为setData，返回值为零，无用。
- 
- @param refreshDate 从数据库传来的时间戳，由于时间戳的起点不同，所以不做任何处理，直接比较、保存
- @param protocolNum 协议号
- 
- @return 时间戳
- */
-- (double)needRefreshDate:(double)refreshDate AndProtocol:(int)protocolNum AndType:(dataType)datatype
-{
-    // 首先判断在Documents里面是否存在PLIST文件，如果没有，创建
-    //获取应用程序的路径
-    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(
-                                                               NSDocumentDirectory,
-                                                               NSUserDomainMask,
-                                                               YES);
-    NSString *documentFolderPath = [searchPaths objectAtIndex:0];
-    
-    //往应用程序路径中添加数据库文件名称
-    NSString *  plistFilePath = [documentFolderPath stringByAppendingPathComponent:PLIST_FILE_NAME];
-    //根据上面拼接好的路径 dbFilePath ，利用NSFileManager 类的对象的fileExistsAtPath方法来检测是否存在，返回一个BOOL值
-    NSFileManager *fm = [NSFileManager defaultManager];
-    BOOL isExist = [fm fileExistsAtPath:plistFilePath];
-    //如果不存在 isExist = NO，创建plist到Documents下
-    if (!isExist)
-    {
-        NSArray *nameArray =[NSArray arrayWithObjects:@"crmuser",@"crmlabel",@"crmuser_label",@"crmmsg",@"crmshare", nil];
-        NSMutableDictionary *refreshDic =[NSMutableDictionary dictionary];
-        for(NSString *name in nameArray )
-        {
-            [refreshDic setValue:[NSNumber numberWithDouble:0.0] forKey:name];
-        }
-        [refreshDic writeToFile:plistFilePath atomically:YES];
-        
-        return 0;
+//将时间戳转换成时间 -- 已经处理了与服务器的时间戳偏差
+-(NSString *)dateTimeToString:(double)dateTime Type:(int)type{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    switch (type) {
+        case 0:
+            [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            break;
+        case 1:
+            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            break;
+        case 2:
+            [formatter setDateFormat:@"HH:mm"];
+        default:
+            break;
     }
-    else{//如果存在
-        NSMutableDictionary  * refreshDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistFilePath];
-        NSString *refreshName = nil;
-        double refreshTime = 0;
-        switch (protocolNum) {
-            case 43://查询客户
-                refreshName = @"crmuser";
-                refreshTime = [[refreshDic objectForKey:@"crmuser"]doubleValue];
-                break;
-            case 47://查询标签
-                refreshName = @"crmlabel";
-                refreshTime = [[refreshDic objectForKey:@"crmlabel"]doubleValue];
-                break;
-            case 48://查询标签客户对照信息
-                refreshName = @"crmuser_label";
-                refreshTime = [[refreshDic objectForKey:@"crmuser_label"]doubleValue];
-                break;
-            case 53://获取CRM消息
-                refreshName = @"crmmsg";
-                refreshTime = [[refreshDic objectForKey:@"crmmsg"]doubleValue];
-                break;
-            case 54://获取共享人员
-                refreshName = @"crmshare";
-                refreshTime = [[refreshDic objectForKey:@"crmshare"]doubleValue];
-                break;
-            default:
-                break;
-        }
-        if (datatype == getData) {//获取
-            return refreshTime;
-        }
-        else{
-            // if (datatype == setData){//更新刷新时间
-            [refreshDic setValue:@(refreshDate) forKey:refreshName];
-            [refreshDic writeToFile:plistFilePath atomically:YES];
-            return 0;
-        }
-    }
+     // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    double ddd = (dateTime*24*3600*1000-2209190400000)/1000;
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:ddd];
+    NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
+    return confromTimespStr;
 }
+
+#pragma mark 014计算字符串的高度
+/**
+ @author Jesus          , 16-01-07 16:01:56
+ 
+ @brief  计算字符串的高度
+ 
+ @param width 宽度
+ @param font  字号
+ @param text  内容
+ 
+ @return 大小
+ */
+- (CGSize)getHeightByWidth:(float)width Font:(UIFont *)font Text:(NSString *)text LineBreakMode:(NSLineBreakMode)breakMode{
+    CGSize maximumLabelSizeOne = CGSizeMake(width,MAXFLOAT);
+    CGSize contentSize = [text sizeWithFont:font
+                                   constrainedToSize:maximumLabelSizeOne
+                                       lineBreakMode:breakMode];
+    return contentSize;
+}
+
+#pragma  mark 015按某一属性排序
+/**
+ @author Jesus , 16-01-13 09:01:12
+ 
+ @brief 015按某一属性排序
+ 
+ @param recordsArray 排序的数组
+ @param property     用于排序的属性
+ @param ascending    是否升序排列
+ 
+ @return 返回排序好的数组
+ */
+- (NSMutableArray *)sortingArray:(NSMutableArray *)recordsArray Property:(NSString *)property Ascending:(BOOL)ascending
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:property ascending:ascending];//其中，price为数组中的对象的属性，这个针对数组中存放对象比较更简洁方便
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
+    [recordsArray sortUsingDescriptors:sortDescriptors];
+    return recordsArray;
+}
+
+//016判断长网址
+- (NSMutableArray *)isURL:(NSString *)text {
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc]initWithString:text];
+     NSRegularExpression * const regexps[] = {kURLRegularExpression()};
+    NSRange stringRange = NSMakeRange(0, mutableAttributedString.length);
+    NSString *urlAction = @"url->";//kURLActions[i];
+    NSMutableArray *results = [NSMutableArray array];
+    [regexps[0] enumerateMatchesInString:[mutableAttributedString string] options:0 range:stringRange usingBlock:^(NSTextCheckingResult *result, __unused NSMatchingFlags flags, __unused BOOL *stop) {
+        
+        //检查是否和之前记录的有交集，有的话则忽略
+        for (NSTextCheckingResult *record in results){
+            if (NSMaxRange(NSIntersectionRange(record.range, result.range))>0){
+                return;
+            }
+        }
+        
+        //添加链接
+        NSString *actionString = [NSString stringWithFormat:@"%@%@",urlAction,[text substringWithRange:result.range]];
+        
+        //这里暂时用NSTextCheckingTypeCorrection类型的传递消息吧
+        //因为有自定义的类型出现，所以这样方便点。
+        NSTextCheckingResult *aResult = [NSTextCheckingResult correctionCheckingResultWithRange:result.range replacementString:actionString];
+        
+        [results addObject:aResult];
+    }];
+    return results;
+}
+//017 按需要生成图片文字按钮
+/*
+ type :0 默认图左字右
+ type :1 图右字左
+ type :2 图上字下
+ type :3 图下字上 
+ */
+- (UIButton *)imageAndLabelButtonByType:(int)type Label:(NSString *)label LabelTextColor:(UIColor *)iColor NormalImage:(NSString *)normalImage SelectedImage:(NSString *)selectedImage Tag:(int)tag Frame:(CGRect)frame FontSize:(int)fontSize{
+    UIButton * imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    imageButton.tag = tag;
+    [imageButton setBackgroundColor:[UIColor clearColor]];
+    [imageButton.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [imageButton setTitleColor:iColor forState:UIControlStateNormal];
+    [imageButton setTitleColor:tabbarSelectTextColor forState:UIControlStateSelected];
+    [imageButton setTitle:label forState:UIControlStateNormal];
+    imageButton.frame =frame;
+    imageButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [imageButton setImage:[UIImage imageNamed:normalImage] forState:UIControlStateNormal];
+    [imageButton setImage:[UIImage imageNamed:selectedImage] forState:UIControlStateSelected];
+    switch (type) {
+        case 0:
+            break;
+        case 1:
+        {
+            CGSize labelSize = [label sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]}];// sizeWithFont:[UIFont systemFontOfSize:fontSize]];
+            [imageButton setImageEdgeInsets:UIEdgeInsetsMake(0,labelSize.width,0,0)];
+            [imageButton setTitleEdgeInsets:UIEdgeInsetsMake(0,-labelSize.width,0,0)];
+        }
+            break;
+        case 2:
+        {//图片在button中是按照原尺寸显示的
+            CGSize labelSize = [label sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]}];
+//            float left = (imageButton.frame.size.width-[UIImage imageNamed:normalImage].size.width)*0.5;
+//            float right = (imageButton.frame.size.width-imageButton.titleLabel.frame.size.width)*0.5-10;
+            [imageButton setImageEdgeInsets:UIEdgeInsetsMake(5,labelSize.width,labelSize.height+5,0)];
+            [imageButton setTitleEdgeInsets:UIEdgeInsetsMake(30,-[UIImage imageNamed:normalImage].size.width,0,0)];
+        }
+            break;
+        case 3:
+        {
+            [imageButton setImageEdgeInsets:UIEdgeInsetsMake(0,0,frame.size.height*0.5,0)];
+//            [imageButton setTitleEdgeInsets:UIEdgeInsetsMake(0,0,frame.size.height*0.5,0)];
+        }
+            break;
+        default:
+            break;
+    }
+    return  imageButton;
+}
+
+
+
+
+//压缩算法
+- (CGRect)ReduceMethodForBackGroundSize:(CGSize)bgSize rectSize:(CGSize)rectSize
+{
+    if ((rectSize.width<bgSize.width)&&(rectSize.height<bgSize.height)) {
+        return CGRectMake(bgSize.width/2-rectSize.width/2, bgSize.height/2-rectSize.height/2, rectSize.width, rectSize.height);
+    }
+    else if((rectSize.width>bgSize.width)&&(rectSize.height<bgSize.height))
+    {
+        float rate = rectSize.width/bgSize.width;
+        return CGRectMake(0, bgSize.height/2-rectSize.height/rate/2, bgSize.width, rectSize.height/rate);
+    }
+    else if((rectSize.width<bgSize.width)&&(rectSize.height>bgSize.height))
+    {
+        float rate = rectSize.height/bgSize.height;
+        return CGRectMake(bgSize.width/2-rectSize.width/rate/2, 0, rectSize.width/rate, bgSize.height);
+    } else if((rectSize.width==bgSize.width)&&(rectSize.height==bgSize.height))
+    {
+        return CGRectMake(0, 0, bgSize.width, bgSize.height);
+    }
+    else if((rectSize.width<bgSize.width)&&(rectSize.height==bgSize.height))
+    {
+        return CGRectMake(bgSize.width/2-rectSize.width/2, 0, rectSize.width, rectSize.height);
+    }
+    else if((rectSize.width==bgSize.width)&&(rectSize.height<bgSize.height))
+    {
+        return CGRectMake(0, bgSize.height/2-rectSize.height/2, rectSize.width, rectSize.height);
+    }
+    else
+    {
+        float widthRate = rectSize.width/bgSize.width;
+        float heightRate = rectSize.height/bgSize.height;
+        if (widthRate>heightRate) {
+            return CGRectMake(0, bgSize.height/2-rectSize.height/widthRate/2, bgSize.width, bgSize.height/widthRate);
+        }
+        else if(widthRate<heightRate)
+        {
+            return CGRectMake(bgSize.width/2-rectSize.width/heightRate/2, 0, bgSize.width/heightRate, bgSize.height);
+        }
+        else
+        {
+            return CGRectMake(0, 0, bgSize.width, bgSize.height);
+        }
+    }
+    return CGRectMake(0, 0, 0, 0);
+}
+
+#pragma  mark 图片翻转
+- (UIImage *)image:(UIImage *)image rotation:(UIImageOrientation)orientation
+{
+    
+    long double rotate = 0.0;
+    
+    CGRect rect;
+    
+    float translateX = 0;
+    
+    float translateY = 0;
+    
+    float scaleX = 1.0;
+    
+    float scaleY = 1.0;
+    
+    
+    
+    switch (orientation) {
+            
+        case UIImageOrientationLeft:
+            
+            rotate = M_PI_2;
+            
+            rect = CGRectMake(0, 0, image.size.height, image.size.width);
+            
+            translateX = 0;
+            
+            translateY = -rect.size.width;
+            
+            scaleY = rect.size.width/rect.size.height;
+            
+            scaleX = rect.size.height/rect.size.width;
+            
+            break;
+            
+        case UIImageOrientationRight:
+            
+            rotate = 3 * M_PI_2;
+            
+            rect = CGRectMake(0, 0, image.size.height, image.size.width);
+            
+            translateX = -rect.size.height;
+            
+            translateY = 0;
+            
+            scaleY = rect.size.width/rect.size.height;
+            
+            scaleX = rect.size.height/rect.size.width;
+            
+            break;
+            
+        case UIImageOrientationDown:
+            
+            rotate = M_PI;
+            
+            rect = CGRectMake(0, 0, image.size.width, image.size.height);
+            
+            translateX = -rect.size.width;
+            
+            translateY = -rect.size.height;
+            
+            break;
+            
+        default:
+            
+            rotate = 0.0;
+            
+            rect = CGRectMake(0, 0, image.size.width, image.size.height);
+            
+            translateX = 0;
+            
+            translateY = 0;
+            
+            break;
+            
+    }
+    
+    
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //做CTM变换
+    
+    CGContextTranslateCTM(context, 0.0, rect.size.height);
+    
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    CGContextRotateCTM(context, rotate);
+    
+    CGContextTranslateCTM(context, translateX, translateY);
+    
+    
+    
+    CGContextScaleCTM(context, scaleX, scaleY);
+    
+    //绘制图片
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, rect.size.width, rect.size.height), image.CGImage);
+    
+    
+    
+    UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
+    
+    
+    
+    return newPic;
+    
+}
+
 #pragma  mark 按提醒时间顺序排序记录
 
 - (NSMutableArray *)sortingArrayByTime:(NSMutableArray *)recordsArray
@@ -345,7 +582,7 @@
  */
 - (void)showAnnexWith:(UIImageView *)imgView FileName:(NSString *)fileName FilePath:(NSString *)filePath
 {
-    NSArray *fileType=[[NSArray alloc] initWithObjects:@".png",@".gif",@".jpg",@".mp3",@".doc",@".docx",@".pdf",@".mp4",@".wav",@".txt",@".xls",@".xlsx",@".ppt",@".pptx",@".bmp",nil];
+    NSArray *fileType=[[NSArray alloc] initWithObjects:@".png",@".gif",@".jpg",@".mp3",@".doc",@".docx",@".pdf",@".mp4",@".wav",@".txt",@".xls",@".xlsx",@".ppt",@".pptx",@".bmp",nil] ;
     //根据不同的文件类型，设置不同类型的文件图片
     for (int i=0; i<fileType.count; i++) {
         NSString *str=[fileType objectAtIndex:i];
@@ -425,4 +662,6 @@
     }
     return 0;
 }
+
+
 @end

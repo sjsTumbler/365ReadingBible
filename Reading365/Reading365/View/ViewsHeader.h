@@ -8,8 +8,9 @@
 
 #ifndef _65_readingBible_ViewsHeader_h
 #define _65_readingBible_ViewsHeader_h
-#endif
-
 #import "SJSReadingViewController.h"
 #import "SJSSettingViewController.h"
-#import "SJSNoteViewController.h"
+#import "SJSCollectionViewController.h"
+#import "SJSSearchViewController.h"
+#endif
+

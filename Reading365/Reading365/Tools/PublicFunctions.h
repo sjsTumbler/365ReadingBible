@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "DefineUI.h"
 
 typedef NS_ENUM(NSInteger, dataType){
     getData = 0 ,//获取
@@ -16,7 +17,7 @@ typedef NS_ENUM(NSInteger, dataType){
 @interface PublicFunctions : NSObject
 //单例化
 + (PublicFunctions *)sharedPublicFunctions;
-//001 HexColor转化为iOS颜色数组或数值string
+//001 HexColor转化为UIColor
 - (UIColor *)colorForHex:(NSString *)hexColor;
 //002 判断字符串是否为空
 - (BOOL) isBlankString:(NSString *)string;
@@ -34,15 +35,35 @@ typedef NS_ENUM(NSInteger, dataType){
 - (BOOL) isJuestIncludeNumber:(NSString *)password;
 // 009 除去字符串中的符号
 - (NSString *)deleteCharactersOfstring:(NSString *)str;
-// 009 处理时间戳的显示
+// 010 处理时间戳的显示
 - (NSString *)editDate:(double)idate;
+// 011压缩算法
+- (CGRect)ReduceMethodForBackGroundSize:(CGSize)bgSize rectSize:(CGSize)rectSize;
+// 012图片翻转
+- (UIImage *)image:(UIImage *)image rotation:(UIImageOrientation)orientation;
+// 013将时间戳转换成时间 -- 已经处理了与服务器的时间戳偏差
+/*
+ type: 0  --  yyyy-MM-dd HH:mm:ss
+ type: 1  --  yyyy-MM-dd HH:mm
+ type: 2  --  HH:mm
+ */
+-(NSString *)dateTimeToString:(double)dateTime Type:(int)type;
+//014计算字符串的高度
+- (CGSize)getHeightByWidth:(float)width Font:(UIFont *)font Text:(NSString *)text LineBreakMode:(NSLineBreakMode)breakMode;
+//015按某一属性排序
+- (NSMutableArray *)sortingArray:(NSMutableArray *)recordsArray Property:(NSString *)property Ascending:(BOOL)ascending;
+//016判断长网址
+- (NSMutableArray *)isURL:(NSString *)text;
+//017 按需要生成图片文字按钮
+/*
+ type :0 默认图左字右
+ type :1 图右字左
+ type :2 图上字下
+ type :3 图下字上
+ */
+- (UIButton *)imageAndLabelButtonByType:(int)type Label:(NSString *)label LabelTextColor:(UIColor *)iColor NormalImage:(NSString *)normalImage SelectedImage:(NSString *)selectedImage Tag:(int)tag Frame:(CGRect)frame FontSize:(int)fontSize;
 
 
-
-
-
-//100 CRM数据刷新专用 - 存取数据库和界面的数据进行刷新的时间戳
-- (double)needRefreshDate:(double)refreshDate AndProtocol:(int)protocolNum AndType:(dataType)datatype;
 
 //102 根据不同的附件类型显示图标
 - (void)showAnnexWith:(UIImageView *)imgView FileName:(NSString *)fileName FilePath:(NSString *)filePath;

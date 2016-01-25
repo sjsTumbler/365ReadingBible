@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Manager.h"
+#import "DefineUI.h"
 #import "PublicFunctions.h"
 
 @protocol SJSNavigationDelegate <NSObject>

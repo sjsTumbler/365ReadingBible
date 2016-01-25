@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DefineUI.h"
+#import "PublicFunctions.h"
 @interface STabbar : UIView
-
+- (id)initWithClass:(id)classObject Sel:(SEL)sel;
 @end

@@ -13,7 +13,7 @@
 #import "old_cuvModel.h"
 #import "old_ncvModel.h"
 #import "old_nivModel.h"
-#import "Manager.h"
+#import "DefineUI.h"
 
 static FMDatabaseQueue* queue;
 @implementation DataFactory
