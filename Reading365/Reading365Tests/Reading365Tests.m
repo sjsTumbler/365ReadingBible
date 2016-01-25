@@ -1,19 +1,19 @@
 //
-//  _65_readingBibleTests.m
-//  365_readingBibleTests
+//  Reading365Tests.m
+//  Reading365Tests
 //
-//  Created by Sun jishuai on 15/7/16.
-//  Copyright (c) 2015年 SunJishuai. All rights reserved.
+//  Created by SunJishuai on 16/1/25.
+//  Copyright (c) 2016年 SunJishuai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface _65_readingBibleTests : XCTestCase
+@interface Reading365Tests : XCTestCase
 
 @end
 
-@implementation _65_readingBibleTests
+@implementation Reading365Tests
 
 - (void)setUp {
     [super setUp];

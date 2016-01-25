@@ -1,14 +1,13 @@
 //
 //  AppDelegate.m
-//  365_dayBibleReadingPlan
+//  Reading365
 //
-//  Created by Sun jishuai on 15/7/9.
-//  Copyright (c) 2015年 SunJishuai. All rights reserved.
+//  Created by SunJishuai on 16/1/25.
+//  Copyright (c) 2016年 SunJishuai. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
 @interface AppDelegate ()
 
 @end
@@ -20,13 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    _iTabBar = [[UITabBarController alloc]init];
-    UINavigationController * readNav = [[UINavigationController alloc]initWithRootViewController:[[SJSReadingViewController alloc]init]];
-    UINavigationController * setNav = [[UINavigationController alloc]initWithRootViewController:[[SJSSettingViewController alloc]init]];
-    UINavigationController * noteNav = [[UINavigationController alloc]initWithRootViewController:[[SJSNoteViewController alloc]init]];
-    _iTabBar.viewControllers = [[NSArray alloc]initWithObjects:noteNav,readNav,setNav, nil];
-    self.window.rootViewController = _iTabBar;
-    [self.window makeKeyAndVisible];
+//    _iTabBar = [[UITabBarController alloc]init];
+//    UINavigationController * readNav = [[UINavigationController alloc]initWithRootViewController:[[SJSReadingViewController alloc]init]];
+//    UINavigationController * setNav = [[UINavigationController alloc]initWithRootViewController:[[SJSSettingViewController alloc]init]];
+//    UINavigationController * noteNav = [[UINavigationController alloc]initWithRootViewController:[[SJSNoteViewController alloc]init]];
+//    _iTabBar.viewControllers = [[NSArray alloc]initWithObjects:noteNav,readNav,setNav, nil];
+//    self.window.rootViewController = _iTabBar;
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

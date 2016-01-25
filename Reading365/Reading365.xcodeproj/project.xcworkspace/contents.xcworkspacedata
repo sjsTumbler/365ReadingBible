@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:365_readingBible.xcodeproj">
+      location = "self:Reading365.xcodeproj">
    </FileRef>
 </Workspace>

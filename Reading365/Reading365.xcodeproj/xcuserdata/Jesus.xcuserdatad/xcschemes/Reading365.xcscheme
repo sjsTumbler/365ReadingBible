@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4802CEA1B575A6100B8C1BC"
-               BuildableName = "365_readingBible.app"
-               BlueprintName = "365_readingBible"
-               ReferencedContainer = "container:365_readingBible.xcodeproj">
+               BlueprintIdentifier = "EAE086501C5621AB007D699E"
+               BuildableName = "Reading365.app"
+               BlueprintName = "Reading365"
+               ReferencedContainer = "container:Reading365.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4802D031B575A6200B8C1BC"
-               BuildableName = "365_readingBibleTests.xctest"
-               BlueprintName = "365_readingBibleTests"
-               ReferencedContainer = "container:365_readingBible.xcodeproj">
+               BlueprintIdentifier = "EAE086691C5621AB007D699E"
+               BuildableName = "Reading365Tests.xctest"
+               BlueprintName = "Reading365Tests"
+               ReferencedContainer = "container:Reading365.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4802D031B575A6200B8C1BC"
-               BuildableName = "365_readingBibleTests.xctest"
-               BlueprintName = "365_readingBibleTests"
-               ReferencedContainer = "container:365_readingBible.xcodeproj">
+               BlueprintIdentifier = "EAE086691C5621AB007D699E"
+               BuildableName = "Reading365Tests.xctest"
+               BlueprintName = "Reading365Tests"
+               ReferencedContainer = "container:Reading365.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4802CEA1B575A6100B8C1BC"
-            BuildableName = "365_readingBible.app"
-            BlueprintName = "365_readingBible"
-            ReferencedContainer = "container:365_readingBible.xcodeproj">
+            BlueprintIdentifier = "EAE086501C5621AB007D699E"
+            BuildableName = "Reading365.app"
+            BlueprintName = "Reading365"
+            ReferencedContainer = "container:Reading365.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4802CEA1B575A6100B8C1BC"
-            BuildableName = "365_readingBible.app"
-            BlueprintName = "365_readingBible"
-            ReferencedContainer = "container:365_readingBible.xcodeproj">
+            BlueprintIdentifier = "EAE086501C5621AB007D699E"
+            BuildableName = "Reading365.app"
+            BlueprintName = "Reading365"
+            ReferencedContainer = "container:Reading365.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4802CEA1B575A6100B8C1BC"
-            BuildableName = "365_readingBible.app"
-            BlueprintName = "365_readingBible"
-            ReferencedContainer = "container:365_readingBible.xcodeproj">
+            BlueprintIdentifier = "EAE086501C5621AB007D699E"
+            BuildableName = "Reading365.app"
+            BlueprintName = "Reading365"
+            ReferencedContainer = "container:Reading365.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

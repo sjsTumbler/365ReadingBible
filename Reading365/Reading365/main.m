@@ -1,9 +1,9 @@
 //
 //  main.m
-//  365_readingBible
+//  Reading365
 //
-//  Created by Sun jishuai on 15/7/16.
-//  Copyright (c) 2015年 SunJishuai. All rights reserved.
+//  Created by SunJishuai on 16/1/25.
+//  Copyright (c) 2016年 SunJishuai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

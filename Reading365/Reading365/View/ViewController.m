@@ -1,10 +1,10 @@
 //
 //  ViewController.m
-//  365_dayBibleReadingPlan
+//  Reading365
 //
-//  Created by Sun jishuai on 15/7/9.
-//  Copyright (c) 2015年 SunJishuai. All rights reserved.
-//  rootView
+//  Created by SunJishuai on 16/1/25.
+//  Copyright (c) 2016年 SunJishuai. All rights reserved.
+//
 
 #import "ViewController.h"
 #import "DataFactory.h"//数据库
@@ -29,7 +29,7 @@
     //背景色
     self.view.backgroundColor = iColorWithHex(0x199111);
     
-     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
     NSMutableDictionary * searchDic = [NSMutableDictionary dictionary];
     [searchDic setValue:@"太" forKey:@"Col001"];
@@ -78,7 +78,7 @@
     }
     NSLog(@"isExist =%d",isExist);
 }
- #pragma mark 设置导航栏
+#pragma mark 设置导航栏
 /**
  @author Jesus , 15-11-14 18:11:12
  
@@ -86,9 +86,9 @@
  */
 - (void)setNavigationBar {
     SNavigationBar * naviBar = [[SNavigationBar alloc]initWithTitle:@"365读经"];
-//    [naviBar setRightBtnTitle:@"统计"];
-//    [naviBar setLeftBtnTitle:@"目录"];
-//    [naviBar setLeftBtnImage:@"testNav"];
+    //    [naviBar setRightBtnTitle:@"统计"];
+    //    [naviBar setLeftBtnTitle:@"目录"];
+    //    [naviBar setLeftBtnImage:@"testNav"];
     [naviBar setLeftBtn_bacK];
     [naviBar setRightBtnImage:@"testNav"];
     naviBar.delegate = self;
@@ -107,3 +107,4 @@
 }
 
 @end
+

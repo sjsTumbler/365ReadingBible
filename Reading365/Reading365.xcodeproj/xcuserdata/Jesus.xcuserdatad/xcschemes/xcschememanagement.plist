@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>365_readingBible.xcscheme</key>
+		<key>Reading365.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>E4802CEA1B575A6100B8C1BC</key>
+		<key>EAE086501C5621AB007D699E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4802D031B575A6200B8C1BC</key>
+		<key>EAE086691C5621AB007D699E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
