@@ -16,6 +16,7 @@
 @implementation AppDelegate
 {
     UITabBarController  * _iTabBar;
+    STabbar             * _sTabbar;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -28,11 +29,15 @@
     _iTabBar.viewControllers = [[NSArray alloc]initWithObjects:readNav,collectionNav,searchNav,setNav, nil];
     self.window.rootViewController = _iTabBar;
     
-    STabbar *sTabbar = [[STabbar alloc]initWithClass:self Sel:@selector(itemClick:)];
+    _sTabbar = [[STabbar alloc]initWithClass:self Sel:@selector(itemClick:)];
     [self.window makeKeyAndVisible];
     
-    [_iTabBar.view addSubview:sTabbar];
+    [_iTabBar.view addSubview:_sTabbar];
     [self.window makeKeyAndVisible];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(hideTabbar) name:HideTabbar object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showTabbar) name:ShowTabbar object:nil];
+    
     return YES;
 }
  #pragma mark  tabbar 点击方法
@@ -50,16 +55,20 @@
     for(UIView *view in views)
     {
         ((UIButton *)view).selected = NO;
-        ((UIButton *)view).titleLabel.textColor = [UIColor whiteColor];
     }
     
     // 2.把当前按钮和label变成选中状态
     btn.selected = YES;
-    btn.titleLabel.textColor = [UIColor colorWithRed:0.00f green:0.66f blue:1.00f alpha:1.00f];
     
     // 3.让真实地tbc进行切换分栏
     _iTabBar.selectedIndex = btn.tag;
     
+}
+- (void)hideTabbar {
+    _sTabbar.hidden = YES;
+}
+- (void)showTabbar {
+    _sTabbar.hidden = NO;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

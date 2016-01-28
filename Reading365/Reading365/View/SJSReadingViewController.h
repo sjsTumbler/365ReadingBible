@@ -7,7 +7,13 @@
 //
 
 #import "RootViewController.h"
+#import "SJSListViewController.h"
+#import "SJSStatistricsViewController.h"
 
 @interface SJSReadingViewController : RootViewController
+<SJSNavigationDelegate,
+UITableViewDelegate,
+UITableViewDataSource
+>
 
 @end

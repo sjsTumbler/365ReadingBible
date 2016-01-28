@@ -31,6 +31,8 @@
 - (id)init;
 //标题初始化
 - (id)initWithTitle:(NSString*)title;
+//设置标题
+- (void)setTitle:(NSString *)title;
 //右侧按钮文字创建
 - (void)setRightBtnTitle:(NSString *)title;
 //右侧按钮图片创建

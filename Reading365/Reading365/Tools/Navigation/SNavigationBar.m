@@ -55,6 +55,19 @@
     
     return self;
 }
+//设置标题
+- (void)setTitle:(NSString *)title {
+    if (self.titleLabel == nil) {
+        self.titleLabel = [[UILabel alloc]init];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.font = [UIFont systemFontOfSize:titleFontOfSize];
+        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.frame = CGRectMake(85, 33, 150, 21);
+        self.titleLabel.center = CGPointMake(viewWidth*0.5, self.titleLabel.center.y);
+        [self addSubview:self.titleLabel];
+    }
+    self.titleLabel.text = title;
+}
 #pragma  mark 右侧文字按钮
 /**
  @author SunJishuai , 15-07-21 23:07:37
@@ -83,7 +96,7 @@
 -(void)setRightBtnImage:(NSString *)imageName
 {
     self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightBtn.frame = CGRectMake(viewWidth-50, 20, 44, 44);
+    self.rightBtn.frame = CGRectMake(viewWidth-44, 30, 24, 24);
     self.rightBtn.tag = nav_right_tag;
     [self.rightBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [self.rightBtn addTarget:self action:@selector(rightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,7 +131,7 @@
 -(void)setLeftBtnImage:(NSString *)imageName
 {
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftBtn.frame = CGRectMake(20, 20, 44, 44);
+    self.leftBtn.frame = CGRectMake(20, 30, 24, 24);
     self.leftBtn.tag = nav_left_tag;
     [self.leftBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -156,7 +169,7 @@
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftBtn.frame = CGRectMake(15, 33, 15+titleSize.width, 21);
     self.leftBtn.tag = nav_left_tag;
-    [self.leftBtn setTitle:[NSString stringWithFormat:@" %@",parentName] forState:UIControlStateNormal];
+    [self.leftBtn setTitle:[NSString stringWithFormat:@"%@",parentName] forState:UIControlStateNormal];
     [self.leftBtn.titleLabel setFont:[UIFont systemFontOfSize: btnFontOfSize]];
     [self.leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];

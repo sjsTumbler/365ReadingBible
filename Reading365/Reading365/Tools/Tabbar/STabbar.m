@@ -41,7 +41,11 @@
 
 - (void)createItemWithItemDict:(NSDictionary *)itemDict andIndex:(int)index andCount:(NSInteger)count andClass:(id)classObject andSEL:(SEL)sel
 {
-   UIButton *item = [[PublicFunctions sharedPublicFunctions]imageAndLabelButtonByType:2 Label:[itemDict objectForKey:@"title"] LabelTextColor:[UIColor whiteColor] NormalImage:[itemDict objectForKey:@"image"] SelectedImage:nil Tag:index Frame:CGRectMake(viewWidth/count*index, 0, viewWidth/count, tabbarHeight)  FontSize:12];
+    UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
+    item.frame = CGRectMake(viewWidth/count*index, 0, viewWidth/count, tabbarHeight);
+    [item setImage:[UIImage imageNamed:[itemDict objectForKey:@"image"]] forState:UIControlStateNormal];
+    [item setImage:[UIImage imageNamed:[itemDict objectForKey:@"image_sel"]] forState:UIControlStateSelected];
+    item.tag = index;
     [item addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:item];

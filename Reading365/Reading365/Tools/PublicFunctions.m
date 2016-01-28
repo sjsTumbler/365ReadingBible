@@ -296,9 +296,11 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
  */
 - (CGSize)getHeightByWidth:(float)width Font:(UIFont *)font Text:(NSString *)text LineBreakMode:(NSLineBreakMode)breakMode{
     CGSize maximumLabelSizeOne = CGSizeMake(width,MAXFLOAT);
-    CGSize contentSize = [text sizeWithFont:font
-                                   constrainedToSize:maximumLabelSizeOne
-                                       lineBreakMode:breakMode];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.lineBreakMode = breakMode;
+    NSDictionary *attributes = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy};
+    
+    CGSize contentSize = [text boundingRectWithSize:maximumLabelSizeOne options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     return contentSize;
 }
 
@@ -381,8 +383,6 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
         case 2:
         {//图片在button中是按照原尺寸显示的
             CGSize labelSize = [label sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]}];
-//            float left = (imageButton.frame.size.width-[UIImage imageNamed:normalImage].size.width)*0.5;
-//            float right = (imageButton.frame.size.width-imageButton.titleLabel.frame.size.width)*0.5-10;
             [imageButton setImageEdgeInsets:UIEdgeInsetsMake(5,labelSize.width,labelSize.height+5,0)];
             [imageButton setTitleEdgeInsets:UIEdgeInsetsMake(30,-[UIImage imageNamed:normalImage].size.width,0,0)];
         }

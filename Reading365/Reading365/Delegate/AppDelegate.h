@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewsHeader.h"
+#import "ViewHeader.h"
+#import "NoticeHeader.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

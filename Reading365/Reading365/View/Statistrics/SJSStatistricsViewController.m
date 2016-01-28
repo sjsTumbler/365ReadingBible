@@ -1,25 +1,32 @@
 //
-//  SJSSettingViewController.m
-//  365_readingBible
+//  SJSStatistricsViewController.m
+//  Reading365
 //
-//  Created by SunJishuai on 16/1/23.
+//  Created by SunJishuai on 16/1/28.
 //  Copyright (c) 2016年 SunJishuai. All rights reserved.
-//
+//  统计
 
-#import "SJSSettingViewController.h"
+#import "SJSStatistricsViewController.h"
 
-@interface SJSSettingViewController ()
+@interface SJSStatistricsViewController ()
 
 @end
 
-@implementation SJSSettingViewController
+@implementation SJSStatistricsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.SNavigationBar setTitle:@"设置"];
+    [self setNav];
 }
-
+- (void)setNav {
+    [self.SNavigationBar setTitle:@"统计"];
+    [self.SNavigationBar setLeftBtn_parentName:@"读经"];
+}
+- (void)SJSNavigationLeftAction:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

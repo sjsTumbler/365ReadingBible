@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C829B74E4C73F99A50C8201B06D0205105B2D278",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "c406b459-e392-1e46-b2a0-e82348dff825++8524" : 0,
+    "C829B74E4C73F99A50C8201B06D0205105B2D278" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C4F1C951-FC69-479E-B319-BEE78A86CD65",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "c406b459-e392-1e46-b2a0-e82348dff825++8524" : "365ReadingBibleReading365\/Reading365\/Data\/FMDatabase",
+    "C829B74E4C73F99A50C8201B06D0205105B2D278" : "365ReadingBible"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Reading365",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Reading365\/Reading365.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sjsTumbler\/365ReadingBible.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C829B74E4C73F99A50C8201B06D0205105B2D278"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/220.161.221.4\/svn\/Web",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c406b459-e392-1e46-b2a0-e82348dff825++8524"
+    }
+  ]
+}

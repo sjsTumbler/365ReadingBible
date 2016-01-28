@@ -1,25 +1,35 @@
 //
-//  SJSSettingViewController.m
-//  365_readingBible
+//  SJSListViewController.m
+//  Reading365
 //
-//  Created by SunJishuai on 16/1/23.
+//  Created by SunJishuai on 16/1/28.
 //  Copyright (c) 2016年 SunJishuai. All rights reserved.
-//
+//  目录索引
+/*
+列表模式  和  平铺模式
+*/
+#import "SJSListViewController.h"
 
-#import "SJSSettingViewController.h"
-
-@interface SJSSettingViewController ()
+@interface SJSListViewController ()
 
 @end
 
-@implementation SJSSettingViewController
+@implementation SJSListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.SNavigationBar setTitle:@"设置"];
+    [self setNav];
 }
-
+- (void)setNav {
+    [self.SNavigationBar setTitle:@"目录索引"];
+    [self.SNavigationBar setLeftBtn_parentName:@"读经"];
+//    [self.SNavigationBar setLeftBtn_bacK];
+    [self.SNavigationBar setRightBtnTitle:@"列表"];
+}
+- (void)SJSNavigationLeftAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

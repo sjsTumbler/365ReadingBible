@@ -7,7 +7,9 @@
 //
 // 适配
 #import <UIKit/UIKit.h>
+#import "SNavigationBar.h"
+#import "NoticeHeader.h"
 
-@interface RootViewController : UIViewController
-
+@interface RootViewController : UIViewController<SJSNavigationDelegate>
+@property (nonatomic,strong) SNavigationBar * SNavigationBar;
 @end
