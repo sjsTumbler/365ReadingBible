@@ -25,7 +25,7 @@
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

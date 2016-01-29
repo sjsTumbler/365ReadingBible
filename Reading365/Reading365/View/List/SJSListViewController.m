@@ -28,7 +28,8 @@
     [self.SNavigationBar setRightBtnTitle:@"列表"];
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

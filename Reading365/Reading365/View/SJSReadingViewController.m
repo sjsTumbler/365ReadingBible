@@ -38,12 +38,13 @@
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     SJSListViewController * LIST = [[SJSListViewController alloc]init];
-    [self.navigationController pushViewController:LIST animated:YES];
+    [self.navigationController pushViewController:LIST animated:NO];
     [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     SJSStatistricsViewController *STA = [[SJSStatistricsViewController alloc]init];
-    [self.navigationController pushViewController:STA animated:YES];
+    [self.navigationController pushViewController:STA animated:NO];
+    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
 }
 - (void)setTable {
     _daysListTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight, viewWidth, viewHeight-navigationBarHight-tabbarHeight)];
