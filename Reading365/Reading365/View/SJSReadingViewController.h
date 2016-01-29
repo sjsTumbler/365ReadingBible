@@ -9,11 +9,14 @@
 #import "RootViewController.h"
 #import "SJSListViewController.h"
 #import "SJSStatistricsViewController.h"
+#import "HeadView.h"
 
 @interface SJSReadingViewController : RootViewController
 <SJSNavigationDelegate,
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+HeadViewDelegate
 >
-
+@property(nonatomic, retain) NSMutableArray* headViewArray;
+@property(nonatomic, retain) NSMutableArray* showHeaderArray;
 @end

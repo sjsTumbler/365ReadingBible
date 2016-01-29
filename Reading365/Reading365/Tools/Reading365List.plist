@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>isRead</key>
+			<false/>
+			<key>startNumber</key>
+			<integer>1</integer>
+			<key>endNumber</key>
+			<integer>35</integer>
+			<key>title</key>
+			<string>创世纪1:1-2:25</string>
+		</dict>
+		<dict>
+			<key>isRead</key>
+			<false/>
+			<key>startNumber</key>
+			<integer>1</integer>
+			<key>endNumber</key>
+			<integer>35</integer>
+			<key>title</key>
+			<string>创世纪1:1-2:25</string>
+		</dict>
+		<dict>
+			<key>isRead</key>
+			<false/>
+			<key>startNumber</key>
+			<integer>1</integer>
+			<key>endNumber</key>
+			<integer>35</integer>
+			<key>title</key>
+			<string>创世纪1:1-2:25</string>
+		</dict>
+		<dict>
+			<key>isRead</key>
+			<false/>
+			<key>startNumber</key>
+			<integer>1</integer>
+			<key>endNumber</key>
+			<integer>35</integer>
+			<key>title</key>
+			<string>创世纪1:1-2:25</string>
+		</dict>
+	</array>
+</array>
+</plist>

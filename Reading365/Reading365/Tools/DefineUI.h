@@ -23,6 +23,8 @@
 #define titleFontOfSize 20.0
 #define btnFontOfSize 15.0
 #define tabbarHeight  49.0
+#define moreListSectionHeight 45.0
+#define cellHeight 45.0
 
 //按钮的Tag值
 #define nav_right_tag 101

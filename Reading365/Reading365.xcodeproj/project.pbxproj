@@ -38,6 +38,8 @@
 		EA8488E81C59100000F4D705 /* statistrics_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488E21C59100000F4D705 /* statistrics_nav.png */; };
 		EA8488E91C59100000F4D705 /* statistrics_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488E31C59100000F4D705 /* statistrics_nav@2x.png */; };
 		EA8488EA1C59100000F4D705 /* statistrics_nav@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488E41C59100000F4D705 /* statistrics_nav@3x.png */; };
+		EA88207F1C5B7FE000376266 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88207E1C5B7FE000376266 /* HeadView.m */; };
+		EA8820811C5B8FF400376266 /* Reading365List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA8820801C5B8FF400376266 /* Reading365List.plist */; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -139,6 +141,9 @@
 		EA8488E21C59100000F4D705 /* statistrics_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistrics_nav.png; sourceTree = "<group>"; };
 		EA8488E31C59100000F4D705 /* statistrics_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistrics_nav@2x.png"; sourceTree = "<group>"; };
 		EA8488E41C59100000F4D705 /* statistrics_nav@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistrics_nav@3x.png"; sourceTree = "<group>"; };
+		EA88207D1C5B7FE000376266 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		EA88207E1C5B7FE000376266 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
+		EA8820801C5B8FF400376266 /* Reading365List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Reading365List.plist; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE086561C5621AB007D699E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -285,6 +290,15 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		EA88207C1C5B7FE000376266 /* MoreList */ = {
+			isa = PBXGroup;
+			children = (
+				EA88207D1C5B7FE000376266 /* HeadView.h */,
+				EA88207E1C5B7FE000376266 /* HeadView.m */,
+			);
+			path = MoreList;
+			sourceTree = "<group>";
+		};
 		EAE086481C5621AB007D699E = {
 			isa = PBXGroup;
 			children = (
@@ -404,12 +418,14 @@
 		EAE086A31C562240007D699E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA88207C1C5B7FE000376266 /* MoreList */,
 				EA75FCA41C5A627E00B10E87 /* Notices */,
 				EAE087181C565AC2007D699E /* PublicFunctions.h */,
 				EAE087191C565AC2007D699E /* PublicFunctions.m */,
 				EAE086A51C562240007D699E /* Navigation */,
 				EAE086AA1C562240007D699E /* Tabbar */,
 				EAE087171C5651F4007D699E /* DefineUI.h */,
+				EA8820801C5B8FF400376266 /* Reading365List.plist */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -620,6 +636,7 @@
 				EA8488BD1C58B4ED00F4D705 /* search_sel_tabbar.png in Resources */,
 				EAE0870B1C5650CA007D699E /* collection_tabbar.png in Resources */,
 				EAE0870F1C5650CA007D699E /* reading_tabbar@2x.png in Resources */,
+				EA8820811C5B8FF400376266 /* Reading365List.plist in Resources */,
 				EA8488DA1C590BDA00F4D705 /* back.png in Resources */,
 				EA8488B71C58B4ED00F4D705 /* collection_sel_tabbar.png in Resources */,
 				EA8488E61C59100000F4D705 /* list_nav@2x.png in Resources */,
@@ -690,6 +707,7 @@
 				EAE086D71C562240007D699E /* STabbar.m in Sources */,
 				EA75FCA21C5A607E00B10E87 /* SJSStatistricsViewController.m in Sources */,
 				EAE086D41C562240007D699E /* SNavigationBar.m in Sources */,
+				EA88207F1C5B7FE000376266 /* HeadView.m in Sources */,
 				EAE086CC1C562240007D699E /* SandboxFile.m in Sources */,
 				EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */,
 				EAE086571C5621AB007D699E /* main.m in Sources */,
