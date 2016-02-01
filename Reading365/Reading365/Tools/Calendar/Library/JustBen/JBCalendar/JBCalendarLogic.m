@@ -591,7 +591,7 @@ static BOOL MonthDataForInit, WeekDataForInit;
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         if (calendarData) {
-            NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%i_%i", MonthDataPlistFile, date.year, date.month]];
+            NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%lu_%lu", MonthDataPlistFile, (unsigned long)date.year, (unsigned long)date.month]];
             
             if ([JBPlistFileManager writeDicData:calendarData ToPlistFileAtPath:path]) {
                 if (successBlock) {
@@ -610,7 +610,7 @@ static BOOL MonthDataForInit, WeekDataForInit;
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         if (calendarData) {
-            NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%i_%i_%i", WeekDataPlistFile, date.year, date.month, date.week]];
+            NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%lu_%lu_%lu", WeekDataPlistFile, (unsigned long)date.year, (unsigned long)date.month, (unsigned long)date.week]];
             if ([JBPlistFileManager writeDicData:calendarData ToPlistFileAtPath:path]) {
                 if (successBlock) {
                     successBlock();
@@ -635,7 +635,7 @@ static BOOL MonthDataForInit, WeekDataForInit;
 - (void)getLocalMonthDataForDate:(NSDate *)date WithSuccessBlock:(void (^)(NSArray *daysInFinalWeekOfPreviousMonth, NSArray *daysInSelectedMonth, NSArray *daysInFirstWeekOfFollowingMonth))successBlock FailureBlock:(void (^)(NSInteger errorno, NSString *error))failureBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%i_%i", MonthDataPlistFile, date.year, date.month]];
+        NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%lu_%lu", MonthDataPlistFile, (unsigned long)date.year, (unsigned long)date.month]];
         if ([JBPlistFileManager isExistFileAtPath:path]) {
             NSDictionary *dic = [JBPlistFileManager readDicDataFromPlistFileAtPath:path];
             if (dic) {
@@ -662,7 +662,7 @@ static BOOL MonthDataForInit, WeekDataForInit;
 - (void)getLocalWeekDataForDate:(NSDate *)date WithSuccessBlock:(void (^)(NSArray *daysInSelectedWeekInPreviousMonth, NSArray *daysInSelectedWeekInSelectedMonth, NSArray *daysInSelectedWeekInFollowingMonth))successBlock FailureBlock:(void (^)(NSInteger errorno, NSString *error))failureBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%i_%i_%i", WeekDataPlistFile, date.year, date.month, date.week]];
+        NSString *path = [JBPlistFileManager pathInDocumentsWithDirPath:CalendarDataDir filePath:[NSString stringWithFormat:@"%@%lu_%lu_%lu", WeekDataPlistFile, (unsigned long)date.year, (unsigned long)date.month, (unsigned long)date.week]];
         if ([JBPlistFileManager isExistFileAtPath:path]) {
             NSDictionary *dic = [JBPlistFileManager readDicDataFromPlistFileAtPath:path];
             if (dic) {

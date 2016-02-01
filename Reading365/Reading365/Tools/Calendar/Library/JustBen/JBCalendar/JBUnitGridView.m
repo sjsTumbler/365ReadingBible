@@ -247,8 +247,8 @@ typedef struct {
         [self addSubview:self.weekdaysBarView];
                 
         if (self.unitType == UnitTypeMonth) {
-            for (NSInteger i = 0; i < MaxTileRowInUnit_Month; i++) {
-                for (NSInteger j = 0; j < TileCountInOneLine; j++) {
+            for (int i = 0; i < MaxTileRowInUnit_Month; i++) {
+                for (int j = 0; j < TileCountInOneLine; j++) {
                     UnitTilePosition position;
                     position.row = i;
                     position.line = j;
@@ -267,8 +267,8 @@ typedef struct {
                 }
             }
         } else if (self.unitType == UnitTypeWeek){
-            for (NSInteger i = 0; i < MaxTileRowInUnit_Week; i++) {
-                for (NSInteger j = 0; j < TileCountInOneLine; j++) {
+            for (int i = 0; i < MaxTileRowInUnit_Week; i++) {
+                for (int j = 0; j < TileCountInOneLine; j++) {
                     UnitTilePosition position;
                     position.row = i;
                     position.line = j;

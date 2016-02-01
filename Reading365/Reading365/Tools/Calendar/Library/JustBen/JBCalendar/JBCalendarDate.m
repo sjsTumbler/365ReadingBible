@@ -113,7 +113,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"year:%i, month:%i, day:%i", self.year, self.month, self.day];
+    return [NSString stringWithFormat:@"year:%li, month:%li, day:%li", (long)self.year, (long)self.month, (long)self.day];
 }
 
 @end

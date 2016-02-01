@@ -40,7 +40,7 @@
     
     if (!previousDate || ![previousDate isEqualToDate:self]) {
         previousDate = self;
-        dateComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit | NSWeekCalendarUnit| NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:self];
+        dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal | NSCalendarUnitWeekOfMonth| NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self];
     }
     
     return dateComponents;
@@ -135,7 +135,7 @@
  ****************************************************/
 - (NSUInteger)week
 {
-    return [self componentsOfDay].week;
+    return [self componentsOfDay].weekOfMonth;
 }
 
 /******************************************
@@ -249,7 +249,7 @@
  ******************************************/
 - (NSUInteger)numberOfDaysInMonth
 {
-    return [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:self].length;
+    return [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self].length;
 }
 
 
@@ -275,7 +275,7 @@
 - (NSDate *)firstDayOfTheWeek
 {
     NSDate *firstDay = nil;
-    if ([[NSCalendar currentCalendar] rangeOfUnit:NSWeekCalendarUnit startDate:&firstDay interval:NULL forDate:self]) {
+    if ([[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitWeekOfMonth startDate:&firstDay interval:NULL forDate:self]) {
         return firstDay;
     }
     
@@ -364,7 +364,7 @@
 - (NSDate *)firstDayOfTheWeekInTheMonth
 {
     NSDate *firstDayOfTheWeek = nil;
-    if ([[NSCalendar currentCalendar] rangeOfUnit:NSWeekCalendarUnit startDate:&firstDayOfTheWeek interval:NULL forDate:self]) {
+    if ([[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitWeekOfMonth startDate:&firstDayOfTheWeek interval:NULL forDate:self]) {
         NSDate *firstDayOfTheMonth = [self firstDayOfTheMonth];
         if ([firstDayOfTheWeek componentsOfDay].month == [firstDayOfTheMonth componentsOfDay].month) {
             return firstDayOfTheWeek;
@@ -415,7 +415,7 @@
  ******************************************/
 - (NSUInteger)weekOfDayInYear
 {
-    return [[NSCalendar currentCalendar] ordinalityOfUnit:NSWeekOfYearCalendarUnit inUnit:NSYearCalendarUnit forDate:self];
+    return [[NSCalendar currentCalendar] ordinalityOfUnit:NSCalendarUnitWeekOfYear inUnit:NSCalendarUnitYear forDate:self];
 }
 
 /******************************************

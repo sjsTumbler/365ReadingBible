@@ -220,7 +220,7 @@
         _date = date;
         
         if (self.dayLabel) {
-            self.dayLabel.text = [NSString stringWithFormat:@"%i", _date.day];
+            self.dayLabel.text = [NSString stringWithFormat:@"%li", (long)_date.day];
         }
         
         if (self.lunarLabel) {

@@ -28,20 +28,20 @@
         self.unitView = [[JBUnitView alloc] initWithFrame:calenderRect UnitType:UnitTypeMonth SelectedDate:[NSDate date] AlignmentRule:JBAlignmentRuleTop Delegate:self DataSource:self];
         [self.view addSubview:self.unitView];
     
-//        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, self.unitView.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.unitView.bounds.size.height) style:UITableViewStylePlain];
-//        [self.view addSubview:self.tableView];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, self.unitView.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.unitView.bounds.size.height) style:UITableViewStylePlain];
+        [self.view addSubview:self.tableView];
     
-//    
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//        button.frame = CGRectMake(0.0f, 400.0f, 50.0f, 50.0f);
-//        [button setTitle:@"Today" forState:UIControlStateNormal];
-//        [button addTarget:self action:@selector(selectorForButton) forControlEvents:UIControlEventTouchUpInside];
-//        [self.view addSubview:button];
+    
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = CGRectMake(0.0f, 400.0f, 50.0f, 50.0f);
+        [button setTitle:@"Today" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(selectorForButton) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
     
     //  Example 1.2:
 //        self.unitView = [[JBUnitView alloc] initWithFrame:calenderRect UnitType:UnitTypeWeek SelectedDate:[NSDate date] AlignmentRule:JBAlignmentRuleTop Delegate:self DataSource:self];
 //        [self.view addSubview:self.unitView];
-//    
+    
 //        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, self.unitView.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.unitView.bounds.size.height) style:UITableViewStylePlain];
 //        [self.view addSubview:self.tableView];
     

@@ -70,7 +70,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-//        [self setClipsToBounds:YES];        
+        [self setClipsToBounds:YES];        
     }
     return self;
 }
@@ -117,7 +117,8 @@
         self.selectedUnitGridView.delegate = self;
         self.selectedUnitGridView.dataSource = self;
         self.selectedUnitGridView.selectedDate = [JBCalendarDate dateFromNSDate:self.selectedDate];
-        self.frame = self.selectedUnitGridView.frame;
+        //这是一句BUG代码
+//        self.frame = self.selectedUnitGridView.frame;
         
         self.followingUnitGridView = [[JBUnitGridView alloc] initWithFrame:CGRectMake(self.bounds.size.width, 0.0f, self.bounds.size.width, self.bounds.size.height) UnitType:unitType];
         self.followingUnitGridView.delegate = self;
