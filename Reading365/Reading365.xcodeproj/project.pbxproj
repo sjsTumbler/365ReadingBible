@@ -40,6 +40,22 @@
 		EA8488EA1C59100000F4D705 /* statistrics_nav@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488E41C59100000F4D705 /* statistrics_nav@3x.png */; };
 		EA88207F1C5B7FE000376266 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88207E1C5B7FE000376266 /* HeadView.m */; };
 		EA8820811C5B8FF400376266 /* Reading365List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA8820801C5B8FF400376266 /* Reading365List.plist */; };
+		EA88214D1C5CBB6600376266 /* JBSXRCUnitTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821271C5CBB6600376266 /* JBSXRCUnitTileView.m */; };
+		EA88214E1C5CBB6600376266 /* JBCalendarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88212D1C5CBB6600376266 /* JBCalendarDate.m */; };
+		EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821301C5CBB6600376266 /* JBCalendarLogic.m */; };
+		EA8821501C5CBB6600376266 /* JBEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821321C5CBB6600376266 /* JBEventModel.m */; };
+		EA8821511C5CBB6600376266 /* JBUnitGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821341C5CBB6600376266 /* JBUnitGridView.m */; };
+		EA8821521C5CBB6600376266 /* JBUnitTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821361C5CBB6600376266 /* JBUnitTileView.m */; };
+		EA8821531C5CBB6600376266 /* JBUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821381C5CBB6600376266 /* JBUnitView.m */; };
+		EA8821541C5CBB6600376266 /* JBWeekdaysBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88213A1C5CBB6600376266 /* JBWeekdaysBarView.m */; };
+		EA8821551C5CBB6600376266 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA88213D1C5CBB6600376266 /* LunarCalendar.m */; };
+		EA8821561C5CBB6600376266 /* NSDate+Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821401C5CBB6600376266 /* NSDate+Calendar.m */; };
+		EA8821571C5CBB6600376266 /* README in Resources */ = {isa = PBXBuildFile; fileRef = EA8821411C5CBB6600376266 /* README */; };
+		EA8821581C5CBB6600376266 /* JBBasicFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821451C5CBB6600376266 /* JBBasicFileManager.m */; };
+		EA8821591C5CBB6600376266 /* JBImageFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821471C5CBB6600376266 /* JBImageFileManager.m */; };
+		EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821491C5CBB6600376266 /* JBPlistFileManager.m */; };
+		EA88215B1C5CBB6600376266 /* weekdaysBarView.png in Resources */ = {isa = PBXBuildFile; fileRef = EA88214B1C5CBB6600376266 /* weekdaysBarView.png */; };
+		EA88215C1C5CBB6600376266 /* weekdaysBarView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA88214C1C5CBB6600376266 /* weekdaysBarView@2x.png */; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -144,6 +160,38 @@
 		EA88207D1C5B7FE000376266 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
 		EA88207E1C5B7FE000376266 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		EA8820801C5B8FF400376266 /* Reading365List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Reading365List.plist; sourceTree = "<group>"; };
+		EA8821261C5CBB6600376266 /* JBSXRCUnitTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSXRCUnitTileView.h; sourceTree = "<group>"; };
+		EA8821271C5CBB6600376266 /* JBSXRCUnitTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSXRCUnitTileView.m; sourceTree = "<group>"; };
+		EA88212B1C5CBB6600376266 /* JBCalendarDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCalendarDataSourceDelegate.h; sourceTree = "<group>"; };
+		EA88212C1C5CBB6600376266 /* JBCalendarDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCalendarDate.h; sourceTree = "<group>"; };
+		EA88212D1C5CBB6600376266 /* JBCalendarDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBCalendarDate.m; sourceTree = "<group>"; };
+		EA88212E1C5CBB6600376266 /* JBCalendarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCalendarDelegate.h; sourceTree = "<group>"; };
+		EA88212F1C5CBB6600376266 /* JBCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCalendarLogic.h; sourceTree = "<group>"; };
+		EA8821301C5CBB6600376266 /* JBCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBCalendarLogic.m; sourceTree = "<group>"; };
+		EA8821311C5CBB6600376266 /* JBEventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBEventModel.h; sourceTree = "<group>"; };
+		EA8821321C5CBB6600376266 /* JBEventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBEventModel.m; sourceTree = "<group>"; };
+		EA8821331C5CBB6600376266 /* JBUnitGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUnitGridView.h; sourceTree = "<group>"; };
+		EA8821341C5CBB6600376266 /* JBUnitGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBUnitGridView.m; sourceTree = "<group>"; };
+		EA8821351C5CBB6600376266 /* JBUnitTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUnitTileView.h; sourceTree = "<group>"; };
+		EA8821361C5CBB6600376266 /* JBUnitTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBUnitTileView.m; sourceTree = "<group>"; };
+		EA8821371C5CBB6600376266 /* JBUnitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUnitView.h; sourceTree = "<group>"; };
+		EA8821381C5CBB6600376266 /* JBUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBUnitView.m; sourceTree = "<group>"; };
+		EA8821391C5CBB6600376266 /* JBWeekdaysBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWeekdaysBarView.h; sourceTree = "<group>"; };
+		EA88213A1C5CBB6600376266 /* JBWeekdaysBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWeekdaysBarView.m; sourceTree = "<group>"; };
+		EA88213C1C5CBB6600376266 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
+		EA88213D1C5CBB6600376266 /* LunarCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendar.m; sourceTree = "<group>"; };
+		EA88213F1C5CBB6600376266 /* NSDate+Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Calendar.h"; sourceTree = "<group>"; };
+		EA8821401C5CBB6600376266 /* NSDate+Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Calendar.m"; sourceTree = "<group>"; };
+		EA8821411C5CBB6600376266 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		EA8821421C5CBB6600376266 /* JBDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDefine.h; sourceTree = "<group>"; };
+		EA8821441C5CBB6600376266 /* JBBasicFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBasicFileManager.h; sourceTree = "<group>"; };
+		EA8821451C5CBB6600376266 /* JBBasicFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBasicFileManager.m; sourceTree = "<group>"; };
+		EA8821461C5CBB6600376266 /* JBImageFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBImageFileManager.h; sourceTree = "<group>"; };
+		EA8821471C5CBB6600376266 /* JBImageFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBImageFileManager.m; sourceTree = "<group>"; };
+		EA8821481C5CBB6600376266 /* JBPlistFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBPlistFileManager.h; sourceTree = "<group>"; };
+		EA8821491C5CBB6600376266 /* JBPlistFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBPlistFileManager.m; sourceTree = "<group>"; };
+		EA88214B1C5CBB6600376266 /* weekdaysBarView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weekdaysBarView.png; sourceTree = "<group>"; };
+		EA88214C1C5CBB6600376266 /* weekdaysBarView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weekdaysBarView@2x.png"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE086561C5621AB007D699E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -299,6 +347,101 @@
 			path = MoreList;
 			sourceTree = "<group>";
 		};
+		EA8821251C5CBB6600376266 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				EA8821261C5CBB6600376266 /* JBSXRCUnitTileView.h */,
+				EA8821271C5CBB6600376266 /* JBSXRCUnitTileView.m */,
+				EA8821281C5CBB6600376266 /* Library */,
+				EA88214A1C5CBB6600376266 /* Resource */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		EA8821281C5CBB6600376266 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EA8821291C5CBB6600376266 /* JustBen */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		EA8821291C5CBB6600376266 /* JustBen */ = {
+			isa = PBXGroup;
+			children = (
+				EA88212A1C5CBB6600376266 /* JBCalendar */,
+				EA8821421C5CBB6600376266 /* JBDefine.h */,
+				EA8821431C5CBB6600376266 /* LocalFileManager */,
+			);
+			path = JustBen;
+			sourceTree = "<group>";
+		};
+		EA88212A1C5CBB6600376266 /* JBCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				EA88212B1C5CBB6600376266 /* JBCalendarDataSourceDelegate.h */,
+				EA88212C1C5CBB6600376266 /* JBCalendarDate.h */,
+				EA88212D1C5CBB6600376266 /* JBCalendarDate.m */,
+				EA88212E1C5CBB6600376266 /* JBCalendarDelegate.h */,
+				EA88212F1C5CBB6600376266 /* JBCalendarLogic.h */,
+				EA8821301C5CBB6600376266 /* JBCalendarLogic.m */,
+				EA8821311C5CBB6600376266 /* JBEventModel.h */,
+				EA8821321C5CBB6600376266 /* JBEventModel.m */,
+				EA8821331C5CBB6600376266 /* JBUnitGridView.h */,
+				EA8821341C5CBB6600376266 /* JBUnitGridView.m */,
+				EA8821351C5CBB6600376266 /* JBUnitTileView.h */,
+				EA8821361C5CBB6600376266 /* JBUnitTileView.m */,
+				EA8821371C5CBB6600376266 /* JBUnitView.h */,
+				EA8821381C5CBB6600376266 /* JBUnitView.m */,
+				EA8821391C5CBB6600376266 /* JBWeekdaysBarView.h */,
+				EA88213A1C5CBB6600376266 /* JBWeekdaysBarView.m */,
+				EA88213B1C5CBB6600376266 /* LunarCalendar */,
+				EA88213E1C5CBB6600376266 /* NSDate */,
+				EA8821411C5CBB6600376266 /* README */,
+			);
+			path = JBCalendar;
+			sourceTree = "<group>";
+		};
+		EA88213B1C5CBB6600376266 /* LunarCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				EA88213C1C5CBB6600376266 /* LunarCalendar.h */,
+				EA88213D1C5CBB6600376266 /* LunarCalendar.m */,
+			);
+			path = LunarCalendar;
+			sourceTree = "<group>";
+		};
+		EA88213E1C5CBB6600376266 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				EA88213F1C5CBB6600376266 /* NSDate+Calendar.h */,
+				EA8821401C5CBB6600376266 /* NSDate+Calendar.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		EA8821431C5CBB6600376266 /* LocalFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				EA8821441C5CBB6600376266 /* JBBasicFileManager.h */,
+				EA8821451C5CBB6600376266 /* JBBasicFileManager.m */,
+				EA8821461C5CBB6600376266 /* JBImageFileManager.h */,
+				EA8821471C5CBB6600376266 /* JBImageFileManager.m */,
+				EA8821481C5CBB6600376266 /* JBPlistFileManager.h */,
+				EA8821491C5CBB6600376266 /* JBPlistFileManager.m */,
+			);
+			path = LocalFileManager;
+			sourceTree = "<group>";
+		};
+		EA88214A1C5CBB6600376266 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EA88214B1C5CBB6600376266 /* weekdaysBarView.png */,
+				EA88214C1C5CBB6600376266 /* weekdaysBarView@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		EAE086481C5621AB007D699E = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +561,7 @@
 		EAE086A31C562240007D699E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA8821251C5CBB6600376266 /* Calendar */,
 				EA88207C1C5B7FE000376266 /* MoreList */,
 				EA75FCA41C5A627E00B10E87 /* Notices */,
 				EAE087181C565AC2007D699E /* PublicFunctions.h */,
@@ -621,6 +765,7 @@
 				EA8488BB1C58B4ED00F4D705 /* reading_sel_tabbar@2x.png in Resources */,
 				EA75FC9D1C5A5D8D00B10E87 /* SJSListViewController.xib in Resources */,
 				EAE087101C5650CA007D699E /* reading_tabbar@3x.png in Resources */,
+				EA88215B1C5CBB6600376266 /* weekdaysBarView.png in Resources */,
 				EAE086601C5621AB007D699E /* Main.storyboard in Resources */,
 				EAE087141C5650CA007D699E /* setting_tabbar.png in Resources */,
 				EAE087131C5650CA007D699E /* search_tabbar@3x.png in Resources */,
@@ -663,6 +808,7 @@
 				EA8488E51C59100000F4D705 /* list_nav.png in Resources */,
 				EAE086D01C562240007D699E /* Default-568h@2x.png in Resources */,
 				EAE086621C5621AB007D699E /* Images.xcassets in Resources */,
+				EA8821571C5CBB6600376266 /* README in Resources */,
 				EA8488DD1C590BDA00F4D705 /* calendar_nav@2x.png in Resources */,
 				EAE086D31C562240007D699E /* testNav@2x.png in Resources */,
 				EAE086DE1C562240007D699E /* SJSReadingViewController.xib in Resources */,
@@ -671,6 +817,7 @@
 				EAE087111C5650CA007D699E /* search_tabbar.png in Resources */,
 				EA8488E91C59100000F4D705 /* statistrics_nav@2x.png in Resources */,
 				EA75FCA31C5A607E00B10E87 /* SJSStatistricsViewController.xib in Resources */,
+				EA88215C1C5CBB6600376266 /* weekdaysBarView@2x.png in Resources */,
 				EA8488CC1C58F72600F4D705 /* SJSSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,30 +840,43 @@
 				EAE086DD1C562240007D699E /* SJSReadingViewController.m in Sources */,
 				EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */,
 				EAE086FA1C5629F9007D699E /* FMDatabasePool.m in Sources */,
+				EA8821521C5CBB6600376266 /* JBUnitTileView.m in Sources */,
 				EAE086FC1C5629F9007D699E /* FMResultSet.m in Sources */,
+				EA8821511C5CBB6600376266 /* JBUnitGridView.m in Sources */,
 				EAE086F91C5629F9007D699E /* FMDatabaseAdditions.m in Sources */,
 				EAE086CB1C562240007D699E /* old_nivModel.m in Sources */,
+				EA88214D1C5CBB6600376266 /* JBSXRCUnitTileView.m in Sources */,
+				EA8821531C5CBB6600376266 /* JBUnitView.m in Sources */,
+				EA8821501C5CBB6600376266 /* JBEventModel.m in Sources */,
 				EA8488CB1C58F72600F4D705 /* SJSSearchViewController.m in Sources */,
 				EAE086CA1C562240007D699E /* old_ncvModel.m in Sources */,
+				EA8821581C5CBB6600376266 /* JBBasicFileManager.m in Sources */,
 				EAE086BF1C562240007D699E /* DataFactory.m in Sources */,
 				EAE086DF1C562240007D699E /* SJSSettingViewController.m in Sources */,
+				EA8821591C5CBB6600376266 /* JBImageFileManager.m in Sources */,
 				EAE086C71C562240007D699E /* new_ncvModel.m in Sources */,
 				EA8488C61C58F70A00F4D705 /* SJSCollectionViewController.m in Sources */,
 				EAE086FB1C5629F9007D699E /* FMDatabaseQueue.m in Sources */,
+				EA8821541C5CBB6600376266 /* JBWeekdaysBarView.m in Sources */,
+				EA8821561C5CBB6600376266 /* NSDate+Calendar.m in Sources */,
 				EAE086C61C562240007D699E /* new_cuvModel.m in Sources */,
 				EAE086D71C562240007D699E /* STabbar.m in Sources */,
 				EA75FCA21C5A607E00B10E87 /* SJSStatistricsViewController.m in Sources */,
 				EAE086D41C562240007D699E /* SNavigationBar.m in Sources */,
 				EA88207F1C5B7FE000376266 /* HeadView.m in Sources */,
 				EAE086CC1C562240007D699E /* SandboxFile.m in Sources */,
+				EA88214E1C5CBB6600376266 /* JBCalendarDate.m in Sources */,
 				EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */,
 				EAE086571C5621AB007D699E /* main.m in Sources */,
 				EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */,
 				EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */,
+				EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */,
+				EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */,
 				EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */,
 				EAE086D91C562240007D699E /* RootViewController.m in Sources */,
 				EAE086C81C562240007D699E /* new_nivModel.m in Sources */,
 				EAE086E71C562375007D699E /* ViewController.m in Sources */,
+				EA8821551C5CBB6600376266 /* LunarCalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,21 @@
 //
 
 #import "RootViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "JBCalendarLogic.h"
+#import "JBUnitView.h"
+#import "JBUnitGridView.h"
+#import "JBSXRCUnitTileView.h"
 @interface SJSStatistricsViewController : RootViewController
-<SJSNavigationDelegate>
+<SJSNavigationDelegate,
+JBUnitGridViewDelegate,
+JBUnitGridViewDataSource,
+JBUnitViewDelegate,
+JBUnitViewDataSource>
+
+@property (nonatomic, retain) JBUnitView *unitView;
+@property (nonatomic, retain) UITableView *tableView;
+
+
+- (void)selectorForButton;
 @end
