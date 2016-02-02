@@ -10,6 +10,7 @@
 #import "SJSListViewController.h"
 #import "SJSStatistricsViewController.h"
 #import "HeadView.h"
+#import "ReadPlistManager.h"
 
 @interface SJSReadingViewController : RootViewController
 <SJSNavigationDelegate,
@@ -19,4 +20,5 @@ HeadViewDelegate
 >
 @property(nonatomic, retain) NSMutableArray* headViewArray;
 @property(nonatomic, retain) NSMutableArray* showHeaderArray;
+@property(nonatomic, retain) NSArray       * dayData;
 @end

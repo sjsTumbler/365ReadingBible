@@ -21,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //初始化数据库
+    [[ReadPlistManager sharedReadPlistManager]initHolyBibleData];
+    
     _iTabBar = [[UITabBarController alloc]init];
     UINavigationController * readNav = [[UINavigationController alloc]initWithRootViewController:[[SJSReadingViewController alloc]init]];
     UINavigationController * setNav = [[UINavigationController alloc]initWithRootViewController:[[SJSSettingViewController alloc]init]];

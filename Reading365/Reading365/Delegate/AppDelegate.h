@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ViewHeader.h"
 #import "NoticeHeader.h"
+#import "ReadPlistManager.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

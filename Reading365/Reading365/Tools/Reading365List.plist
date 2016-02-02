@@ -7,9 +7,9 @@
 			<key>isRead</key>
 			<false/>
 			<key>startNumber</key>
-			<integer>1</integer>
+			<integer>101001001</integer>
 			<key>endNumber</key>
-			<integer>35</integer>
+			<integer>101002025</integer>
 			<key>title</key>
 			<string>创世纪1:1-2:25</string>
 		</dict>
@@ -17,31 +17,31 @@
 			<key>isRead</key>
 			<false/>
 			<key>startNumber</key>
-			<integer>1</integer>
+			<integer>201001001</integer>
 			<key>endNumber</key>
-			<integer>35</integer>
+			<integer>200002012</integer>
 			<key>title</key>
-			<string>创世纪1:1-2:25</string>
+			<string>马太福音1:1-2:12</string>
 		</dict>
 		<dict>
 			<key>isRead</key>
 			<false/>
 			<key>startNumber</key>
-			<integer>1</integer>
+			<integer>119001001</integer>
 			<key>endNumber</key>
-			<integer>35</integer>
+			<integer>119001006</integer>
 			<key>title</key>
-			<string>创世纪1:1-2:25</string>
+			<string>诗篇1:1-6</string>
 		</dict>
 		<dict>
 			<key>isRead</key>
 			<false/>
 			<key>startNumber</key>
-			<integer>1</integer>
+			<integer>120001001</integer>
 			<key>endNumber</key>
-			<integer>35</integer>
+			<integer>120001006</integer>
 			<key>title</key>
-			<string>创世纪1:1-2:25</string>
+			<string>箴言1:1-6</string>
 		</dict>
 	</array>
 </array>

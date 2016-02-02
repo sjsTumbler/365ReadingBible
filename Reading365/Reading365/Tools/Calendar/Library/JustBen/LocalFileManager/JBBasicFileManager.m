@@ -138,7 +138,7 @@
 
 
 //  检查文件是否存在
-+ (BOOL)isFilePathExist:(NSString *)filePath isDir:(BOOL)isDir;
++ (BOOL)isFilePathExist:(NSString *)filePath isDir:(BOOL)isDir
 {    
     if (filePath) {        
         NSString *path = [NSString stringWithString:filePath];

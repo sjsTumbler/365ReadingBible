@@ -36,6 +36,7 @@
         [self.headViewArray addObject:headview];
     }
     self.showHeaderArray = [[NSMutableArray alloc]initWithArray:self.headViewArray];
+    self.dayData = [[NSArray alloc]init];
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:@"读经"];
@@ -84,30 +85,31 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    NSString * bibleTitle = @"";
+    NSString * bibleTitle = [[ReadPlistManager sharedReadPlistManager]getTitleByData:self.dayData Index:indexPath.row];
     switch (indexPath.row) {
         case 0:
-            bibleTitle = @"旧约";
+            bibleTitle = [NSString stringWithFormat:@"旧约:%@",bibleTitle];
             break;
         case 1:
-            bibleTitle = @"新约";
+            bibleTitle = [NSString stringWithFormat:@"新约:%@",bibleTitle];
             break;
         case 2:
-            bibleTitle = @"诗篇";
+            bibleTitle = [NSString stringWithFormat:@"诗篇:%@",bibleTitle];
             break;
         case 3:
-            bibleTitle = @"箴言";
+            bibleTitle = [NSString stringWithFormat:@"箴言:%@",bibleTitle];
             break;
         default:
             break;
     }
     cell.textLabel.text = bibleTitle;
     cell.textLabel.textColor = [UIColor orangeColor];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSMutableArray * result =  [[ReadPlistManager sharedReadPlistManager]searchBibleByDataDic:[self.dayData objectAtIndex:indexPath.row]];
     NSLog(@"%ld",(long)indexPath.row+1);
     switch (indexPath.row) {
         case 0:{
@@ -135,6 +137,7 @@
         return;
     }
     _currentSection = view.section;
+    self.dayData = [[ReadPlistManager sharedReadPlistManager]readArrayDataOnDay:view.section-1];
     [self reset];
     
 }
