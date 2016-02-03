@@ -12,7 +12,6 @@
 
 
 #define GetDataBasePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
-//[[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"db"]
 //[SandboxFile GetPathForDocuments:@"HolyBible.sqlite3" inDir:@"DataBase"]
 
 @interface DataFactory : NSObject

@@ -168,25 +168,20 @@
  
  @return 对应的经文
  */
-- (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic  DBType:(FSO)type{
-    
-    if ([self isFilePathExist:DBPath isDir:NO]) {
-        long start = [[searchDic objectForKey:@"startNumber"]longValue];
-        long end   = [[searchDic objectForKey:@"endNumber"]longValue];
-        NSMutableArray * result = [[NSMutableArray alloc]init];
-        for (long i = start; i <= end; i++) {
-            NSMutableDictionary * search = [NSMutableDictionary dictionary];
-            [search setValue:[NSString stringWithFormat:@"%lu",i] forKey:@"o_id"];
-            [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:type callback:^(NSArray *resultArray) {
-                if (resultArray.count > 0) {
-                    [result addObject:[resultArray firstObject]];
-                }
-            }];
-        }
-        return result;
-    }else{
-        return nil;
+- (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic{
+    float start = [[searchDic objectForKey:@"startNumber"]floatValue];
+    float end   = [[searchDic objectForKey:@"endNumber"]floatValue];
+    NSMutableArray * result = [[NSMutableArray alloc]init];
+    for (float i = start; i <= end; i++) {
+        NSMutableDictionary * search = [NSMutableDictionary dictionary];
+        [search setValue:[NSString stringWithFormat:@"%f",i] forKey:@"o_id"];
+        [[DataFactory shardDataFactory]searchWhere:searchDic orderBy:nil offset:0 count:10 Classtype:new_cuv callback:^(NSArray *resultArray) {
+            if (resultArray.count > 0) {
+                [result addObject:[resultArray firstObject]];
+            }
+        }];
     }
+    return result;
 }
 
 @end

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SNavigationBar.h"
 #import "NoticeHeader.h"
-#import "ReadPlistManager.h"
 
 @interface RootViewController : UIViewController<SJSNavigationDelegate>
 @property (nonatomic,strong) SNavigationBar * SNavigationBar;

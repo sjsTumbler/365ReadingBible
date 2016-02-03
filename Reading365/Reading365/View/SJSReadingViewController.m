@@ -109,34 +109,18 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    SJSReadNoteViewController * readNote = [[SJSReadNoteViewController alloc]init];
-//    readNote.viewTitle = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    readNote.dataDic = [self.dayData objectAtIndex:indexPath.row];
+    NSMutableArray * result =  [[ReadPlistManager sharedReadPlistManager]searchBibleByDataDic:[self.dayData objectAtIndex:indexPath.row]];
+    NSLog(@"%ld",(long)indexPath.row+1);
     switch (indexPath.row) {
         case 0:{
-        readNote.dataType = old_cuv;
-            readNote.viewTitle = @"旧约";
+            
         }
             break;
-        case 1:{
-            readNote.dataType = new_cuv;
-            readNote.viewTitle = @"新约";
-        }
-            break;
-        case 2:{
-        readNote.dataType = old_cuv;
-            readNote.viewTitle = @"诗篇";
-        }
-            break;
-        case 3:{
-            readNote.dataType = old_cuv;
-            readNote.viewTitle = @"箴言";
-        }
-            break;
+            
         default:
             break;
     }
-    [self.navigationController pushViewController:readNote animated:NO];
+    
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{

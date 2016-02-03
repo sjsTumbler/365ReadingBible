@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 #import "STabbar.h"
 @interface AppDelegate ()
 

@@ -78,8 +78,6 @@
 		EA8821881C608C4100376266 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EA8821731C608C4100376266 /* iTunesArtwork */; };
 		EA8821891C608C4100376266 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = EA8821741C608C4100376266 /* iTunesArtwork@2x */; };
 		EA8821931C60A40500376266 /* ReadPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821921C60A40500376266 /* ReadPlistManager.m */; };
-		EA88219A1C61DB6F00376266 /* SJSReadNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */; };
-		EA88219B1C61DB6F00376266 /* SJSReadNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -110,6 +108,7 @@
 		EAE086DF1C562240007D699E /* SJSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086BB1C562240007D699E /* SJSSettingViewController.m */; };
 		EAE086E01C562240007D699E /* SJSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE086BC1C562240007D699E /* SJSSettingViewController.xib */; };
 		EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086E31C5622CE007D699E /* AppDelegate.m */; };
+		EAE086E71C562375007D699E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086E61C562375007D699E /* ViewController.m */; };
 		EAE086E91C562444007D699E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE086E81C562444007D699E /* libsqlite3.0.dylib */; };
 		EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086EC1C5629F9007D699E /* FMDatabase.m */; };
 		EAE086F91C5629F9007D699E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086EE1C5629F9007D699E /* FMDatabaseAdditions.m */; };
@@ -239,10 +238,6 @@
 		EA8821901C60A40500376266 /* DefineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineManager.h; sourceTree = "<group>"; };
 		EA8821911C60A40500376266 /* ReadPlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPlistManager.h; sourceTree = "<group>"; };
 		EA8821921C60A40500376266 /* ReadPlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPlistManager.m; sourceTree = "<group>"; };
-		EA8821971C61DB6F00376266 /* SJSReadNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadNoteViewController.h; sourceTree = "<group>"; };
-		EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNoteViewController.m; sourceTree = "<group>"; };
-		EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSReadNoteViewController.xib; sourceTree = "<group>"; };
-		EA88219C1C62470200376266 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE086561C5621AB007D699E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -291,6 +286,8 @@
 		EAE086BC1C562240007D699E /* SJSSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSSettingViewController.xib; sourceTree = "<group>"; };
 		EAE086E21C5622CE007D699E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAE086E31C5622CE007D699E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAE086E51C562375007D699E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EAE086E61C562375007D699E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EAE086E81C562444007D699E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		EAE086EB1C5629F9007D699E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		EAE086EC1C5629F9007D699E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -529,16 +526,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		EA8821961C61DAFA00376266 /* Reading */ = {
-			isa = PBXGroup;
-			children = (
-				EA8821971C61DB6F00376266 /* SJSReadNoteViewController.h */,
-				EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */,
-				EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */,
-			);
-			path = Reading;
-			sourceTree = "<group>";
-		};
 		EAE086481C5621AB007D699E = {
 			isa = PBXGroup;
 			children = (
@@ -622,7 +609,6 @@
 				EAE086951C562240007D699E /* old_nivModel.h */,
 				EAE086961C562240007D699E /* old_nivModel.m */,
 				EAE086971C562240007D699E /* Sandbox */,
-				EA88219C1C62470200376266 /* ModelHeader.h */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -696,9 +682,10 @@
 		EAE086B01C562240007D699E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EA8821961C61DAFA00376266 /* Reading */,
 				EA75FC9E1C5A606500B10E87 /* Statistrics */,
 				EA75FC981C5A5D4C00B10E87 /* List */,
+				EAE086E51C562375007D699E /* ViewController.h */,
+				EAE086E61C562375007D699E /* ViewController.m */,
 				EAE086B11C562240007D699E /* RootViewController.h */,
 				EAE086B21C562240007D699E /* RootViewController.m */,
 				EAE086B31C562240007D699E /* RootViewController.xib */,
@@ -910,7 +897,6 @@
 				EA8821761C608C4100376266 /* Icon-60@2x.png in Resources */,
 				EA8821831C608C4100376266 /* Icon-Spotlight-40.png in Resources */,
 				EA8488C01C58B4ED00F4D705 /* setting_sel_tabbar.png in Resources */,
-				EA88219B1C61DB6F00376266 /* SJSReadNoteViewController.xib in Resources */,
 				EA8488C21C58B4ED00F4D705 /* setting_sel_tabbar@3x.png in Resources */,
 				EA8488BE1C58B4ED00F4D705 /* search_sel_tabbar@2x.png in Resources */,
 				EAE086CD1C562240007D699E /* HolyBible.db in Resources */,
@@ -957,7 +943,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA88219A1C61DB6F00376266 /* SJSReadNoteViewController.m in Sources */,
 				EAE086C91C562240007D699E /* old_cuvModel.m in Sources */,
 				EAE086DD1C562240007D699E /* SJSReadingViewController.m in Sources */,
 				EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */,
@@ -998,6 +983,7 @@
 				EAE086D91C562240007D699E /* RootViewController.m in Sources */,
 				EA8821931C60A40500376266 /* ReadPlistManager.m in Sources */,
 				EAE086C81C562240007D699E /* new_nivModel.m in Sources */,
+				EAE086E71C562375007D699E /* ViewController.m in Sources */,
 				EA8821551C5CBB6600376266 /* LunarCalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,5 +26,5 @@
 //根据数据获取title
 - (NSString *)getTitleByData:(NSArray *)dataArray Index:(NSInteger)index;
 //根据经文字典从数据库中找到对应的经文并返回
-- (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic DBType:(FSO)type;
+- (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic;
 @end
