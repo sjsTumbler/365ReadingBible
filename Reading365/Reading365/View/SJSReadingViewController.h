@@ -11,6 +11,7 @@
 #import "SJSStatistricsViewController.h"
 #import "HeadView.h"
 #import "ReadPlistManager.h"
+#import "SJSReadNoteViewController.h"
 
 @interface SJSReadingViewController : RootViewController
 <SJSNavigationDelegate,

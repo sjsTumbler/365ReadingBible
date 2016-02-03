@@ -7,12 +7,7 @@
 //
 
 #import "DataFactory.h"
-#import "new_cuvModel.h"
-#import "new_ncvModel.h"
-#import "new_nivModel.h"
-#import "old_cuvModel.h"
-#import "old_ncvModel.h"
-#import "old_nivModel.h"
+#import "ModelHeader.h"
 #import "DefineUI.h"
 
 static FMDatabaseQueue* queue;

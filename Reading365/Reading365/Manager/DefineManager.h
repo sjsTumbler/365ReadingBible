@@ -11,5 +11,6 @@
 
 #define DATABASE_FILE_NAME @"HolyBible.db"
 #define PlistName @"Reading365List"
-
+#define DBPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
+//[[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"db"]
 #endif
