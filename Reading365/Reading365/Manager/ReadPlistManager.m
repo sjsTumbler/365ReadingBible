@@ -158,35 +158,5 @@
     NSDictionary * dataDic = [dataArray objectAtIndex:index];
     return [dataDic objectForKey:@"title"];
 }
-#pragma mark 根据经文字典从数据库中找到对应的经文并返回
-/**
- @author Jesus         , 16-02-02 17:02:26
- 
- @brief 根据经文字典从数据库中找到对应的经文并返回
- 
- @param searchDic 经文字典
- 
- @return 对应的经文
- */
-- (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic  DBType:(FSO)type{
-    
-    if ([self isFilePathExist:DBPath isDir:NO]) {
-        long start = [[searchDic objectForKey:@"startNumber"]longValue];
-        long end   = [[searchDic objectForKey:@"endNumber"]longValue];
-        NSMutableArray * result = [[NSMutableArray alloc]init];
-        for (long i = start; i <= end; i++) {
-            NSMutableDictionary * search = [NSMutableDictionary dictionary];
-            [search setValue:[NSString stringWithFormat:@"%lu",i] forKey:@"o_id"];
-            [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:type callback:^(NSArray *resultArray) {
-                if (resultArray.count > 0) {
-                    [result addObject:[resultArray firstObject]];
-                }
-            }];
-        }
-        return result;
-    }else{
-        return nil;
-    }
-}
 
 @end

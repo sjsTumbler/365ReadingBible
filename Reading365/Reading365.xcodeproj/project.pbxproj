@@ -11,6 +11,9 @@
 		EA75FC9D1C5A5D8D00B10E87 /* SJSListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA75FC9B1C5A5D8D00B10E87 /* SJSListViewController.xib */; };
 		EA75FCA21C5A607E00B10E87 /* SJSStatistricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75FCA01C5A607E00B10E87 /* SJSStatistricsViewController.m */; };
 		EA75FCA31C5A607E00B10E87 /* SJSStatistricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA75FCA11C5A607E00B10E87 /* SJSStatistricsViewController.xib */; };
+		EA7852FD1C62B9FC0029538F /* SJSReadNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7852FB1C62B9FC0029538F /* SJSReadNoteTableViewCell.m */; };
+		EA7852FE1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7852FC1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib */; };
+		EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7853001C62C1540029538F /* SJSReadNoteManager.m */; };
 		EA8488B71C58B4ED00F4D705 /* collection_sel_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488AB1C58B4ED00F4D705 /* collection_sel_tabbar.png */; };
 		EA8488B81C58B4ED00F4D705 /* collection_sel_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488AC1C58B4ED00F4D705 /* collection_sel_tabbar@2x.png */; };
 		EA8488B91C58B4ED00F4D705 /* collection_sel_tabbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8488AD1C58B4ED00F4D705 /* collection_sel_tabbar@3x.png */; };
@@ -150,6 +153,11 @@
 		EA75FCA01C5A607E00B10E87 /* SJSStatistricsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSStatistricsViewController.m; sourceTree = "<group>"; };
 		EA75FCA11C5A607E00B10E87 /* SJSStatistricsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSStatistricsViewController.xib; sourceTree = "<group>"; };
 		EA75FCA51C5A629500B10E87 /* NoticeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeHeader.h; sourceTree = "<group>"; };
+		EA7852FA1C62B9FC0029538F /* SJSReadNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadNoteTableViewCell.h; sourceTree = "<group>"; };
+		EA7852FB1C62B9FC0029538F /* SJSReadNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNoteTableViewCell.m; sourceTree = "<group>"; };
+		EA7852FC1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSReadNoteTableViewCell.xib; sourceTree = "<group>"; };
+		EA7852FF1C62C1540029538F /* SJSReadNoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadNoteManager.h; sourceTree = "<group>"; };
+		EA7853001C62C1540029538F /* SJSReadNoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNoteManager.m; sourceTree = "<group>"; };
 		EA8488AB1C58B4ED00F4D705 /* collection_sel_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_sel_tabbar.png; sourceTree = "<group>"; };
 		EA8488AC1C58B4ED00F4D705 /* collection_sel_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collection_sel_tabbar@2x.png"; sourceTree = "<group>"; };
 		EA8488AD1C58B4ED00F4D705 /* collection_sel_tabbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collection_sel_tabbar@3x.png"; sourceTree = "<group>"; };
@@ -535,6 +543,11 @@
 				EA8821971C61DB6F00376266 /* SJSReadNoteViewController.h */,
 				EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */,
 				EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */,
+				EA7852FA1C62B9FC0029538F /* SJSReadNoteTableViewCell.h */,
+				EA7852FB1C62B9FC0029538F /* SJSReadNoteTableViewCell.m */,
+				EA7852FC1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib */,
+				EA7852FF1C62C1540029538F /* SJSReadNoteManager.h */,
+				EA7853001C62C1540029538F /* SJSReadNoteManager.m */,
 			);
 			path = Reading;
 			sourceTree = "<group>";
@@ -879,6 +892,7 @@
 				EA8821841C608C4100376266 /* Icon-Spotlight-40@2x.png in Resources */,
 				EA88217E1C608C4100376266 /* Icon-Small-50.png in Resources */,
 				EA8488DC1C590BDA00F4D705 /* calendar_nav.png in Resources */,
+				EA7852FE1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib in Resources */,
 				EA88217B1C608C4100376266 /* Icon-76@2x.png in Resources */,
 				EAE086D11C562240007D699E /* icon1.png in Resources */,
 				EA8488EA1C59100000F4D705 /* statistrics_nav@3x.png in Resources */,
@@ -971,6 +985,7 @@
 				EA8821531C5CBB6600376266 /* JBUnitView.m in Sources */,
 				EA8821501C5CBB6600376266 /* JBEventModel.m in Sources */,
 				EA8488CB1C58F72600F4D705 /* SJSSearchViewController.m in Sources */,
+				EA7852FD1C62B9FC0029538F /* SJSReadNoteTableViewCell.m in Sources */,
 				EAE086CA1C562240007D699E /* old_ncvModel.m in Sources */,
 				EA8821581C5CBB6600376266 /* JBBasicFileManager.m in Sources */,
 				EAE086BF1C562240007D699E /* DataFactory.m in Sources */,
@@ -992,6 +1007,7 @@
 				EAE086571C5621AB007D699E /* main.m in Sources */,
 				EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */,
 				EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */,
+				EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */,
 				EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */,
 				EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */,
 				EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */,

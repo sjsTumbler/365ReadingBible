@@ -6,19 +6,27 @@
 		<dict>
 			<key>isRead</key>
 			<false/>
-			<key>startNumber</key>
+			<key>startNumber0</key>
 			<integer>101001001</integer>
-			<key>endNumber</key>
-			<integer>101002025</integer>
+			<key>endNumber0</key>
+			<real>101001031</real>
+			<key>startNumber1</key>
+			<real>101002001</real>
+			<key>endNumber1</key>
+			<real>101002025</real>
 			<key>title</key>
 			<string>创世纪1:1-2:25</string>
 		</dict>
 		<dict>
 			<key>isRead</key>
 			<false/>
-			<key>startNumber</key>
+			<key>startNumber0</key>
 			<integer>201001001</integer>
-			<key>endNumber</key>
+			<key>endNumber0</key>
+			<real>201001025</real>
+			<key>startNumber1</key>
+			<integer>201002001</integer>
+			<key>endNumber1</key>
 			<real>201002012</real>
 			<key>title</key>
 			<string>马太福音1:1-2:12</string>
@@ -26,9 +34,9 @@
 		<dict>
 			<key>isRead</key>
 			<false/>
-			<key>startNumber</key>
+			<key>startNumber0</key>
 			<integer>119001001</integer>
-			<key>endNumber</key>
+			<key>endNumber0</key>
 			<integer>119001006</integer>
 			<key>title</key>
 			<string>诗篇1:1-6</string>
@@ -36,9 +44,9 @@
 		<dict>
 			<key>isRead</key>
 			<false/>
-			<key>startNumber</key>
+			<key>startNumber0</key>
 			<integer>120001001</integer>
-			<key>endNumber</key>
+			<key>endNumber0</key>
 			<integer>120001006</integer>
 			<key>title</key>
 			<string>箴言1:1-6</string>

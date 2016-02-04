@@ -25,6 +25,9 @@
 #define tabbarHeight  49.0
 #define moreListSectionHeight 45.0
 #define cellHeight 45.0
+#define labelHeight 21.0
+#define sectionHeight 30.0
+#define edages 15.0
 
 //按钮的Tag值
 #define nav_right_tag 101
@@ -42,10 +45,10 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define iColorWithRGB(r, g, b) [UIColor colorWithRed:(r) / 255.f green:(g) / 255.f blue:(b) / 255.f alpha:1.0f]
 
 #define navColor 0x199fff
-
+#define sectionColor 0xdddddd
 
 #define tabbarColor iColorWithRGB(5, 178, 215)
 #define tabbarFrame CGRectMake(0, viewHeight-tabbarHeight, viewWidth, tabbarHeight)
 #define tabbarSelectTextColor iColorWithHex(0xcccccc)
-
+#define cellFont [UIFont systemFontOfSize:15]
 #endif

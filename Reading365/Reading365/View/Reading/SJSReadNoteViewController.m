@@ -15,6 +15,7 @@
 @implementation SJSReadNoteViewController
 {
     UITableView * _bibleTable;
+    NSMutableArray * _cellHeightArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +26,8 @@
 }
 - (void)initData {
     self.dataArray = [[NSMutableArray alloc]init];
-    self.dataArray =  [[ReadPlistManager sharedReadPlistManager]searchBibleByDataDic:_dataDic DBType:_dataType];
+    self.dataArray =  [[SJSReadNoteManager sharedReadNoteManager]searchBibleByDataDic:_dataDic DBType:_dataType];
+    _cellHeightArray = [[NSMutableArray alloc]initWithArray:[[SJSReadNoteManager sharedReadNoteManager]getAutoCellHeightByModels:self.dataArray Type:_dataType]];
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:_viewTitle];
@@ -53,19 +55,20 @@
     return self.dataArray.count ;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 21;
+    return sectionHeight;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UILabel * sectionTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, viewWidth, 21)];
+    UILabel * sectionTitle = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth-edages,sectionHeight)];
     sectionTitle.text = [self.dataDic objectForKey:@"title"];
     sectionTitle.textAlignment = NSTextAlignmentLeft;
-    sectionTitle.backgroundColor = [UIColor lightGrayColor];
     sectionTitle.font = [UIFont systemFontOfSize:15];
-    return sectionTitle;
+    UIView * sectionView = [[UIView alloc]init];
+    sectionView.backgroundColor = iColorWithHex(sectionColor);
+    [sectionView addSubview:sectionTitle];
+    return sectionView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //动态的高度
-    return 60.0;
+    return [[_cellHeightArray objectAtIndex:indexPath.row]floatValue];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellName = @"cellName";
@@ -77,26 +80,39 @@
     switch (_dataType) {
         case new_cuv:{
             new_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = model.Col003;
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
         }
             break;
-        case new_ncv:{}
+        case new_ncv:{
+            new_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+        }
             break;
-        case new_niv:{}
+        case new_niv:{
+            new_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+        }
             break;
         case old_cuv:{
             old_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = model.Col003;
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
         }
             break;
-        case old_ncv:{}
+        case old_ncv:{
+            old_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+        }
             break;
-        case old_niv:{}
+        case old_niv:{
+            old_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+        }
             break;
         default:
             break;
     }
     cell.textLabel.text = bibleContent;
+    cell.textLabel.font = cellFont;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.textColor = [UIColor orangeColor];
