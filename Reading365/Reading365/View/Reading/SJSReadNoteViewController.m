@@ -40,7 +40,7 @@
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     CGPoint point = CGPointMake(1, 0);
-    [SJSReadNotePopView configCustomPopViewWithFrame:CGRectMake(100, 50, 150, 200) imagesArr:@[@"saoyisao.png",@"jiahaoyou.png",@"taolun.png",@"diannao.png",@"diannao.png",@"shouqian.png"] dataSourceArr:@[@"扫一扫",@"加好友",@"创建讨论组",@"发送到电脑",@"面对面快传",@"收钱"] anchorPoint:point seletedRowForIndex:^(NSInteger index) {
+    [SJSReadNotePopView configCustomPopViewWithFrame:CGRectMake(viewWidth-edages-130, navigationBarHight, 130, 200) imagesArr:@[@"saoyisao.png",@"jiahaoyou.png",@"taolun.png",@"diannao.png",@"diannao.png",@"shouqian.png"] dataSourceArr:@[@"扫一扫",@"加好友",@"创建讨论组",@"发送到电脑",@"面对面快传",@"收钱"] anchorPoint:point seletedRowForIndex:^(NSInteger index) {
         NSLog(@"%ld", index + 1);
     } animation:YES timeForCome:0.3 timeForGo:0.3];
 }
