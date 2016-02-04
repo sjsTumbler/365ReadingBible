@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA03AFCB1C62E36E007B486B /* SJSReadNotePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA03AFCA1C62E36E007B486B /* SJSReadNotePopView.m */; };
 		EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75FC9A1C5A5D8D00B10E87 /* SJSListViewController.m */; };
 		EA75FC9D1C5A5D8D00B10E87 /* SJSListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA75FC9B1C5A5D8D00B10E87 /* SJSListViewController.xib */; };
 		EA75FCA21C5A607E00B10E87 /* SJSStatistricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75FCA01C5A607E00B10E87 /* SJSStatistricsViewController.m */; };
@@ -146,6 +147,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA03AFC91C62E36E007B486B /* SJSReadNotePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadNotePopView.h; sourceTree = "<group>"; };
+		EA03AFCA1C62E36E007B486B /* SJSReadNotePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNotePopView.m; sourceTree = "<group>"; };
 		EA75FC991C5A5D8D00B10E87 /* SJSListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSListViewController.h; sourceTree = "<group>"; };
 		EA75FC9A1C5A5D8D00B10E87 /* SJSListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSListViewController.m; sourceTree = "<group>"; };
 		EA75FC9B1C5A5D8D00B10E87 /* SJSListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSListViewController.xib; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				EA7852FC1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib */,
 				EA7852FF1C62C1540029538F /* SJSReadNoteManager.h */,
 				EA7853001C62C1540029538F /* SJSReadNoteManager.m */,
+				EA03AFC91C62E36E007B486B /* SJSReadNotePopView.h */,
+				EA03AFCA1C62E36E007B486B /* SJSReadNotePopView.m */,
 			);
 			path = Reading;
 			sourceTree = "<group>";
@@ -1007,6 +1012,7 @@
 				EAE086571C5621AB007D699E /* main.m in Sources */,
 				EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */,
 				EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */,
+				EA03AFCB1C62E36E007B486B /* SJSReadNotePopView.m in Sources */,
 				EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */,
 				EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */,
 				EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */,

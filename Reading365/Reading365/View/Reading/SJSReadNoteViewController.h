@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "ModelHeader.h"
 #import "SJSReadNoteManager.h"
+#import "SJSReadNotePopView.h"
 
 @interface SJSReadNoteViewController : RootViewController
 <SJSNavigationDelegate,
