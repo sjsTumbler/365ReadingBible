@@ -16,6 +16,7 @@
 {
     UITableView * _bibleTable;
     NSMutableArray * _cellHeightArray;
+//    SJSReadNoteTableViewCell * _readNoteCell;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +24,14 @@
     [self initData];
     [self setNav];
     [self setTable];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    //解决cell还原问题
+    NSArray *cells = [_bibleTable visibleCells];
+    for (SJSReadNoteTableViewCell * cell in cells) {
+        [cell hideMenuView:YES Animated:YES];
+    }
 }
 - (void)initData {
     self.dataArray = [[NSMutableArray alloc]init];
@@ -37,6 +46,7 @@
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:NO];
+    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     CGPoint point = CGPointMake(1, 0);
@@ -45,7 +55,7 @@
     } animation:YES timeForCome:0.3 timeForGo:0.3];
 }
 - (void)setTable {
-    _bibleTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight, viewWidth, viewHeight-navigationBarHight-tabbarHeight)];
+    _bibleTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight, viewWidth, viewHeight-navigationBarHight)];
     _bibleTable.delegate = self;
     _bibleTable.dataSource = self;
     _bibleTable.tableFooterView=[[UIView alloc]init];
@@ -74,10 +84,11 @@
     return [[_cellHeightArray objectAtIndex:indexPath.row]floatValue];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * cellName = @"cellName";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    static NSString *cellName = @"contentCell";
+    SJSReadNoteTableViewCell *cell = (SJSReadNoteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"SJSReadNoteTableViewCell" owner:self options:nil]lastObject];
+        cell.backgroundColor = [UIColor whiteColor];
     }
     NSString * bibleContent = @"";
     switch (_dataType) {
@@ -114,18 +125,68 @@
         default:
             break;
     }
-    cell.textLabel.text = bibleContent;
-    cell.textLabel.font = cellFont;
-    cell.textLabel.adjustsFontSizeToFitWidth = YES;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.textColor = [UIColor orangeColor];
-    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    cell.delegate = self;//滑动的代理
+    cell.iContentLabel.text = bibleContent;
+    [cell frameToFitSize:[[_cellHeightArray objectAtIndex:indexPath.row]floatValue]];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+#pragma  mark SJSReadNoteTableViewCellDelegate 滑动收藏笔记
+/**
+ @author SunJishuai,
+ 
+ @brief  SJSReadNoteTableViewCellDelegate
+ 
+ @param aSender 滑动手势
+ */
+-(void)didCellWillShow:(id)aSender{
+    //解决cell还原问题-- 实现单次只对一个cell操作
+    NSArray *cells = [_bibleTable visibleCells];
+    for (SJSReadNoteTableViewCell * cell in cells) {
+        [cell hideMenuView:YES Animated:NO];
+    }
+//    _readNoteCell = aSender;
+    self.canCustomEdit = YES;
+}
 
+-(void)didCellWillHide:(id)aSender{
+//    _readNoteCell = nil;
+    self.canCustomEdit = NO;
+}
+
+-(void)didCellHided:(id)aSender{
+//    _readNoteCell = nil;
+    self.canCustomEdit = NO;
+}
+
+-(void)didCellShowed:(id)aSender{
+//    _readNoteCell = aSender;
+    self.canCustomEdit = YES;
+}
+#pragma mark 收藏
+/**
+ @author SunJishuai , 15-07-25 14:07:54
+ 
+ @brief  收藏
+ 
+ @param aSender
+ */
+-(void)didCellClickedSaveButton:(SJSReadNoteTableViewCell*)aSender{
+    [aSender hideMenuView:YES Animated:YES];
+    NSLog(@"收藏");
+//    self.indexPath = [_bibleTable indexPathForCell:aSender];
+    self.canCustomEdit = NO;
+}
+
+#pragma mark 点击笔记
+-(void)didCellClickedNoteButton:(SJSReadNoteTableViewCell*)aSender{
+    NSLog(@"笔记");
+    //自动恢复
+    [aSender hideMenuView:YES Animated:YES];
+//    NSIndexPath *indexPath = [_listTable indexPathForCell:aSender];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

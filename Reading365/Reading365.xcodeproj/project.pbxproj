@@ -254,6 +254,7 @@
 		EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNoteViewController.m; sourceTree = "<group>"; };
 		EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSReadNoteViewController.xib; sourceTree = "<group>"; };
 		EA88219C1C62470200376266 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
+		EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一年365日每日读经计划.doc"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE086561C5621AB007D699E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -687,6 +688,7 @@
 				EAE086A51C562240007D699E /* Navigation */,
 				EAE086AA1C562240007D699E /* Tabbar */,
 				EAE087171C5651F4007D699E /* DefineUI.h */,
+				EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */,
 				EA8820801C5B8FF400376266 /* Reading365List.plist */,
 			);
 			path = Tools;

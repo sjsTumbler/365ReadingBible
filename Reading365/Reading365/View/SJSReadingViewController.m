@@ -137,6 +137,7 @@
             break;
     }
     [self.navigationController pushViewController:readNote animated:NO];
+    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{

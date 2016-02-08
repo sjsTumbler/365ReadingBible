@@ -10,13 +10,16 @@
 #import "ModelHeader.h"
 #import "SJSReadNoteManager.h"
 #import "SJSReadNotePopView.h"
+#import "SJSReadNoteTableViewCell.h"
 
 @interface SJSReadNoteViewController : RootViewController
 <SJSNavigationDelegate,
 UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+ReadNoteTableViewCellDelegate>
 @property(nonatomic,strong) NSMutableArray * dataArray;
 @property(nonatomic,strong) NSString * viewTitle;
 @property(nonatomic,strong) NSDictionary * dataDic;
 @property(nonatomic,assign) FSO  dataType;
+@property(nonatomic,assign) BOOL canCustomEdit;
 @end

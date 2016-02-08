@@ -7,8 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DefineUI.h"
+
+@protocol ReadNoteTableViewCellDelegate <NSObject>
+
+-(void)didCellWillHide:(id)aSender;
+-(void)didCellHided:(id)aSender;
+-(void)didCellWillShow:(id)aSender;
+-(void)didCellShowed:(id)aSender;
+-(void)didCellClickedSaveButton:(id)aSender;
+-(void)didCellClickedNoteButton:(id)aSender;
+@end
 
 @interface SJSReadNoteTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+<UIGestureRecognizerDelegate>
 
+@property (nonatomic,assign) id<ReadNoteTableViewCellDelegate> delegate;
+@property (nonatomic,strong) UIView * iContentView;
+@property (nonatomic,strong) UILabel * iContentLabel;
+
+-(void)hideMenuView:(BOOL)aHide Animated:(BOOL)aAnimate;
+-(void)addControl;
+-(void)frameToFitSize:(CGFloat)height;
 @end
