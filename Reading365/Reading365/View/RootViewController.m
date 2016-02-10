@@ -18,8 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    [[ReadPlistManager sharedReadPlistManager]initHolyBibleData];
-    
     [self.navigationController setNavigationBarHidden:YES];
     self.SNavigationBar = [[SNavigationBar alloc]init];
     self.SNavigationBar.delegate = self;

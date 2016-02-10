@@ -84,6 +84,10 @@
 		EA8821931C60A40500376266 /* ReadPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821921C60A40500376266 /* ReadPlistManager.m */; };
 		EA88219A1C61DB6F00376266 /* SJSReadNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */; };
 		EA88219B1C61DB6F00376266 /* SJSReadNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */; };
+		EA8AC7601C68DC9C005247B8 /* select_mark_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75C1C68DC9C005247B8 /* select_mark_nor.png */; };
+		EA8AC7611C68DC9C005247B8 /* select_mark_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */; };
+		EA8AC7621C68DC9C005247B8 /* select_mark_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */; };
+		EA8AC7631C68DC9C005247B8 /* select_mark_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -254,6 +258,10 @@
 		EA8821981C61DB6F00376266 /* SJSReadNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNoteViewController.m; sourceTree = "<group>"; };
 		EA8821991C61DB6F00376266 /* SJSReadNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSReadNoteViewController.xib; sourceTree = "<group>"; };
 		EA88219C1C62470200376266 /* ModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeader.h; sourceTree = "<group>"; };
+		EA8AC75C1C68DC9C005247B8 /* select_mark_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_mark_nor.png; sourceTree = "<group>"; };
+		EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_nor@2x.png"; sourceTree = "<group>"; };
+		EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_mark_sel.png; sourceTree = "<group>"; };
+		EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_sel@2x.png"; sourceTree = "<group>"; };
 		EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一年365日每日读经计划.doc"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -666,6 +674,10 @@
 		EAE0869C1C562240007D699E /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EA8AC75C1C68DC9C005247B8 /* select_mark_nor.png */,
+				EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */,
+				EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */,
+				EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */,
 				EA88215F1C608C4100376266 /* Icon */,
 				EA8488D41C590BDA00F4D705 /* NavigationBar */,
 				EAE086FE1C5650BE007D699E /* Tabbar */,
@@ -888,6 +900,7 @@
 				EAE087101C5650CA007D699E /* reading_tabbar@3x.png in Resources */,
 				EA88215B1C5CBB6600376266 /* weekdaysBarView.png in Resources */,
 				EAE086601C5621AB007D699E /* Main.storyboard in Resources */,
+				EA8AC7611C68DC9C005247B8 /* select_mark_nor@2x.png in Resources */,
 				EAE087141C5650CA007D699E /* setting_tabbar.png in Resources */,
 				EAE087131C5650CA007D699E /* search_tabbar@3x.png in Resources */,
 				EA8488C11C58B4ED00F4D705 /* setting_sel_tabbar@2x.png in Resources */,
@@ -902,11 +915,13 @@
 				EA7852FE1C62B9FC0029538F /* SJSReadNoteTableViewCell.xib in Resources */,
 				EA88217B1C608C4100376266 /* Icon-76@2x.png in Resources */,
 				EAE086D11C562240007D699E /* icon1.png in Resources */,
+				EA8AC7621C68DC9C005247B8 /* select_mark_sel.png in Resources */,
 				EA8488EA1C59100000F4D705 /* statistrics_nav@3x.png in Resources */,
 				EAE0870C1C5650CA007D699E /* collection_tabbar@2x.png in Resources */,
 				EA88217A1C608C4100376266 /* Icon-76.png in Resources */,
 				EA8488BD1C58B4ED00F4D705 /* search_sel_tabbar.png in Resources */,
 				EAE0870B1C5650CA007D699E /* collection_tabbar.png in Resources */,
+				EA8AC7631C68DC9C005247B8 /* select_mark_sel@2x.png in Resources */,
 				EAE0870F1C5650CA007D699E /* reading_tabbar@2x.png in Resources */,
 				EA8820811C5B8FF400376266 /* Reading365List.plist in Resources */,
 				EA8821861C608C4100376266 /* Icon.png in Resources */,
@@ -953,6 +968,7 @@
 				EAE086BE1C562240007D699E /* 项目策划 in Resources */,
 				EA8488E71C59100000F4D705 /* list_nav@3x.png in Resources */,
 				EAE087111C5650CA007D699E /* search_tabbar.png in Resources */,
+				EA8AC7601C68DC9C005247B8 /* select_mark_nor.png in Resources */,
 				EA8488E91C59100000F4D705 /* statistrics_nav@2x.png in Resources */,
 				EA75FCA31C5A607E00B10E87 /* SJSStatistricsViewController.xib in Resources */,
 				EA88215C1C5CBB6600376266 /* weekdaysBarView@2x.png in Resources */,

@@ -84,7 +84,25 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+        UIButton * selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        selectButton.frame = CGRectMake(viewWidth-44, 0, 44, 44);
+        [selectButton setImage:[UIImage imageNamed:@"select_mark_nor"] forState:UIControlStateNormal];
+        [selectButton setImage:[UIImage imageNamed:@"select_mark_sel"] forState:UIControlStateSelected];
+        [selectButton addTarget:self action:@selector(readMaskButton:) forControlEvents:UIControlEventTouchUpInside];
+        [cell addSubview:selectButton];
     }
+    for (UIView * view in cell.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            view.tag = indexPath.section*10 + indexPath.row;
+            if ([[[self.dayData objectAtIndex:indexPath.row]objectForKey:@"isRead"] isEqualToString:@"0"]) {
+                ((UIButton *)view).selected = NO;
+            }else {
+                ((UIButton *)view).selected = YES;
+            }
+        }
+    }
+    
+    
     NSString * bibleTitle = [[ReadPlistManager sharedReadPlistManager]getTitleByData:self.dayData Index:indexPath.row];
     switch (indexPath.row) {
         case 0:
@@ -181,6 +199,23 @@
     //    [self.showHeaderArray removeAllObjects];
     //    [self.showHeaderArray addObjectsFromArray:headViewArray];
     [_daysListTable reloadData];
+}
+#pragma mark  标记为已读
+/**
+ @author Jesus   , 16-02-08 22:02:00
+ 
+ @brief 标记为已读
+ 
+ @param markButton 按钮
+ */
+- (void)readMaskButton:(UIButton *)markButton {
+    if (markButton.selected) {
+        markButton.selected = NO;
+        [[ReadPlistManager sharedReadPlistManager]setStatusOfBibleBy:markButton.tag isRead:@"0"];
+    }else {
+        markButton.selected = YES;
+        [[ReadPlistManager sharedReadPlistManager]setStatusOfBibleBy:markButton.tag isRead:@"1"];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

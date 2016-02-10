@@ -63,7 +63,20 @@
         
     }
     NSLog(@"isExist =%d",isExist);
+    
+    //创建数据表
+    [self buildTables];
 }
+ #pragma mark 创建数据表
+/**
+ @author Jesus      , 16-02-10 19:02:40
+ 
+ @brief 创建数据表
+ */
+- (void)buildTables {
+    [[DataFactory shardDataFactory]CreateTable];
+}
+
 #pragma mark  从plist文件读取数组
 /**
  @author Jesus   , 16-02-02 16:02:47
@@ -158,5 +171,15 @@
     NSDictionary * dataDic = [dataArray objectAtIndex:index];
     return [dataDic objectForKey:@"title"];
 }
-
+//标记经文已读或未读
+- (void)setStatusOfBibleBy:(NSUInteger)tag  isRead:(NSString *)isRead{
+    NSString *path = [[NSBundle mainBundle]pathForResource:PlistName ofType:@"plist"];
+    if ([self isFilePathExist:path isDir:NO]) {
+        NSMutableArray *plistArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+        NSMutableDictionary * dataDic = [[NSMutableDictionary alloc]initWithDictionary: [[plistArray objectAtIndex:tag/10]objectAtIndex:tag%10]];
+        [dataDic setValue:isRead forKey:@"isRead"];
+        [[plistArray objectAtIndex:tag/10]insertObject:dataDic atIndex:tag%10];
+        [plistArray writeToFile:path atomically:YES];
+    }
+}
 @end

@@ -25,5 +25,6 @@
 - (NSArray *)readArrayDataOnDay:(NSInteger)day;
 //根据数据获取title
 - (NSString *)getTitleByData:(NSArray *)dataArray Index:(NSInteger)index;
-
+//标记经文已读或未读
+- (void)setStatusOfBibleBy:(NSUInteger)tag isRead:(NSString *)isRead;//0 为未 1 为已读
 @end

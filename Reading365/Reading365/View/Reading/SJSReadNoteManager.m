@@ -9,6 +9,7 @@
 #import "SJSReadNoteManager.h"
 
 #define DBPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
+
 @implementation SJSReadNoteManager
 //单例化
 + (SJSReadNoteManager *)sharedReadNoteManager {
