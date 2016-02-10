@@ -43,6 +43,8 @@ static FMDatabaseQueue* queue;
     [[[old_cuvModelBase alloc]initWithDBQueue:queue]autorelease];
     [[[old_ncvModelBase alloc]initWithDBQueue:queue]autorelease];
     [[[old_nivModelBase alloc]initWithDBQueue:queue]autorelease];
+    
+    [[[StatusModelBase alloc]initWithDBQueue:queue]autorelease];
 }
 -(id)Factory:(FSO)type
 {
@@ -67,6 +69,9 @@ static FMDatabaseQueue* queue;
             break;
         case old_niv:
             result=[[[old_nivModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case status:
+            result=[[[StatusModelBase alloc]initWithDBQueue:queue]autorelease];
             break;
         default:
             break;

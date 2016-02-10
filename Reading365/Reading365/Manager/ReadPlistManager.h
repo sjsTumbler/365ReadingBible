@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DefineManager.h"
 #import "DataFactory.h"
+#import "ModelHeader.h"
 
 @interface ReadPlistManager : NSObject
 //单例化
@@ -25,6 +26,8 @@
 - (NSArray *)readArrayDataOnDay:(NSInteger)day;
 //根据数据获取title
 - (NSString *)getTitleByData:(NSArray *)dataArray Index:(NSInteger)index;
-//标记经文已读或未读
-- (void)setStatusOfBibleBy:(NSUInteger)tag isRead:(NSString *)isRead;//0 为未 1 为已读
+//获取读经状态
+- (NSString *)getStatusOfBuble:(NSInteger)tag;
+//修改经文已读或未读
+- (void)setStatusOfBibleBy:(NSInteger)tag isRead:(NSString *)isRead;//0 为未 1 为已读
 @end

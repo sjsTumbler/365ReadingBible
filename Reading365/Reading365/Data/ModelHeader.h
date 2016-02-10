@@ -15,4 +15,6 @@
 #import "old_ncvModel.h"
 #import "old_nivModel.h"
 
+#import "StatusModel.h"
+
 #endif

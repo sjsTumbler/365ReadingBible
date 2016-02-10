@@ -88,6 +88,7 @@
 		EA8AC7611C68DC9C005247B8 /* select_mark_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */; };
 		EA8AC7621C68DC9C005247B8 /* select_mark_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */; };
 		EA8AC7631C68DC9C005247B8 /* select_mark_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */; };
+		EA8AC7681C6B70BA005247B8 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7671C6B70BA005247B8 /* StatusModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -262,6 +263,8 @@
 		EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_nor@2x.png"; sourceTree = "<group>"; };
 		EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_mark_sel.png; sourceTree = "<group>"; };
 		EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_sel@2x.png"; sourceTree = "<group>"; };
+		EA8AC7661C6B70BA005247B8 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
+		EA8AC7671C6B70BA005247B8 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
 		EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一年365日每日读经计划.doc"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -650,6 +653,8 @@
 				EAE086961C562240007D699E /* old_nivModel.m */,
 				EAE086971C562240007D699E /* Sandbox */,
 				EA88219C1C62470200376266 /* ModelHeader.h */,
+				EA8AC7661C6B70BA005247B8 /* StatusModel.h */,
+				EA8AC7671C6B70BA005247B8 /* StatusModel.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1033,6 +1038,7 @@
 				EA03AFCB1C62E36E007B486B /* SJSReadNotePopView.m in Sources */,
 				EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */,
 				EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */,
+				EA8AC7681C6B70BA005247B8 /* StatusModel.m in Sources */,
 				EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */,
 				EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */,
 				EAE086D91C562240007D699E /* RootViewController.m in Sources */,

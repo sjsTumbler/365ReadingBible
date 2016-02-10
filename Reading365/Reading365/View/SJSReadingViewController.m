@@ -93,8 +93,9 @@
     }
     for (UIView * view in cell.subviews) {
         if ([view isKindOfClass:[UIButton class]]) {
-            view.tag = indexPath.section*10 + indexPath.row;
-            if ([[[self.dayData objectAtIndex:indexPath.row]objectForKey:@"isRead"] isEqualToString:@"0"]) {
+            int sectionNow = [[[self.dayData firstObject]objectForKey:@"onlyTag"]intValue]/1000;
+            view.tag = (sectionNow+1)*1000 + indexPath.row+1;
+            if ([[[ReadPlistManager sharedReadPlistManager]getStatusOfBuble:view.tag ] isEqualToString:@"0"]) {
                 ((UIButton *)view).selected = NO;
             }else {
                 ((UIButton *)view).selected = YES;

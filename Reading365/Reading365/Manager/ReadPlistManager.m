@@ -74,6 +74,7 @@
  @brief 创建数据表
  */
 - (void)buildTables {
+    [[DataFactory shardDataFactory]CreateDataBase];
     [[DataFactory shardDataFactory]CreateTable];
 }
 
@@ -171,15 +172,72 @@
     NSDictionary * dataDic = [dataArray objectAtIndex:index];
     return [dataDic objectForKey:@"title"];
 }
-//标记经文已读或未读
-- (void)setStatusOfBibleBy:(NSUInteger)tag  isRead:(NSString *)isRead{
-    NSString *path = [[NSBundle mainBundle]pathForResource:PlistName ofType:@"plist"];
-    if ([self isFilePathExist:path isDir:NO]) {
-        NSMutableArray *plistArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
-        NSMutableDictionary * dataDic = [[NSMutableDictionary alloc]initWithDictionary: [[plistArray objectAtIndex:tag/10]objectAtIndex:tag%10]];
-        [dataDic setValue:isRead forKey:@"isRead"];
-        [[plistArray objectAtIndex:tag/10]insertObject:dataDic atIndex:tag%10];
-        [plistArray writeToFile:path atomically:YES];
+//获取读经状态
+- (NSString *)getStatusOfBuble:(NSInteger)tag {
+    NSString * onlyTag = @"";
+    __block NSString * statusStr = @"0";
+    switch (tag%1000) {
+        case 1:
+        case 3:
+        case 4:{
+            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+1000000];
+        }
+            break;
+        case 2:{
+            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+2000000];
+        }
+            break;
+        default:
+            break;
     }
+    NSMutableDictionary * search = [NSMutableDictionary dictionary];
+    [search setValue:onlyTag forKey:@"onlyTag"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:status callback:^(NSArray *resultArray) {
+        if (resultArray.count > 0) {
+            StatusModel * model = [resultArray firstObject];
+            statusStr = model.status;
+        }
+    }];
+    return statusStr;
+}
+ #pragma mark  修改经文已读或未读
+/**
+ @author Jesus       , 16-02-10 22:02:54
+ 
+ @brief 修改经文已读或未读
+ 
+ @param tag    唯一字段
+ @param isRead 状态
+ */
+- (void)setStatusOfBibleBy:(NSInteger)tag  isRead:(NSString *)isRead{
+    NSString * onlyTag = @"";
+    switch (tag%1000) {
+        case 1:
+        case 3:
+        case 4:{
+            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+1000000];
+        }
+            break;
+        case 2:{
+            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+2000000];
+        }
+            break;
+        default:
+            break;
+    }
+    NSMutableDictionary * search = [NSMutableDictionary dictionary];
+    [search setValue:onlyTag forKey:@"onlyTag"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:status callback:^(NSArray *resultArray) {
+        if (resultArray.count > 0) {
+            StatusModel * model = [resultArray firstObject];
+            model.status = isRead;
+            [[DataFactory shardDataFactory]updateToDB:model Classtype:status];
+        }else {
+            StatusModel * model = [[StatusModel alloc]init];
+            model.onlyTag = onlyTag;
+            model.status = isRead;
+            [[DataFactory shardDataFactory] insertToDB:model Classtype:status];
+        }
+    }];
 }
 @end
