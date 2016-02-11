@@ -15,11 +15,49 @@
 @end
 
 @implementation SJSListViewController
-
+{
+    UISegmentedControl * _segCon;
+    int                  _oldOrNew;//0-old,1-new
+    NSMutableArray     * _oldList;
+    NSMutableArray     * _newList;
+    NSMutableArray     * _showList;
+    UITableView        * _listTable;
+    NSInteger        _currentSection;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initData];
     [self setNav];
+    [self setSegmnet];
+    [self setTable];
+}
+- (void)initData {
+    _oldList = [[NSMutableArray alloc]init];
+    _newList = [[NSMutableArray alloc]init];
+    //101-139
+    for (int i = 101; i<=139; i++) {
+        HeadView* headview = [[HeadView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, moreListSectionHeight)];
+        headview.delegate = self;
+        headview.section = i;
+        IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:i];
+        if (model != nil) {
+            [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
+        }
+        [_oldList addObject:headview];
+    }
+    //201-227
+    for (int j = 201; j<=227; j++) {
+        HeadView* headview = [[HeadView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, moreListSectionHeight)];
+        headview.delegate = self;
+        headview.section = j;
+        IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:j];
+        if (model != nil) {
+            [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
+        }
+        [_newList addObject:headview];
+    }
+    _showList = [[NSMutableArray alloc]initWithArray:_oldList];
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:@"目录索引"];
@@ -30,6 +68,171 @@
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+//设置分段处理器
+- (void)setSegmnet {
+    // 分段选择器
+    _segCon = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"旧约",@"新约", nil]];
+    _segCon.frame = CGRectMake(0, navigationBarHight , viewWidth, segmentedHeight);
+    // 设置默认值
+    _segCon.selectedSegmentIndex = 0;
+    _oldOrNew = 0;
+    // 添加事件
+    [_segCon addTarget:self action:@selector(segClick:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.view addSubview:_segCon];
+}
+- (void)segClick:(UISegmentedControl *)seg
+{
+    _oldOrNew = (int)seg.selectedSegmentIndex;
+    if (_oldOrNew == 0) {
+        for(int i = 0;i<[_oldList count];i++)
+        {
+            HeadView *head = [_oldList objectAtIndex:i];
+            head.open = NO;
+            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+        }
+        [_showList removeAllObjects];
+        [_showList addObjectsFromArray:_oldList];
+        [_listTable reloadData];
+    }else{
+        for(int i = 0;i<[_newList count];i++)
+        {
+            HeadView *head = [_newList objectAtIndex:i];
+            head.open = NO;
+            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+        }
+        [_showList removeAllObjects];
+        [_showList addObjectsFromArray:_newList];
+        [_listTable reloadData];
+    }
+}
+- (void)setTable {
+    _listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight+segmentedHeight, viewWidth, viewHeight-navigationBarHight-segmentedHeight)];
+    _listTable.delegate = self;
+    _listTable.dataSource = self;
+    _listTable.tableFooterView=[[UIView alloc]init];
+    [self.view addSubview:_listTable];
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [_showList count];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    HeadView* headView = [_showList objectAtIndex:section];
+    IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
+    return headView.open?[model.TOTALNUM intValue]:0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HeadView* headView = [_showList objectAtIndex:indexPath.section];
+    
+    return headView.open?cellHeight:0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return moreListSectionHeight;
+}
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [_showList objectAtIndex:section];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * cellName = @"cellName";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row+1];
+    cell.textLabel.textColor = [UIColor orangeColor];
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SJSReadNoteViewController * rnvc = [[SJSReadNoteViewController alloc]init];
+    rnvc.readType = indexing;
+    HeadView* headView = [_showList objectAtIndex:indexPath.section];
+    rnvc.viewTitle = headView.backBtn.titleLabel.text;
+    if (_oldOrNew ==0) {
+        rnvc.dataType = old_cuv;
+    }else{
+        rnvc.dataType = new_cuv;
+    }
+    rnvc.sectionName = [NSString stringWithFormat:@"第%ld章",indexPath.row+1];
+    rnvc.k_id = [NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1];
+    [self.navigationController pushViewController:rnvc animated:NO];
+}
+#pragma mark - HeadViewdelegate
+-(void)selectedWith:(HeadView *)view{
+    if (view.open) {//之前处于打开状态
+        if (_oldOrNew == 0) {
+            for(int i = 0;i<[_oldList count];i++)
+            {
+                HeadView *head = [_oldList objectAtIndex:i];
+                head.open = NO;
+                [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+            }
+            [_showList removeAllObjects];
+            [_showList addObjectsFromArray:_oldList];
+            [_listTable reloadData];
+            return;
+        }else{
+            for(int i = 0;i<[_newList count];i++)
+            {
+                HeadView *head = [_newList objectAtIndex:i];
+                head.open = NO;
+                [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+            }
+            [_showList removeAllObjects];
+            [_showList addObjectsFromArray:_newList];
+            [_listTable reloadData];
+            return;
+        }
+     
+    }
+    _currentSection = view.section;
+    [self reset];
+    
+}
+
+//界面重置
+- (void)reset
+{
+    if (_oldOrNew == 0) {
+        for(int i = 0;i<[_oldList count];i++)
+        {
+            HeadView *head = [_oldList objectAtIndex:i];
+            
+            if(head.section == _currentSection)
+            {
+                head.open = YES;
+                //只显示当前打开的组
+                [_showList removeAllObjects];
+                [_showList addObject:head];
+                
+            }else {
+                head.open = NO;
+            }
+        }
+    }else{
+        for(int i = 0;i<[_newList count];i++)
+        {
+            HeadView *head = [_newList objectAtIndex:i];
+            
+            if(head.section == _currentSection)
+            {
+                head.open = YES;
+                //只显示当前打开的组
+                [_showList removeAllObjects];
+                [_showList addObject:head];
+                
+            }else {
+                head.open = NO;
+            }
+        }
+    }
+    
+    //所有的组都打开
+    //    [self.showHeaderArray removeAllObjects];
+    //    [self.showHeaderArray addObjectsFromArray:headViewArray];
+    [_listTable reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

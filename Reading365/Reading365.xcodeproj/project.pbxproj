@@ -95,6 +95,8 @@
 		EA8AC77C1C6C3294005247B8 /* old_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7731C6C3294005247B8 /* old_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EA8AC77D1C6C3294005247B8 /* old_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7751C6C3294005247B8 /* old_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EA8AC77E1C6C3294005247B8 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7771C6C3294005247B8 /* StatusModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC7851C6C6C3F005247B8 /* IndexingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7841C6C6C3F005247B8 /* IndexingModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC7881C6C7FCA005247B8 /* SJSListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7871C6C7FCA005247B8 /* SJSListManager.m */; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -277,6 +279,10 @@
 		EA8AC7751C6C3294005247B8 /* old_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_nivModel.m; sourceTree = "<group>"; };
 		EA8AC7761C6C3294005247B8 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
 		EA8AC7771C6C3294005247B8 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
+		EA8AC7831C6C6C3F005247B8 /* IndexingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingModel.h; sourceTree = "<group>"; };
+		EA8AC7841C6C6C3F005247B8 /* IndexingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingModel.m; sourceTree = "<group>"; };
+		EA8AC7861C6C7FCA005247B8 /* SJSListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSListManager.h; sourceTree = "<group>"; };
+		EA8AC7871C6C7FCA005247B8 /* SJSListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSListManager.m; sourceTree = "<group>"; };
 		EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一年365日每日读经计划.doc"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -370,6 +376,8 @@
 				EA75FC991C5A5D8D00B10E87 /* SJSListViewController.h */,
 				EA75FC9A1C5A5D8D00B10E87 /* SJSListViewController.m */,
 				EA75FC9B1C5A5D8D00B10E87 /* SJSListViewController.xib */,
+				EA8AC7861C6C7FCA005247B8 /* SJSListManager.h */,
+				EA8AC7871C6C7FCA005247B8 /* SJSListManager.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -586,6 +594,8 @@
 				EA8AC7751C6C3294005247B8 /* old_nivModel.m */,
 				EA8AC7761C6C3294005247B8 /* StatusModel.h */,
 				EA8AC7771C6C3294005247B8 /* StatusModel.m */,
+				EA8AC7831C6C6C3F005247B8 /* IndexingModel.h */,
+				EA8AC7841C6C6C3F005247B8 /* IndexingModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1041,6 +1051,8 @@
 				EAE086E41C5622CE007D699E /* AppDelegate.m in Sources */,
 				EAE086571C5621AB007D699E /* main.m in Sources */,
 				EAE0871A1C565AC2007D699E /* PublicFunctions.m in Sources */,
+				EA8AC7881C6C7FCA005247B8 /* SJSListManager.m in Sources */,
+				EA8AC7851C6C6C3F005247B8 /* IndexingModel.m in Sources */,
 				EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */,
 				EA03AFCB1C62E36E007B486B /* SJSReadNotePopView.m in Sources */,
 				EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */,

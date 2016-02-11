@@ -28,6 +28,7 @@
 #define labelHeight 21.0
 #define sectionHeight 30.0
 #define edages 15.0
+#define segmentedHeight 35.0
 
 //按钮的Tag值
 #define nav_right_tag 101

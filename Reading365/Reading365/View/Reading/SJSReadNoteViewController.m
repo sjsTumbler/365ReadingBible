@@ -35,7 +35,12 @@
 }
 - (void)initData {
     self.dataArray = [[NSMutableArray alloc]init];
-    self.dataArray =  [[SJSReadNoteManager sharedReadNoteManager]searchBibleByDataDic:_dataDic DBType:_dataType];
+    if (self.readType == 0) {
+        self.dataArray =  [[SJSReadNoteManager sharedReadNoteManager]searchBibleByDataDic:_dataDic DBType:_dataType];
+        
+    }else{
+        self.dataArray = [[SJSReadNoteManager sharedReadNoteManager]searchBibleByk_id:self.k_id DBType:self.dataType];
+    }
     _cellHeightArray = [[NSMutableArray alloc]initWithArray:[[SJSReadNoteManager sharedReadNoteManager]getAutoCellHeightByModels:self.dataArray Type:_dataType]];
 }
 - (void)setNav {
@@ -46,7 +51,9 @@
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:NO];
-    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+    if (self.readType == 0) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+    }
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     CGPoint point = CGPointMake(1, 0);
@@ -72,7 +79,11 @@
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UILabel * sectionTitle = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth-edages,sectionHeight)];
-    sectionTitle.text = [self.dataDic objectForKey:@"title"];
+    if (self.readType == 0) {
+        sectionTitle.text = [self.dataDic objectForKey:@"title"];
+    }else {
+        sectionTitle.text = self.sectionName;
+    }
     sectionTitle.textAlignment = NSTextAlignmentLeft;
     sectionTitle.font = [UIFont systemFontOfSize:15];
     UIView * sectionView = [[UIView alloc]init];

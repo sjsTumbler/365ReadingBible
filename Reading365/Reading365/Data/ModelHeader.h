@@ -16,4 +16,5 @@
 #import "old_nivModel.h"
 
 #import "StatusModel.h"
+#import "IndexingModel.h"
 #endif

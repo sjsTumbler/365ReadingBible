@@ -7,10 +7,16 @@
 //
 
 #import "RootViewController.h"
+#import "HeadView.h"
+#import "SJSListManager.h"
+#import "SJSReadNoteViewController.h"
 
 @interface SJSListViewController : RootViewController
 <
-SJSNavigationDelegate
+SJSNavigationDelegate,
+HeadViewDelegate,
+UITableViewDelegate,
+UITableViewDataSource
 >
 
 @end

@@ -19,4 +19,6 @@
 - (NSMutableArray *)getAutoCellHeightByModels:(NSMutableArray *)modelArry Type:(FSO)type;
 //根据经文字典从数据库中找到对应的经文并返回
 - (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic DBType:(FSO)type;
+//根据k_id从数据库中找到对应的经文并返回
+- (NSMutableArray *)searchBibleByk_id:(NSString *)k_id DBType:(FSO)type;
 @end

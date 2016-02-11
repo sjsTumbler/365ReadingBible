@@ -27,6 +27,7 @@ typedef enum
     old_niv,//英文版旧约
     
     status,//经文状态
+    t_CH_EN,//目录索引
 }
 FSO;//这个是枚举是区别不同的实体
 +(DataFactory *)shardDataFactory;

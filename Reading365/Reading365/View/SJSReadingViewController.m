@@ -135,6 +135,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SJSReadNoteViewController * readNote = [[SJSReadNoteViewController alloc]init];
 //    readNote.viewTitle = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    readNote.readType = plan;
     readNote.dataDic = [self.dayData objectAtIndex:indexPath.row];
     switch (indexPath.row) {
         case 0:{
@@ -165,7 +166,7 @@
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{
-    if (view.open) {
+    if (view.open) {//之前处于打开状态
         for(int i = 0;i<[self.headViewArray count];i++)
         {
             HeadView *head = [self.headViewArray objectAtIndex:i];

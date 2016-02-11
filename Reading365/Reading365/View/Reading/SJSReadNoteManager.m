@@ -141,4 +141,26 @@
     }
     return result;
 }
+#pragma mark   根据k_id从数据库中找到对应的经文并返回
+/**
+ @author Jesus       , 16-02-11 18:02:49
+ 
+ @brief 根据k_id从数据库中找到对应的经文并返回
+ 
+ @param k_id 经文卷章
+ @param type 数据库类型
+ 
+ @return models
+ */
+- (NSMutableArray *)searchBibleByk_id:(NSString *)k_id DBType:(FSO)type {
+    NSMutableArray * result = [[NSMutableArray alloc]init];
+    NSMutableDictionary * search = [NSMutableDictionary dictionary];
+    [search setValue:k_id forKey:@"k_id"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:@"col_005" offset:0 count:100 Classtype:type callback:^(NSArray *resultArray) {
+        if (resultArray.count > 0) {
+            [result addObjectsFromArray:resultArray];
+        }
+    }];
+    return result;
+}
 @end
