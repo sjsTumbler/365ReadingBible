@@ -10,13 +10,15 @@
 #import "HeadView.h"
 #import "SJSListManager.h"
 #import "SJSReadNoteViewController.h"
+#import "SJSListTableViewCell.h"
 
 @interface SJSListViewController : RootViewController
 <
 SJSNavigationDelegate,
 HeadViewDelegate,
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+IndexingReadingDelegate
 >
 
 @end

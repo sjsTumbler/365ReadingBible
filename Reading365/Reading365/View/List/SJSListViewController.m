@@ -119,13 +119,13 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     HeadView* headView = [_showList objectAtIndex:section];
-    IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
-    return headView.open?[model.TOTALNUM intValue]:0;
+    return headView.open?1:0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     HeadView* headView = [_showList objectAtIndex:indexPath.section];
-    
-    return headView.open?cellHeight:0;
+    IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
+    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]<6)?1:0);
+    return headView.open?lines*50:0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return moreListSectionHeight;
@@ -135,29 +135,40 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellName = @"cellName";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    SJSListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+        cell = [[SJSListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row+1];
-    cell.textLabel.textColor = [UIColor orangeColor];
-    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    HeadView* headView = [_showList objectAtIndex:indexPath.section];
+    IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
+    [cell setCellByModel:model];
+    cell.delegate = self;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    SJSReadNoteViewController * rnvc = [[SJSReadNoteViewController alloc]init];
-    rnvc.readType = indexing;
-    HeadView* headView = [_showList objectAtIndex:indexPath.section];
-    rnvc.viewTitle = headView.backBtn.titleLabel.text;
-    if (_oldOrNew ==0) {
-        rnvc.dataType = old_cuv;
-    }else{
-        rnvc.dataType = new_cuv;
-    }
-    rnvc.sectionName = [NSString stringWithFormat:@"第%ld章",indexPath.row+1];
-    rnvc.k_id = [NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1];
-    [self.navigationController pushViewController:rnvc animated:NO];
+}
+#pragma mark  点击“卷章”,进入对应经文的阅读
+/**
+ @author Jesus       , 16-02-12 00:02:06
+ 
+ @brief 点击“卷章”,进入对应经文的阅读
+ 
+ @param index collection
+ */
+- (void)didSelectedCollectionIndex:(NSIndexPath *)indexPath {
+        SJSReadNoteViewController * rnvc = [[SJSReadNoteViewController alloc]init];
+        rnvc.readType = indexing;
+        HeadView* headView = [_showList objectAtIndex:indexPath.section];
+        rnvc.viewTitle = headView.backBtn.titleLabel.text;
+        if (_oldOrNew ==0) {
+            rnvc.dataType = old_cuv;
+        }else{
+            rnvc.dataType = new_cuv;
+        }
+        rnvc.sectionName = [NSString stringWithFormat:@"第%ld章",indexPath.row+1];
+        rnvc.k_id = [NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1];
+        [self.navigationController pushViewController:rnvc animated:NO];
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{
@@ -228,7 +239,6 @@
             }
         }
     }
-    
     //所有的组都打开
     //    [self.showHeaderArray removeAllObjects];
     //    [self.showHeaderArray addObjectsFromArray:headViewArray];
@@ -238,15 +248,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
