@@ -21,8 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //初始化数据库
-    [[ReadPlistManager sharedReadPlistManager]initHolyBibleData];
-    
+    [self performSelectorInBackground:@selector(initDataBase) withObject:nil];
     _iTabBar = [[UITabBarController alloc]init];
     UINavigationController * readNav = [[UINavigationController alloc]initWithRootViewController:[[SJSReadingViewController alloc]init]];
     UINavigationController * setNav = [[UINavigationController alloc]initWithRootViewController:[[SJSSettingViewController alloc]init]];
@@ -41,6 +40,9 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showTabbar) name:ShowTabbar object:nil];
     
     return YES;
+}
+- (void)initDataBase {
+    [[ReadPlistManager sharedReadPlistManager]initHolyBibleData];
 }
  #pragma mark  tabbar 点击方法
 /**

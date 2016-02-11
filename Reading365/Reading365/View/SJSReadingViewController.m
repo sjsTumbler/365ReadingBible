@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+//     [self performSelectorInBackground:@selector(initData) withObject:nil];
     [self initData];
     [self setNav];
     [self setTable];
@@ -27,8 +28,12 @@
 - (void)initData {
     //需要在此前跳出设置读经开始日期的弹框，否则默认为1月1号
     self.headViewArray = [[NSMutableArray alloc]init ];
-    for(int i = 1;i<= 365 ;i++)
+    for(int i = 1;i<= 16 ;i++)
     {
+//      先判断是否已读，已读则不显示
+        if ([[ReadPlistManager sharedReadPlistManager]getSatusOfBibleByDay:i]) {
+            continue;
+        }
         HeadView* headview = [[HeadView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, moreListSectionHeight)];
         headview.delegate = self;
         headview.section = i;
@@ -94,8 +99,8 @@
     for (UIView * view in cell.subviews) {
         if ([view isKindOfClass:[UIButton class]]) {
             int sectionNow = [[[self.dayData firstObject]objectForKey:@"onlyTag"]intValue]/1000;
-            view.tag = (sectionNow+1)*1000 + indexPath.row+1;
-            if ([[[ReadPlistManager sharedReadPlistManager]getStatusOfBuble:view.tag ] isEqualToString:@"0"]) {
+            view.tag = sectionNow*1000 + indexPath.row+1;
+            if ([[[ReadPlistManager sharedReadPlistManager]getStatusOfBible:view.tag ] isEqualToString:@"0"]) {
                 ((UIButton *)view).selected = NO;
             }else {
                 ((UIButton *)view).selected = YES;

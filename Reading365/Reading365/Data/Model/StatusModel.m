@@ -37,6 +37,9 @@ const static NSString* tablename = @"status";//表名
     {
         _onlyTag       =  [dic objectForKey:@"onlyTag"];
         _status        =  [dic objectForKey:@"status"];
+        _version       =  [[dic objectForKey:@"version"]intValue] ;
+        _day           =  [[dic objectForKey:@"day"]intValue];
+        _part          =  [[dic objectForKey:@"part"]intValue];
     }
     return self;
 }

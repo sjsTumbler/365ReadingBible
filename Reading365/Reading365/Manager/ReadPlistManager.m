@@ -172,26 +172,21 @@
     NSDictionary * dataDic = [dataArray objectAtIndex:index];
     return [dataDic objectForKey:@"title"];
 }
-//获取读经状态
-- (NSString *)getStatusOfBuble:(NSInteger)tag {
-    NSString * onlyTag = @"";
+#pragma mark  获取某段经文的阅读状态
+/**
+ @author Jesus         , 16-02-11 11:02:53
+ 
+ @brief 获取某段经文的阅读状态
+ 
+ @param tag
+ 
+ @return 0 or 1
+ */
+- (NSString *)getStatusOfBible:(NSInteger)tag {
     __block NSString * statusStr = @"0";
-    switch (tag%1000) {
-        case 1:
-        case 3:
-        case 4:{
-            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+1000000];
-        }
-            break;
-        case 2:{
-            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+2000000];
-        }
-            break;
-        default:
-            break;
-    }
+    tag = tag + 1000000;
     NSMutableDictionary * search = [NSMutableDictionary dictionary];
-    [search setValue:onlyTag forKey:@"onlyTag"];
+    [search setValue:@(tag) forKey:@"onlyTag"];
     [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:status callback:^(NSArray *resultArray) {
         if (resultArray.count > 0) {
             StatusModel * model = [resultArray firstObject];
@@ -210,21 +205,7 @@
  @param isRead 状态
  */
 - (void)setStatusOfBibleBy:(NSInteger)tag  isRead:(NSString *)isRead{
-    NSString * onlyTag = @"";
-    switch (tag%1000) {
-        case 1:
-        case 3:
-        case 4:{
-            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+1000000];
-        }
-            break;
-        case 2:{
-            onlyTag = [NSString stringWithFormat:@"%lu",(unsigned long)tag+2000000];
-        }
-            break;
-        default:
-            break;
-    }
+    NSString * onlyTag = [NSString stringWithFormat:@"%ld",tag+1000000];
     NSMutableDictionary * search = [NSMutableDictionary dictionary];
     [search setValue:onlyTag forKey:@"onlyTag"];
     [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:status callback:^(NSArray *resultArray) {
@@ -236,8 +217,46 @@
             StatusModel * model = [[StatusModel alloc]init];
             model.onlyTag = onlyTag;
             model.status = isRead;
+            model.version = 1;
+            model.day = (int)tag/1000;
+            model.part = (int)tag%1000;
             [[DataFactory shardDataFactory] insertToDB:model Classtype:status];
         }
     }];
+}
+
+#pragma mark  获取某天的读经状态
+/**
+ @author Jesus        , 16-02-11 08:02:02
+ 
+ @brief 获取某天的读经状态
+ 
+ @param day
+ 
+ @return YES OR NO
+ */
+- (BOOL)getSatusOfBibleByDay:(int)day {
+    __block BOOL isRead = NO;
+    NSMutableDictionary * search = [NSMutableDictionary dictionary];
+    [search setValue:@(day) forKey:@"day"];
+    [search setValue:@(1) forKey:@"version"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:status callback:^(NSArray *resultArray) {
+        if (resultArray.count == 4) {
+            int readNumber = 0;
+            for(StatusModel *model in resultArray){
+                if ([model.status isEqualToString:@"1"]) {
+                    readNumber++;
+                }
+            }
+            if (readNumber == 4) {
+                isRead = YES;
+            }else {
+                isRead = NO;
+            }
+        }else{
+            isRead = NO;
+        }
+    }];
+    return isRead;
 }
 @end

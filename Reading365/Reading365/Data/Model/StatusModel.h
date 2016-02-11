@@ -14,8 +14,9 @@
 @interface StatusModel : LKModelBase
 /*
  唯一字段，9位数，
- 前三位为版本 001:和合本旧约；
-            002:和合本新约
+ 前三位为版本 001:和合本
+            002:繁体本
+            003:英文本
  中间三位为天数，如第101天：101，
  后三位为对应的模块，旧约：001，新约：002，诗篇：003，箴言：004
  
@@ -27,6 +28,9 @@
  */
 @property (copy,nonatomic)   NSString  * onlyTag;
 @property (copy,nonatomic)   NSString  * status;//0为未读，1为已读
+@property (assign,nonatomic)   int       version;//版本
+@property (assign,nonatomic)   int       day;    //天
+@property (assign,nonatomic)   int       part;   //经文的模块
 
 - (id)init;
 - (id)initWithJsonDictionary:(NSDictionary*)dic;

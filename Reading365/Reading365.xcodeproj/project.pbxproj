@@ -88,7 +88,13 @@
 		EA8AC7611C68DC9C005247B8 /* select_mark_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */; };
 		EA8AC7621C68DC9C005247B8 /* select_mark_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */; };
 		EA8AC7631C68DC9C005247B8 /* select_mark_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */; };
-		EA8AC7681C6B70BA005247B8 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7671C6B70BA005247B8 /* StatusModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC7781C6C3294005247B8 /* new_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC76B1C6C3294005247B8 /* new_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC7791C6C3294005247B8 /* new_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC76D1C6C3294005247B8 /* new_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC77A1C6C3294005247B8 /* new_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC76F1C6C3294005247B8 /* new_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC77B1C6C3294005247B8 /* old_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7711C6C3294005247B8 /* old_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC77C1C6C3294005247B8 /* old_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7731C6C3294005247B8 /* old_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC77D1C6C3294005247B8 /* old_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7751C6C3294005247B8 /* old_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA8AC77E1C6C3294005247B8 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8AC7771C6C3294005247B8 /* StatusModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086571C5621AB007D699E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086561C5621AB007D699E /* main.m */; };
 		EAE086601C5621AB007D699E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0865E1C5621AB007D699E /* Main.storyboard */; };
 		EAE086621C5621AB007D699E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE086611C5621AB007D699E /* Images.xcassets */; };
@@ -96,12 +102,6 @@
 		EAE086711C5621AB007D699E /* Reading365Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086701C5621AB007D699E /* Reading365Tests.m */; };
 		EAE086BE1C562240007D699E /* 项目策划 in Resources */ = {isa = PBXBuildFile; fileRef = EAE0867A1C562240007D699E /* 项目策划 */; };
 		EAE086BF1C562240007D699E /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0867D1C562240007D699E /* DataFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086C61C562240007D699E /* new_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0868C1C562240007D699E /* new_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086C71C562240007D699E /* new_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0868E1C562240007D699E /* new_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086C81C562240007D699E /* new_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086901C562240007D699E /* new_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086C91C562240007D699E /* old_cuvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086921C562240007D699E /* old_cuvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086CA1C562240007D699E /* old_ncvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086941C562240007D699E /* old_ncvModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EAE086CB1C562240007D699E /* old_nivModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086961C562240007D699E /* old_nivModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EAE086CC1C562240007D699E /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE086991C562240007D699E /* SandboxFile.m */; };
 		EAE086CD1C562240007D699E /* HolyBible.db in Resources */ = {isa = PBXBuildFile; fileRef = EAE0869B1C562240007D699E /* HolyBible.db */; };
 		EAE086D01C562240007D699E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE0869F1C562240007D699E /* Default-568h@2x.png */; };
@@ -263,8 +263,20 @@
 		EA8AC75D1C68DC9C005247B8 /* select_mark_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_nor@2x.png"; sourceTree = "<group>"; };
 		EA8AC75E1C68DC9C005247B8 /* select_mark_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_mark_sel.png; sourceTree = "<group>"; };
 		EA8AC75F1C68DC9C005247B8 /* select_mark_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_mark_sel@2x.png"; sourceTree = "<group>"; };
-		EA8AC7661C6B70BA005247B8 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
-		EA8AC7671C6B70BA005247B8 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
+		EA8AC76A1C6C3294005247B8 /* new_cuvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_cuvModel.h; sourceTree = "<group>"; };
+		EA8AC76B1C6C3294005247B8 /* new_cuvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_cuvModel.m; sourceTree = "<group>"; };
+		EA8AC76C1C6C3294005247B8 /* new_ncvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_ncvModel.h; sourceTree = "<group>"; };
+		EA8AC76D1C6C3294005247B8 /* new_ncvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_ncvModel.m; sourceTree = "<group>"; };
+		EA8AC76E1C6C3294005247B8 /* new_nivModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_nivModel.h; sourceTree = "<group>"; };
+		EA8AC76F1C6C3294005247B8 /* new_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_nivModel.m; sourceTree = "<group>"; };
+		EA8AC7701C6C3294005247B8 /* old_cuvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_cuvModel.h; sourceTree = "<group>"; };
+		EA8AC7711C6C3294005247B8 /* old_cuvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_cuvModel.m; sourceTree = "<group>"; };
+		EA8AC7721C6C3294005247B8 /* old_ncvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_ncvModel.h; sourceTree = "<group>"; };
+		EA8AC7731C6C3294005247B8 /* old_ncvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_ncvModel.m; sourceTree = "<group>"; };
+		EA8AC7741C6C3294005247B8 /* old_nivModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_nivModel.h; sourceTree = "<group>"; };
+		EA8AC7751C6C3294005247B8 /* old_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_nivModel.m; sourceTree = "<group>"; };
+		EA8AC7761C6C3294005247B8 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
+		EA8AC7771C6C3294005247B8 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
 		EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一年365日每日读经计划.doc"; sourceTree = "<group>"; };
 		EAE086511C5621AB007D699E /* Reading365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE086551C5621AB007D699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -278,18 +290,6 @@
 		EAE0867A1C562240007D699E /* 项目策划 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目策划"; sourceTree = "<group>"; };
 		EAE0867C1C562240007D699E /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
 		EAE0867D1C562240007D699E /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
-		EAE0868B1C562240007D699E /* new_cuvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_cuvModel.h; sourceTree = "<group>"; };
-		EAE0868C1C562240007D699E /* new_cuvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_cuvModel.m; sourceTree = "<group>"; };
-		EAE0868D1C562240007D699E /* new_ncvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_ncvModel.h; sourceTree = "<group>"; };
-		EAE0868E1C562240007D699E /* new_ncvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_ncvModel.m; sourceTree = "<group>"; };
-		EAE0868F1C562240007D699E /* new_nivModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = new_nivModel.h; sourceTree = "<group>"; };
-		EAE086901C562240007D699E /* new_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = new_nivModel.m; sourceTree = "<group>"; };
-		EAE086911C562240007D699E /* old_cuvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_cuvModel.h; sourceTree = "<group>"; };
-		EAE086921C562240007D699E /* old_cuvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_cuvModel.m; sourceTree = "<group>"; };
-		EAE086931C562240007D699E /* old_ncvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_ncvModel.h; sourceTree = "<group>"; };
-		EAE086941C562240007D699E /* old_ncvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_ncvModel.m; sourceTree = "<group>"; };
-		EAE086951C562240007D699E /* old_nivModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_nivModel.h; sourceTree = "<group>"; };
-		EAE086961C562240007D699E /* old_nivModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_nivModel.m; sourceTree = "<group>"; };
 		EAE086981C562240007D699E /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
 		EAE086991C562240007D699E /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
 		EAE0869B1C562240007D699E /* HolyBible.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = HolyBible.db; sourceTree = "<group>"; };
@@ -569,6 +569,27 @@
 			path = Reading;
 			sourceTree = "<group>";
 		};
+		EA8AC7691C6C3294005247B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA8AC76A1C6C3294005247B8 /* new_cuvModel.h */,
+				EA8AC76B1C6C3294005247B8 /* new_cuvModel.m */,
+				EA8AC76C1C6C3294005247B8 /* new_ncvModel.h */,
+				EA8AC76D1C6C3294005247B8 /* new_ncvModel.m */,
+				EA8AC76E1C6C3294005247B8 /* new_nivModel.h */,
+				EA8AC76F1C6C3294005247B8 /* new_nivModel.m */,
+				EA8AC7701C6C3294005247B8 /* old_cuvModel.h */,
+				EA8AC7711C6C3294005247B8 /* old_cuvModel.m */,
+				EA8AC7721C6C3294005247B8 /* old_ncvModel.h */,
+				EA8AC7731C6C3294005247B8 /* old_ncvModel.m */,
+				EA8AC7741C6C3294005247B8 /* old_nivModel.h */,
+				EA8AC7751C6C3294005247B8 /* old_nivModel.m */,
+				EA8AC7761C6C3294005247B8 /* StatusModel.h */,
+				EA8AC7771C6C3294005247B8 /* StatusModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EAE086481C5621AB007D699E = {
 			isa = PBXGroup;
 			children = (
@@ -636,25 +657,12 @@
 		EAE0867B1C562240007D699E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EA8AC7691C6C3294005247B8 /* Model */,
 				EAE086EA1C5629E9007D699E /* FMDB */,
 				EAE0867C1C562240007D699E /* DataFactory.h */,
 				EAE0867D1C562240007D699E /* DataFactory.m */,
-				EAE0868B1C562240007D699E /* new_cuvModel.h */,
-				EAE0868C1C562240007D699E /* new_cuvModel.m */,
-				EAE0868D1C562240007D699E /* new_ncvModel.h */,
-				EAE0868E1C562240007D699E /* new_ncvModel.m */,
-				EAE0868F1C562240007D699E /* new_nivModel.h */,
-				EAE086901C562240007D699E /* new_nivModel.m */,
-				EAE086911C562240007D699E /* old_cuvModel.h */,
-				EAE086921C562240007D699E /* old_cuvModel.m */,
-				EAE086931C562240007D699E /* old_ncvModel.h */,
-				EAE086941C562240007D699E /* old_ncvModel.m */,
-				EAE086951C562240007D699E /* old_nivModel.h */,
-				EAE086961C562240007D699E /* old_nivModel.m */,
 				EAE086971C562240007D699E /* Sandbox */,
 				EA88219C1C62470200376266 /* ModelHeader.h */,
-				EA8AC7661C6B70BA005247B8 /* StatusModel.h */,
-				EA8AC7671C6B70BA005247B8 /* StatusModel.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1000,7 +1008,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA88219A1C61DB6F00376266 /* SJSReadNoteViewController.m in Sources */,
-				EAE086C91C562240007D699E /* old_cuvModel.m in Sources */,
 				EAE086DD1C562240007D699E /* SJSReadingViewController.m in Sources */,
 				EAE086F81C5629F9007D699E /* FMDatabase.m in Sources */,
 				EAE086FA1C5629F9007D699E /* FMDatabasePool.m in Sources */,
@@ -1008,24 +1015,24 @@
 				EAE086FC1C5629F9007D699E /* FMResultSet.m in Sources */,
 				EA8821511C5CBB6600376266 /* JBUnitGridView.m in Sources */,
 				EAE086F91C5629F9007D699E /* FMDatabaseAdditions.m in Sources */,
-				EAE086CB1C562240007D699E /* old_nivModel.m in Sources */,
 				EA88214D1C5CBB6600376266 /* JBSXRCUnitTileView.m in Sources */,
+				EA8AC77B1C6C3294005247B8 /* old_cuvModel.m in Sources */,
 				EA8821531C5CBB6600376266 /* JBUnitView.m in Sources */,
+				EA8AC77D1C6C3294005247B8 /* old_nivModel.m in Sources */,
 				EA8821501C5CBB6600376266 /* JBEventModel.m in Sources */,
 				EA8488CB1C58F72600F4D705 /* SJSSearchViewController.m in Sources */,
 				EA7852FD1C62B9FC0029538F /* SJSReadNoteTableViewCell.m in Sources */,
-				EAE086CA1C562240007D699E /* old_ncvModel.m in Sources */,
 				EA8821581C5CBB6600376266 /* JBBasicFileManager.m in Sources */,
 				EAE086BF1C562240007D699E /* DataFactory.m in Sources */,
 				EAE086DF1C562240007D699E /* SJSSettingViewController.m in Sources */,
 				EA8821591C5CBB6600376266 /* JBImageFileManager.m in Sources */,
-				EAE086C71C562240007D699E /* new_ncvModel.m in Sources */,
 				EA8488C61C58F70A00F4D705 /* SJSCollectionViewController.m in Sources */,
+				EA8AC77C1C6C3294005247B8 /* old_ncvModel.m in Sources */,
 				EAE086FB1C5629F9007D699E /* FMDatabaseQueue.m in Sources */,
 				EA8821541C5CBB6600376266 /* JBWeekdaysBarView.m in Sources */,
 				EA8821561C5CBB6600376266 /* NSDate+Calendar.m in Sources */,
-				EAE086C61C562240007D699E /* new_cuvModel.m in Sources */,
 				EAE086D71C562240007D699E /* STabbar.m in Sources */,
+				EA8AC7791C6C3294005247B8 /* new_ncvModel.m in Sources */,
 				EA75FCA21C5A607E00B10E87 /* SJSStatistricsViewController.m in Sources */,
 				EAE086D41C562240007D699E /* SNavigationBar.m in Sources */,
 				EA88207F1C5B7FE000376266 /* HeadView.m in Sources */,
@@ -1037,13 +1044,14 @@
 				EA75FC9C1C5A5D8D00B10E87 /* SJSListViewController.m in Sources */,
 				EA03AFCB1C62E36E007B486B /* SJSReadNotePopView.m in Sources */,
 				EA7853011C62C1540029538F /* SJSReadNoteManager.m in Sources */,
+				EA8AC7781C6C3294005247B8 /* new_cuvModel.m in Sources */,
 				EA88215A1C5CBB6600376266 /* JBPlistFileManager.m in Sources */,
-				EA8AC7681C6B70BA005247B8 /* StatusModel.m in Sources */,
+				EA8AC77E1C6C3294005247B8 /* StatusModel.m in Sources */,
 				EA88214F1C5CBB6600376266 /* JBCalendarLogic.m in Sources */,
 				EAE086FD1C5629F9007D699E /* LKDaoBase.m in Sources */,
+				EA8AC77A1C6C3294005247B8 /* new_nivModel.m in Sources */,
 				EAE086D91C562240007D699E /* RootViewController.m in Sources */,
 				EA8821931C60A40500376266 /* ReadPlistManager.m in Sources */,
-				EAE086C81C562240007D699E /* new_nivModel.m in Sources */,
 				EA8821551C5CBB6600376266 /* LunarCalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

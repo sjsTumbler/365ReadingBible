@@ -27,7 +27,9 @@
 //根据数据获取title
 - (NSString *)getTitleByData:(NSArray *)dataArray Index:(NSInteger)index;
 //获取读经状态
-- (NSString *)getStatusOfBuble:(NSInteger)tag;
+- (NSString *)getStatusOfBible:(NSInteger)tag;
 //修改经文已读或未读
 - (void)setStatusOfBibleBy:(NSInteger)tag isRead:(NSString *)isRead;//0 为未 1 为已读
+//获取某天的读经状态
+- (BOOL)getSatusOfBibleByDay:(int)day;
 @end
