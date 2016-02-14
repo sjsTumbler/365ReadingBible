@@ -62,8 +62,10 @@ typedef NS_ENUM(NSInteger, dataType){
  type :3 图下字上
  */
 - (UIButton *)imageAndLabelButtonByType:(int)type Label:(NSString *)label LabelTextColor:(UIColor *)iColor NormalImage:(NSString *)normalImage SelectedImage:(NSString *)selectedImage Tag:(int)tag Frame:(CGRect)frame FontSize:(int)fontSize;
-
-
+//017 NSUserDefaults使用方法
+- (void)NSUserDefaults_SaveEditWithValue:(NSString *)value Key:(NSString *)key;
+- (void)NSUserDefaults_DeleteWithKey:(NSString *)key;
+- (NSString *)NSUserDefaults_ReadWithKey:(NSString *)key;
 
 //102 根据不同的附件类型显示图标
 - (void)showAnnexWith:(UIImageView *)imgView FileName:(NSString *)fileName FilePath:(NSString *)filePath;

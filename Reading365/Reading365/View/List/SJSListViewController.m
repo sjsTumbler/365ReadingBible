@@ -22,7 +22,9 @@
     NSMutableArray     * _newList;
     NSMutableArray     * _showList;
     UITableView        * _listTable;
-    NSInteger        _currentSection;
+    UICollectionView   * _listCollection;
+    NSInteger            _currentSection;
+    int                  _tableOrCollection;//0-table,1-collection
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +35,22 @@
     [self setTable];
 }
 - (void)initData {
+    //加载默认的经文卷和展示方式
+    NSString * oldOrNew = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:@"oldOrNew"];
+    if ([[PublicFunctions sharedPublicFunctions]isBlankString:oldOrNew]) {
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"oldOrNew"];
+        _oldOrNew = 0;
+    }else{
+        _oldOrNew = [oldOrNew intValue];
+    }
+    
+    NSString * tableOrCollection = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:@"tableOrCollection"];
+    if ([[PublicFunctions sharedPublicFunctions]isBlankString:tableOrCollection]) {
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"tableOrCollection"];
+        _tableOrCollection = 0;
+    }else{
+        _tableOrCollection = [tableOrCollection intValue];
+    }
     _oldList = [[NSMutableArray alloc]init];
     _newList = [[NSMutableArray alloc]init];
     //101-139
@@ -57,17 +75,40 @@
         }
         [_newList addObject:headview];
     }
-    _showList = [[NSMutableArray alloc]initWithArray:_oldList];
+    if (_oldOrNew == 0) {
+        _showList = [[NSMutableArray alloc]initWithArray:_oldList];
+    }else if (_oldOrNew == 1){
+        _showList = [[NSMutableArray alloc]initWithArray:_newList];
+    }
+    
+    
+    
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:@"目录索引"];
     [self.SNavigationBar setLeftBtn_parentName:@"读经"];
-//    [self.SNavigationBar setLeftBtn_bacK];
-    [self.SNavigationBar setRightBtnTitle:@"列表"];
+    NSString * rightTitle= @"";
+    if (_tableOrCollection == 0) {
+        rightTitle = @"列表";
+    }else if (_tableOrCollection == 1) {
+        rightTitle = @"矩阵";
+    }
+    [self.SNavigationBar setRightBtnTitle:rightTitle];
 }
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+- (void)SJSNavigationRightAction:(UIButton *)sender {
+    if (_tableOrCollection == 0) {
+        _tableOrCollection = 1;
+        [self.SNavigationBar editRightBtnTitle:@"矩阵"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"tableOrCollection"];
+    }else if (_tableOrCollection == 1){
+        _tableOrCollection = 0;
+        [self.SNavigationBar editRightBtnTitle:@"列表"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"tableOrCollection"];
+    }
 }
 //设置分段处理器
 - (void)setSegmnet {
@@ -75,8 +116,7 @@
     _segCon = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"旧约",@"新约", nil]];
     _segCon.frame = CGRectMake(0, navigationBarHight , viewWidth, segmentedHeight);
     // 设置默认值
-    _segCon.selectedSegmentIndex = 0;
-    _oldOrNew = 0;
+    _segCon.selectedSegmentIndex = _oldOrNew;
     // 添加事件
     [_segCon addTarget:self action:@selector(segClick:) forControlEvents:UIControlEventValueChanged];
     
@@ -86,6 +126,7 @@
 {
     _oldOrNew = (int)seg.selectedSegmentIndex;
     if (_oldOrNew == 0) {
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"oldOrNew"];
         for(int i = 0;i<[_oldList count];i++)
         {
             HeadView *head = [_oldList objectAtIndex:i];
@@ -96,6 +137,7 @@
         [_showList addObjectsFromArray:_oldList];
         [_listTable reloadData];
     }else{
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"oldOrNew"];
         for(int i = 0;i<[_newList count];i++)
         {
             HeadView *head = [_newList objectAtIndex:i];
@@ -124,7 +166,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     HeadView* headView = [_showList objectAtIndex:indexPath.section];
     IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
-    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]<6)?1:0);
+    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]%6)?1:0);
     return headView.open?lines*50:0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

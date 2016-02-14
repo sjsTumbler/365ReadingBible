@@ -175,6 +175,10 @@
     [self.leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftBtn];
 }
+//右侧按钮文字变更
+- (void)editRightBtnTitle:(NSString *)title {
+    [self.rightBtn setTitle:title forState:UIControlStateNormal];
+}
 //按钮的代理链接
 -(void)leftBtnAction:(UIButton *)sender{
     if (_delegate != nil && [_delegate respondsToSelector:@selector(SJSNavigationLeftAction:)]) {

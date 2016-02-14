@@ -45,6 +45,7 @@
 - (void)setLeftBtn_bacK;
 //左侧按钮返回图片+上级标题创建
 - (void)setLeftBtn_parentName:(NSString *)parentName;
-
+//右侧按钮文字变更
+- (void)editRightBtnTitle:(NSString *)title;
 
 @end

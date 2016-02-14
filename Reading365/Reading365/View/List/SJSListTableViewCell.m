@@ -20,7 +20,7 @@
     
     [[self.contentView viewWithTag:10089]removeFromSuperview];
     _indexModel = model;
-    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]<6)?1:0);
+    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]%6)?1:0);
     // 1.实例化布局模式
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     // 2.设置item大小

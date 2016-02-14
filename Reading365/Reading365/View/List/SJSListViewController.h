@@ -20,5 +20,4 @@ UITableViewDelegate,
 UITableViewDataSource,
 IndexingReadingDelegate
 >
-
 @end

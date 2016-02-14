@@ -399,6 +399,42 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
     return  imageButton;
 }
 
+#pragma mark  017 集成NSUserDefaults使用方法
+
+/**
+ @author Jesus      , 16-02-13 09:02:05
+ 
+ @brief 017 集成NSUserDefaults使用方法
+ @param value 值
+ @param key   key
+ //注：当NSUserDefaults当暂存使用时，要在使用后及时删除
+ 
+ NSUserDefaults使用注意：NSUserDefaults不支持直接修改！应该用一个变量（初始化后的）作容器，把NSUserDefaults里面的值取出来，而不是一个指向那块内存区间的指针。所以只可进行添加、删除、替换，不支持修改，此处的内存不支持地址访问！！！！
+ 
+ */
+- (void)NSUserDefaults_SaveEditWithValue:(NSString *)value Key:(NSString *)key {
+    NSUserDefaults *ud  = [NSUserDefaults standardUserDefaults];
+    [ud setObject:value forKey:key];
+    [ud synchronize];
+}
+- (void)NSUserDefaults_DeleteWithKey:(NSString *)key {
+    NSUserDefaults *ud  = [NSUserDefaults standardUserDefaults];
+    [ud removeObjectForKey:key];
+    [ud synchronize];
+}
+- (NSString *)NSUserDefaults_ReadWithKey:(NSString *)key {
+    NSUserDefaults *ud  = [NSUserDefaults standardUserDefaults];
+    return [ud objectForKey:key];
+}
+
+
+
+
+
+
+
+
+
 
 
 
