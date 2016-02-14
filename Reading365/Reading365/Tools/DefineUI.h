@@ -28,7 +28,9 @@
 #define labelHeight 21.0
 #define sectionHeight 30.0
 #define edages 15.0
-#define segmentedHeight 35.0
+#define segmentedHeight 35.0 //分段选择器的高度
+#define listNumWH   (viewWidth-20)/6 //章——矩阵宽度、高度
+#define rootListWH  viewWidth/6 //简称--矩阵宽度、高度
 
 //按钮的Tag值
 #define nav_right_tag 101

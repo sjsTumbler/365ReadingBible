@@ -16,7 +16,7 @@
         // Initialization code
         
         _numberLabel = [[UILabel alloc] init];
-        _numberLabel.frame = CGRectMake(0, 0, 50, 50);
+        _numberLabel.frame = CGRectMake(0, 0, listNumWH, listNumWH);
         _numberLabel.backgroundColor = [UIColor whiteColor];
         _numberLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_numberLabel];

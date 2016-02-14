@@ -19,7 +19,9 @@
     UISegmentedControl * _segCon;
     int                  _oldOrNew;//0-old,1-new
     NSMutableArray     * _oldList;
+    NSMutableArray     * _oldRoot;
     NSMutableArray     * _newList;
+    NSMutableArray     * _newRoot;
     NSMutableArray     * _showList;
     UITableView        * _listTable;
     UICollectionView   * _listCollection;
@@ -33,6 +35,7 @@
     [self setNav];
     [self setSegmnet];
     [self setTable];
+    [self setCollection];
 }
 - (void)initData {
     //加载默认的经文卷和展示方式
@@ -53,6 +56,8 @@
     }
     _oldList = [[NSMutableArray alloc]init];
     _newList = [[NSMutableArray alloc]init];
+    _oldRoot = [[NSMutableArray alloc]init];
+    _newRoot = [[NSMutableArray alloc]init];
     //101-139
     for (int i = 101; i<=139; i++) {
         HeadView* headview = [[HeadView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, moreListSectionHeight)];
@@ -63,6 +68,7 @@
             [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
         }
         [_oldList addObject:headview];
+        [_oldRoot addObject:model.CH_Abbre];
     }
     //201-227
     for (int j = 201; j<=227; j++) {
@@ -74,24 +80,22 @@
             [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
         }
         [_newList addObject:headview];
+        [_newRoot addObject:model.CH_Abbre];
     }
     if (_oldOrNew == 0) {
         _showList = [[NSMutableArray alloc]initWithArray:_oldList];
     }else if (_oldOrNew == 1){
         _showList = [[NSMutableArray alloc]initWithArray:_newList];
     }
-    
-    
-    
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:@"目录索引"];
     [self.SNavigationBar setLeftBtn_parentName:@"读经"];
     NSString * rightTitle= @"";
     if (_tableOrCollection == 0) {
-        rightTitle = @"列表";
-    }else if (_tableOrCollection == 1) {
         rightTitle = @"矩阵";
+    }else if (_tableOrCollection == 1) {
+        rightTitle = @"列表";
     }
     [self.SNavigationBar setRightBtnTitle:rightTitle];
 }
@@ -100,13 +104,19 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
-    if (_tableOrCollection == 0) {
+    if (_tableOrCollection == 0) {//显示矩阵，隐藏列表
+        _listCollection.hidden = NO;
+//        [_listCollection reloadData];
+        _listTable.hidden = YES;
         _tableOrCollection = 1;
-        [self.SNavigationBar editRightBtnTitle:@"矩阵"];
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"tableOrCollection"];
-    }else if (_tableOrCollection == 1){
-        _tableOrCollection = 0;
         [self.SNavigationBar editRightBtnTitle:@"列表"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"tableOrCollection"];
+    }else if (_tableOrCollection == 1){//显示列表，隐藏矩阵
+        _tableOrCollection = 0;
+        [self.SNavigationBar editRightBtnTitle:@"矩阵"];
+        _listCollection.hidden = YES;
+        _listTable.hidden = NO;
+//        [_listTable reloadData];
         [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"tableOrCollection"];
     }
 }
@@ -125,7 +135,7 @@
 - (void)segClick:(UISegmentedControl *)seg
 {
     _oldOrNew = (int)seg.selectedSegmentIndex;
-    if (_oldOrNew == 0) {
+    if (_oldOrNew == 0 ) {
         [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"oldOrNew"];
         for(int i = 0;i<[_oldList count];i++)
         {
@@ -136,7 +146,10 @@
         [_showList removeAllObjects];
         [_showList addObjectsFromArray:_oldList];
         [_listTable reloadData];
-    }else{
+        
+        
+        [_listCollection reloadData];
+    }else if (_oldOrNew == 1){
         [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"oldOrNew"];
         for(int i = 0;i<[_newList count];i++)
         {
@@ -147,15 +160,32 @@
         [_showList removeAllObjects];
         [_showList addObjectsFromArray:_newList];
         [_listTable reloadData];
+        
+        
+        [_listCollection reloadData];
     }
 }
+#pragma mark 设置列表
+/**
+ @author Jesus         , 16-02-14 11:02:43
+ 
+ @brief 设置列表
+ */
 - (void)setTable {
     _listTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight+segmentedHeight, viewWidth, viewHeight-navigationBarHight-segmentedHeight)];
     _listTable.delegate = self;
     _listTable.dataSource = self;
     _listTable.tableFooterView=[[UIView alloc]init];
     [self.view addSubview:_listTable];
+    if (_tableOrCollection == 0) {
+        _listTable.hidden = NO;
+        _listCollection.hidden = YES;
+    }else if (_tableOrCollection == 1){
+        _listTable.hidden = YES;
+        _listCollection.hidden = NO;
+    }
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [_showList count];
 }
@@ -214,6 +244,11 @@
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{
+    if (_tableOrCollection == 1) {
+        _listCollection.hidden = NO;
+        _listTable.hidden = YES;
+    }
+    
     if (view.open) {//之前处于打开状态
         if (_oldOrNew == 0) {
             for(int i = 0;i<[_oldList count];i++)
@@ -285,6 +320,80 @@
     //    [self.showHeaderArray removeAllObjects];
     //    [self.showHeaderArray addObjectsFromArray:headViewArray];
     [_listTable reloadData];
+}
+#pragma mark  设置矩阵
+/**
+ @author Jesus        , 16-02-14 11:02:13
+ 
+ @brief 设置矩阵
+ */
+- (void)setCollection {
+//    int lines = 0;
+//    if (_oldOrNew == 0) {
+//        lines = 8;
+//    }else if (_oldOrNew == 1) {
+//        lines = 6;
+//    }
+    // 1.实例化布局模式
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    // 2.设置item大小
+    [layout setItemSize:CGSizeMake(rootListWH, rootListWH)];
+    [layout setMinimumLineSpacing:0.0];
+    [layout setMinimumInteritemSpacing:0.0];
+    // 3.设置布局方向(默认纵向)
+    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    // 4.实例化collectionView
+    _listCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0,navigationBarHight+segmentedHeight ,viewWidth, rootListWH*8) collectionViewLayout:layout];
+    _listCollection.backgroundColor = [UIColor clearColor];
+    // 5.设置协议代理者
+    _listCollection.delegate = self;
+    _listCollection.dataSource = self;
+    // 6.注册item
+    [_listCollection registerClass:[SJSListRootCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    // 7.加入到view中
+    [self.view addSubview:_listCollection];
+    if (_tableOrCollection == 0) {
+        _listTable.hidden = NO;
+        _listCollection.hidden = YES;
+    }else if (_tableOrCollection == 1){
+        _listTable.hidden = YES;
+        _listCollection.hidden = NO;
+    }
+}
+// 设置有多少个分组
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+// 设置一个分组中有多少item
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _oldOrNew==0?39:27;
+}
+
+// item方法
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellName = @"cell";
+    SJSListRootCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
+    NSString * abbre = @"";
+    if (_oldOrNew == 0) {
+        abbre = [_oldRoot objectAtIndex:indexPath.row];
+    }else if (_oldOrNew == 1) {
+        abbre = [_newRoot objectAtIndex:indexPath.row];
+    }
+    cell.abbreLabel.text = abbre;
+    return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+#warning bug 1
+    HeadView * headView = [_showList objectAtIndex:indexPath.row];
+    _currentSection = headView.section;
+    [self reset];
+    _listTable.hidden = NO;
+    _listCollection.hidden = YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

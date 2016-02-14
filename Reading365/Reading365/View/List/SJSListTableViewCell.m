@@ -24,14 +24,14 @@
     // 1.实例化布局模式
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     // 2.设置item大小
-    [layout setItemSize:CGSizeMake(50, 50)];
+    [layout setItemSize:CGSizeMake(listNumWH, listNumWH)];
     [layout setMinimumLineSpacing:0.0];
     [layout setMinimumInteritemSpacing:0.0];
     // 3.设置布局方向(默认纵向)
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     // 4.实例化collectionView
-    UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 0,viewWidth-20, 50*lines) collectionViewLayout:layout];
+    UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 0,viewWidth-20, listNumWH*lines) collectionViewLayout:layout];
     cv.backgroundColor = [UIColor clearColor];
     cv.tag = 10089;
     // 5.设置协议代理者

@@ -11,6 +11,7 @@
 #import "SJSListManager.h"
 #import "SJSReadNoteViewController.h"
 #import "SJSListTableViewCell.h"
+#import "SJSListRootCollectionViewCell.h"
 
 @interface SJSListViewController : RootViewController
 <
@@ -18,6 +19,8 @@ SJSNavigationDelegate,
 HeadViewDelegate,
 UITableViewDelegate,
 UITableViewDataSource,
-IndexingReadingDelegate
+IndexingReadingDelegate,
+UICollectionViewDelegate,
+UICollectionViewDataSource
 >
 @end
