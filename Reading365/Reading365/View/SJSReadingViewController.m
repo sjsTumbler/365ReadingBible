@@ -28,12 +28,13 @@
 - (void)initData {
     //需要在此前跳出设置读经开始日期的弹框，否则默认为1月1号
     self.headViewArray = [[NSMutableArray alloc]init ];
-    for(int i = 1;i<= 16 ;i++)
+    for(int i = 1;i<= 268 ;i++)
     {
 //      先判断是否已读，已读则不显示
-        if ([[ReadPlistManager sharedReadPlistManager]getSatusOfBibleByDay:i]) {
-            continue;
-        }
+//        if ([[ReadPlistManager sharedReadPlistManager]getSatusOfBibleByDay:i]) {
+//            continue;
+//        }
+        // 使用plist文件解决此问题，进入程序先判断是否有plist文件，没有则生成一个全部未读的365表，每次对经文阅读状态点击，都会在后台判断更改当天的阅读状态，此处加载数据之前先把plist文件读出来，一一对应，以解决过多数据库打开操作引起的异常现象
         HeadView* headview = [[HeadView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, moreListSectionHeight)];
         headview.delegate = self;
         headview.section = i;

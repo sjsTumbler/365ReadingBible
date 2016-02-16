@@ -13,7 +13,7 @@
 @interface SJSListViewController ()
 
 @end
-
+#warning 当在矩阵模式下进入章列表时-- 对segmented进行操作会引发界面的混乱
 @implementation SJSListViewController
 {
     UISegmentedControl * _segCon;
@@ -197,7 +197,7 @@
     HeadView* headView = [_showList objectAtIndex:indexPath.section];
     IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
     int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]%6)?1:0);
-    return headView.open?lines*50:0;
+    return headView.open?lines*listNumWH:0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return moreListSectionHeight;
@@ -328,12 +328,7 @@
  @brief 设置矩阵
  */
 - (void)setCollection {
-//    int lines = 0;
-//    if (_oldOrNew == 0) {
-//        lines = 8;
-//    }else if (_oldOrNew == 1) {
-//        lines = 6;
-//    }
+
     // 1.实例化布局模式
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     // 2.设置item大小
@@ -370,7 +365,7 @@
 // 设置一个分组中有多少item
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _oldOrNew==0?39:27;
+    return _oldOrNew==0?38:26;
 }
 
 // item方法
@@ -388,7 +383,8 @@
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-#warning bug 1
+#warning bug 1 maybe array out 
+    NSLog(@"test bug -- indexPath.row = %ld    \n   showList.count = %ld",(long)indexPath.row,_showList.count);
     HeadView * headView = [_showList objectAtIndex:indexPath.row];
     _currentSection = headView.section;
     [self reset];
