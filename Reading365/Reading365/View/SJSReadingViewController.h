@@ -12,6 +12,7 @@
 #import "HeadView.h"
 #import "ReadPlistManager.h"
 #import "SJSReadNoteViewController.h"
+#import "DefineNotification.h"
 
 @interface SJSReadingViewController : RootViewController
 <SJSNavigationDelegate,

@@ -11,6 +11,9 @@
 
 #define DATABASE_FILE_NAME @"HolyBible.db"
 #define PlistName @"Reading365List"
+//状态
+#define ReadStatusPlistPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0] stringByAppendingPathComponent:@"ReadStatus.plist"]
+
 #define DBPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
 //[[NSBundle mainBundle]pathForResource:@"HolyBible" ofType:@"db"]
 #endif

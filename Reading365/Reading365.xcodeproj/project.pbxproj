@@ -160,6 +160,8 @@
 /* Begin PBXFileReference section */
 		EA03AFC91C62E36E007B486B /* SJSReadNotePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSReadNotePopView.h; sourceTree = "<group>"; };
 		EA03AFCA1C62E36E007B486B /* SJSReadNotePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSReadNotePopView.m; sourceTree = "<group>"; };
+		EA6A46731C743734009E61F8 /* DefineNSUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineNSUserDefaults.h; sourceTree = "<group>"; };
+		EA6A46741C7437A3009E61F8 /* DefineNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineNotification.h; sourceTree = "<group>"; };
 		EA75FC991C5A5D8D00B10E87 /* SJSListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSListViewController.h; sourceTree = "<group>"; };
 		EA75FC9A1C5A5D8D00B10E87 /* SJSListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSListViewController.m; sourceTree = "<group>"; };
 		EA75FC9B1C5A5D8D00B10E87 /* SJSListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJSListViewController.xib; sourceTree = "<group>"; };
@@ -743,6 +745,8 @@
 				EAE087171C5651F4007D699E /* DefineUI.h */,
 				EADEBF921C642332008CFEA8 /* 一年365日每日读经计划.doc */,
 				EA8820801C5B8FF400376266 /* Reading365List.plist */,
+				EA6A46731C743734009E61F8 /* DefineNSUserDefaults.h */,
+				EA6A46741C7437A3009E61F8 /* DefineNotification.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

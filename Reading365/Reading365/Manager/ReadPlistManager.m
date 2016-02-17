@@ -77,7 +77,31 @@
     [[DataFactory shardDataFactory]CreateDataBase];
     [[DataFactory shardDataFactory]CreateTable];
 }
-
+ #pragma mark  初始化阅读状态的plist文件
+/**
+ @author Jesus        , 16-02-17 09:02:17
+ 
+ @brief 初始化阅读状态的plist文件
+ */
+- (void)initReadStatusPlist {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    BOOL isExist = [fm fileExistsAtPath:ReadStatusPlistPath];
+    //如果不存在 isExist = NO，创建plist到Documents下
+    if (!isExist)
+    {
+        NSMutableArray * nameArray = [[NSMutableArray alloc]init];
+        for (int i = 1; i <= 365 ; i++) {
+            [nameArray addObject:[NSString stringWithFormat:@"第%d天",i]];
+        }
+        
+        NSMutableDictionary *refreshDic =[NSMutableDictionary dictionary];
+        for(NSString *name in nameArray )
+        {
+            [refreshDic setValue:[NSNumber numberWithInt:0 ] forKey:name];
+        }
+        [refreshDic writeToFile:ReadStatusPlistPath atomically:YES];
+    }
+}
 #pragma mark  从plist文件读取数组
 /**
  @author Jesus   , 16-02-02 16:02:47
@@ -223,6 +247,8 @@
             [[DataFactory shardDataFactory] insertToDB:model Classtype:status];
         }
     }];
+    //修改阅读状态
+    [self editDayStatusOfBible:(int)tag/1000];
 }
 
 #pragma mark  获取某天的读经状态
@@ -258,5 +284,34 @@
         }
     }];
     return isRead;
+}
+#pragma mark  获取读经状态
+/**
+ @author Jesus        , 16-02-17 10:02:44
+ 
+ @brief 获取读经状态
+ 
+ @return 状态字典
+ */
+- (NSDictionary *)getSatusOfBible{
+    return  [[NSDictionary alloc]initWithContentsOfFile:ReadStatusPlistPath];
+}
+ #pragma mark  修改某天的读经状态
+/**
+ @author Jesus       , 16-02-17 10:02:46
+ 
+ @brief 修改某天的读经状态
+ 
+ @param day 某天
+ */
+- (void)editDayStatusOfBible:(int)day {
+     NSMutableDictionary * statusDic = [[NSMutableDictionary alloc]initWithDictionary:[self getSatusOfBible]];
+    if([self getSatusOfBibleByDay:day]){//已读
+        [statusDic setValue:[NSNumber numberWithInt:1] forKey:[NSString stringWithFormat:@"第%d天",day]];
+    }else {//未读
+    [statusDic setValue:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"第%d天",day]];
+    }
+    [statusDic writeToFile:ReadStatusPlistPath atomically:YES];
+//    [[NSNotificationCenter defaultCenter]postNotificationName:RefreshStatus object:nil];
 }
 @end

@@ -39,17 +39,17 @@
 }
 - (void)initData {
     //加载默认的经文卷和展示方式
-    NSString * oldOrNew = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:@"oldOrNew"];
+    NSString * oldOrNew = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:Old_New_Bible];
     if ([[PublicFunctions sharedPublicFunctions]isBlankString:oldOrNew]) {
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"oldOrNew"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:Old_New_Bible];
         _oldOrNew = 0;
     }else{
         _oldOrNew = [oldOrNew intValue];
     }
     
-    NSString * tableOrCollection = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:@"tableOrCollection"];
+    NSString * tableOrCollection = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:List_Table_Collection];
     if ([[PublicFunctions sharedPublicFunctions]isBlankString:tableOrCollection]) {
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"tableOrCollection"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:List_Table_Collection];
         _tableOrCollection = 0;
     }else{
         _tableOrCollection = [tableOrCollection intValue];
@@ -110,14 +110,14 @@
         _listTable.hidden = YES;
         _tableOrCollection = 1;
         [self.SNavigationBar editRightBtnTitle:@"列表"];
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"tableOrCollection"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:List_Table_Collection];
     }else if (_tableOrCollection == 1){//显示列表，隐藏矩阵
         _tableOrCollection = 0;
         [self.SNavigationBar editRightBtnTitle:@"矩阵"];
         _listCollection.hidden = YES;
         _listTable.hidden = NO;
 //        [_listTable reloadData];
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"tableOrCollection"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:List_Table_Collection];
     }
 }
 //设置分段处理器
@@ -136,12 +136,11 @@
 {
     _oldOrNew = (int)seg.selectedSegmentIndex;
     if (_oldOrNew == 0 ) {
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:@"oldOrNew"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:Old_New_Bible];
         for(int i = 0;i<[_oldList count];i++)
         {
             HeadView *head = [_oldList objectAtIndex:i];
             head.open = NO;
-            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
         }
         [_showList removeAllObjects];
         [_showList addObjectsFromArray:_oldList];
@@ -150,12 +149,11 @@
         
         [_listCollection reloadData];
     }else if (_oldOrNew == 1){
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:@"oldOrNew"];
+        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:Old_New_Bible];
         for(int i = 0;i<[_newList count];i++)
         {
             HeadView *head = [_newList objectAtIndex:i];
             head.open = NO;
-            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
         }
         [_showList removeAllObjects];
         [_showList addObjectsFromArray:_newList];
@@ -255,7 +253,6 @@
             {
                 HeadView *head = [_oldList objectAtIndex:i];
                 head.open = NO;
-                [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
             }
             [_showList removeAllObjects];
             [_showList addObjectsFromArray:_oldList];
@@ -266,7 +263,6 @@
             {
                 HeadView *head = [_newList objectAtIndex:i];
                 head.open = NO;
-                [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
             }
             [_showList removeAllObjects];
             [_showList addObjectsFromArray:_newList];

@@ -43,6 +43,7 @@
 }
 - (void)initDataBase {
     [[ReadPlistManager sharedReadPlistManager]initHolyBibleData];
+    [[ReadPlistManager sharedReadPlistManager]initReadStatusPlist];
 }
  #pragma mark  tabbar 点击方法
 /**

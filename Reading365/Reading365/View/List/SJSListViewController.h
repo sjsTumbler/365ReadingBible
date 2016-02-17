@@ -12,6 +12,7 @@
 #import "SJSReadNoteViewController.h"
 #import "SJSListTableViewCell.h"
 #import "SJSListRootCollectionViewCell.h"
+#import "DefineNSUserDefaults.h"
 
 @interface SJSListViewController : RootViewController
 <

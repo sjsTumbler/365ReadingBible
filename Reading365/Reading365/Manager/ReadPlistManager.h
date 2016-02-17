@@ -10,12 +10,17 @@
 #import "DefineManager.h"
 #import "DataFactory.h"
 #import "ModelHeader.h"
+#import "DefineNotification.h"
+
+
 
 @interface ReadPlistManager : NSObject
 //单例化
 + (ReadPlistManager *)sharedReadPlistManager;
 //初始化数据库
 - (void)initHolyBibleData;
+//初始化阅读状态的plist文件
+- (void)initReadStatusPlist;
 //从plist文件读取数组
 - (NSArray *)readArrDataFromPlistFileAtPath:(NSString *)path Day:(NSInteger)day;
 //  检查文件是否存在
@@ -32,4 +37,7 @@
 - (void)setStatusOfBibleBy:(NSInteger)tag isRead:(NSString *)isRead;//0 为未 1 为已读
 //获取某天的读经状态
 - (BOOL)getSatusOfBibleByDay:(int)day;
+//获取读经状态
+- (NSDictionary *)getSatusOfBible;
+
 @end
