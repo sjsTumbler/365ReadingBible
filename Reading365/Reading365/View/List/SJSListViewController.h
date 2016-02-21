@@ -13,6 +13,7 @@
 #import "SJSListTableViewCell.h"
 #import "SJSListRootCollectionViewCell.h"
 #import "DefineNSUserDefaults.h"
+#import "SJSSegment.h"
 
 @interface SJSListViewController : RootViewController
 <
@@ -22,6 +23,7 @@ UITableViewDelegate,
 UITableViewDataSource,
 IndexingReadingDelegate,
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+SegmentDelegate
 >
 @end

@@ -13,20 +13,22 @@
 @interface SJSListViewController ()
 
 @end
-#warning 当在矩阵模式下进入章列表时-- 对segmented进行操作会引发界面的混乱
 @implementation SJSListViewController
 {
-    UISegmentedControl * _segCon;
+    SJSSegment         * _segCon;//分段控制器
+    UIScrollView       * _baseScrollView;
     int                  _oldOrNew;//0-old,1-new
-    NSMutableArray     * _oldList;
-    NSMutableArray     * _oldRoot;
-    NSMutableArray     * _newList;
-    NSMutableArray     * _newRoot;
-    NSMutableArray     * _showList;
-    UITableView        * _listTable;
-    UICollectionView   * _listCollection;
-    NSInteger            _currentSection;
     int                  _tableOrCollection;//0-table,1-collection
+    NSMutableArray     * _oldList;//旧约列表
+    NSMutableArray     * _oldRoot;//旧约矩阵
+    NSMutableArray     * _newList;//新约列表
+    NSMutableArray     * _newRoot;//新约矩阵
+    UITableView        * _oldTable;
+    UITableView        * _newTable;
+    UICollectionView   * _OldCollection;
+    UICollectionView   * _newCollection;
+    NSInteger            _currentSection;
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +36,7 @@
     [self initData];
     [self setNav];
     [self setSegmnet];
+    [self setScroll];
     [self setTable];
     [self setCollection];
 }
@@ -82,11 +85,6 @@
         [_newList addObject:headview];
         [_newRoot addObject:model.CH_Abbre];
     }
-    if (_oldOrNew == 0) {
-        _showList = [[NSMutableArray alloc]initWithArray:_oldList];
-    }else if (_oldOrNew == 1){
-        _showList = [[NSMutableArray alloc]initWithArray:_newList];
-    }
 }
 - (void)setNav {
     [self.SNavigationBar setTitle:@"目录索引"];
@@ -104,32 +102,29 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
-    if (_tableOrCollection == 0) {//显示矩阵，隐藏列表
-        _listCollection.hidden = NO;
-//        [_listCollection reloadData];
-        _listTable.hidden = YES;
-        _tableOrCollection = 1;
-        [self.SNavigationBar editRightBtnTitle:@"列表"];
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:List_Table_Collection];
-    }else if (_tableOrCollection == 1){//显示列表，隐藏矩阵
-        _tableOrCollection = 0;
-        [self.SNavigationBar editRightBtnTitle:@"矩阵"];
-        _listCollection.hidden = YES;
-        _listTable.hidden = NO;
-//        [_listTable reloadData];
-        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:List_Table_Collection];
-    }
+//    if (_tableOrCollection == 0) {//显示矩阵，隐藏列表
+//        _listCollection.hidden = NO;
+////        [_listCollection reloadData];
+//        _listTable.hidden = YES;
+//        _tableOrCollection = 1;
+//        [self.SNavigationBar editRightBtnTitle:@"列表"];
+//        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"1" Key:List_Table_Collection];
+//    }else if (_tableOrCollection == 1){//显示列表，隐藏矩阵
+//        _tableOrCollection = 0;
+//        [self.SNavigationBar editRightBtnTitle:@"矩阵"];
+//        _listCollection.hidden = YES;
+//        _listTable.hidden = NO;
+////        [_listTable reloadData];
+//        [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:@"0" Key:List_Table_Collection];
+//    }
 }
 //设置分段处理器
 - (void)setSegmnet {
     // 分段选择器
-    _segCon = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"旧约",@"新约", nil]];
-    _segCon.frame = CGRectMake(0, navigationBarHight , viewWidth, segmentedHeight);
+    _segCon = [[SJSSegment alloc]initSegmentWithFrame:CGRectMake(0, navigationBarHight , viewWidth, segmentHeight) TitleList:[NSArray arrayWithObjects:@"旧约",@"新约", nil]];
     // 设置默认值
-    _segCon.selectedSegmentIndex = _oldOrNew;
-    // 添加事件
-    [_segCon addTarget:self action:@selector(segClick:) forControlEvents:UIControlEventValueChanged];
-    
+    _segCon.indexDefaults = _oldOrNew;
+    _segCon.delegate = self;
     [self.view addSubview:_segCon];
 }
 - (void)segClick:(UISegmentedControl *)seg
