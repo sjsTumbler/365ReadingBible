@@ -7,7 +7,8 @@
 //
 
 #import "SJSListShowViewController.h"
-
+//temp
+#import "SJSReadNoteViewController.h"
 @interface SJSListShowViewController ()
 {
     NSMutableArray     * _showArray;//用于存储table的sections
@@ -16,11 +17,21 @@
     UITableView        * _table;
     UICollectionView   * _collection;
     NSInteger            _currentSection;
+    BOOL                 open;
 }
 @end
 
 @implementation SJSListShowViewController
 
+- (id)initWithFrame:(CGRect)frame Old_new:(int)old_new Table_collection:(int)table_collection{
+    self.old_new = old_new;
+    self.table_collection = 1;//table_collection;
+    self = [super init];
+    if (self) {
+        self.view.frame = frame;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -35,6 +46,7 @@
  @brief 初始化界面数据
  */
 - (void)initData {
+    open = NO;
     _tableArray = [[NSMutableArray alloc]init];
     _collectionArray = [[NSMutableArray alloc]init];
     if (self.old_new == 0) {//old
@@ -64,11 +76,7 @@
             [_collectionArray addObject:model.CH_Abbre];
         }
     }
-    if (self.table_collection == 0) {//table
-        _showArray = [[NSMutableArray alloc]initWithArray:_tableArray];
-    }else if (self.table_collection == 1) {
-        _showArray = [[NSMutableArray alloc]initWithArray:_collectionArray];
-    }
+    _showArray = [[NSMutableArray alloc]initWithArray:_tableArray];
 }
 #pragma mark   搭建界面
 /**
@@ -77,7 +85,7 @@
  @brief 搭建界面
  */
 - (void)setTable_collection {
-    _table = [[UITableView alloc]initWithFrame:self.view.bounds];
+    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight-navigationBarHight-segmentHeight)];
     _table.delegate = self;
     _table.dataSource = self;
     _table.tableFooterView=[[UIView alloc]init];
@@ -93,7 +101,7 @@
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     // 4.实例化collectionView
-    _collection = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    _collection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight-navigationBarHight-segmentHeight) collectionViewLayout:layout];
     _collection.backgroundColor = [UIColor clearColor];
     // 5.设置协议代理者
     _collection.delegate = self;
@@ -150,31 +158,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-
-#warning 此处需要代理 -- 把此代理方法传递给父视图
-//- (void)didSelectedCollectionIndex:(NSIndexPath *)indexPath {
-//    SJSReadNoteViewController * rnvc = [[SJSReadNoteViewController alloc]init];
-//    rnvc.readType = indexing;
-//    HeadView* headView = nil;
-//    if (_oldOrNew == 0) {
-//        headView = [_oldList objectAtIndex:indexPath.section];
-//    }else{
-//        headView = [_newList objectAtIndex:indexPath.section];
-//    }
-//    
-//    //        HeadView* headView = [_showList objectAtIndex:indexPath.section];
-//    rnvc.viewTitle = headView.backBtn.titleLabel.text;
-//    if (_oldOrNew ==0) {
-//        rnvc.dataType = old_cuv;
-//    }else{
-//        rnvc.dataType = new_cuv;
-//    }
-//    rnvc.sectionName = [NSString stringWithFormat:@"第%ld章",indexPath.row+1];
-//    rnvc.k_id = [NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1];
-//    [self.navigationController pushViewController:rnvc animated:NO];
-//}
+#pragma mark IndexingReadingDelegate
+- (void)didSelectedCollectionIndex:(NSIndexPath *)indexPath {
+    HeadView* headView = [_showArray objectAtIndex:indexPath.section];
+    [self.delegate didSelectedShowListCollectionWithTitle:headView.backBtn.titleLabel.text DataType:self.old_new==0?old_cuv:new_ncv SectionName:[NSString stringWithFormat:@"第%ld章",indexPath.row+1] k_id:[NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1]];
+}
 #pragma mark collectionVew的代理方法
 // 设置有多少个分组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -203,14 +191,17 @@
     [self reset];
     _table.hidden = NO;
     _collection.hidden = YES;
+    open = YES;
 }
 #pragma mark - HeadViewdelegate
 -(void)selectedWith:(HeadView *)view{
-    if (self.table_collection == 1) {
-        _collection.hidden = NO;
+    if (self.table_collection == 0) {
+        _table.hidden = NO;
+        _collection.hidden = YES;
+    }else if (self.table_collection == 1) {
         _table.hidden = YES;
+        _collection.hidden = NO;
     }
-    
     if (view.open) {//之前处于打开状态
         for(int i = 0;i<[_tableArray count];i++)
         {
@@ -222,6 +213,8 @@
         [_table reloadData];
         return;
     }
+    //能走到这一步说明是打开过程
+    open = YES;
     _currentSection = view.section;
     [self reset];
     
@@ -238,8 +231,8 @@
         {
             head.open = YES;
             //只显示当前打开的组
-            [_tableArray removeAllObjects];
-            [_tableArray addObject:head];
+            [_showArray removeAllObjects];
+            [_showArray addObject:head];
             
         }else {
             head.open = NO;
@@ -247,19 +240,30 @@
     }
     [_table reloadData];
 }
+#pragma mark 切换table和collection
+/**
+ @author Jesus         , 16-02-22 15:02:32
+ 
+ @brief 切换table和collection
+ 
+ @param table_collection
+ */
+- (void)setTableOrCollection:(int)table_collection{
+    self.table_collection = table_collection;
+    if(open == NO){//防止对打开状态的切换导致崩溃
+        if (self.table_collection == 0) {
+            _table.hidden = NO;
+            _collection.hidden = YES;
+        }else if (self.table_collection == 1) {
+            _table.hidden = YES;
+            _collection.hidden = NO;
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

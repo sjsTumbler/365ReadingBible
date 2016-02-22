@@ -49,7 +49,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 
 #define navColor 0x199fff
 #define sectionColor 0xdddddd
-#define segmentColor 0xa2dbf6 //分段控制器颜色
+#define segmentColor 0x199fff //分段控制器颜色
 
 #define tabbarColor iColorWithRGB(5, 178, 215)
 #define tabbarFrame CGRectMake(0, viewHeight-tabbarHeight, viewWidth, tabbarHeight)

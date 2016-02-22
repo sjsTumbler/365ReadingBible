@@ -14,16 +14,13 @@
 #import "SJSListRootCollectionViewCell.h"
 #import "DefineNSUserDefaults.h"
 #import "SJSSegment.h"
+#import "SJSListShowViewController.h"
 
 @interface SJSListViewController : RootViewController
 <
 SJSNavigationDelegate,
-HeadViewDelegate,
-UITableViewDelegate,
-UITableViewDataSource,
-IndexingReadingDelegate,
-UICollectionViewDelegate,
-UICollectionViewDataSource,
-SegmentDelegate
+UIScrollViewDelegate,
+SegmentDelegate,
+ShowListDelegate
 >
 @end

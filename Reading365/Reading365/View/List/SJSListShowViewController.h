@@ -17,6 +17,11 @@
 #import "SJSListRootCollectionViewCell.h"
 #import "SJSListTableViewCell.h"
 
+@protocol ShowListDelegate <NSObject>
+@optional
+- (void)didSelectedShowListCollectionWithTitle:(NSString *)title DataType:(FSO)type SectionName:(NSString *)sectionName k_id:(NSString *)k_id;
+@end
+
 @interface SJSListShowViewController : UIViewController
 <
 HeadViewDelegate,
@@ -28,8 +33,12 @@ SJSNavigationDelegate,
 IndexingReadingDelegate
 >
 
+@property(nonatomic, weak) id <ShowListDelegate> delegate;
 @property (nonatomic,assign) int old_new;//old-0,new-1
 @property (nonatomic,assign) int table_collection;//table-0,collection-1
 
-
+//初始化
+- (id)initWithFrame:(CGRect)frame Old_new:(int)old_new Table_collection:(int)table_collection;
+//切换table和collection
+- (void)setTableOrCollection:(int)table_collection;
 @end
