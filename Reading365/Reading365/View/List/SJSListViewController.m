@@ -80,9 +80,7 @@
 //设置分段处理器
 - (void)setSegmnet {
     // 分段选择器
-    _segCon = [[SJSSegment alloc]initSegmentWithFrame:CGRectMake(0, navigationBarHight , viewWidth, segmentHeight) TitleList:[NSArray arrayWithObjects:@"旧约",@"新约", nil]];
-    // 设置默认值
-    _segCon.indexDefaults = _oldOrNew;
+    _segCon = [[SJSSegment alloc]initSegmentWithFrame:CGRectMake(0, navigationBarHight , viewWidth, segmentHeight) TitleList:[NSArray arrayWithObjects:@"旧约",@"新约", nil] IndexDefaults:_oldOrNew];
     _segCon.delegate = self;
     [self.view addSubview:_segCon];
 }

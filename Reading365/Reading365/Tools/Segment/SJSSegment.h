@@ -23,7 +23,7 @@
 @property(nonatomic,weak)   CALayer *LGLayer;
 
 
--(id)initSegmentWithFrame:(CGRect)frame TitleList:(NSArray *)titleList;
+-(id)initSegmentWithFrame:(CGRect)frame TitleList:(NSArray *)titleList IndexDefaults:(int)indexDefaults;
 -(void)moveToOffsetX:(CGFloat)X;
 
 @end

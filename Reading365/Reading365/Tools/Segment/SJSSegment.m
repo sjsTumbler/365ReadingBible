@@ -10,9 +10,10 @@
 
 @implementation SJSSegment
 
-- (id)initSegmentWithFrame:(CGRect)frame TitleList:(NSArray *)titleList {
+- (id)initSegmentWithFrame:(CGRect)frame TitleList:(NSArray *)titleList IndexDefaults:(int)indexDefaults {
     if (self = [super initWithFrame:frame]) {
         self.titleList = [[NSMutableArray alloc]initWithArray:titleList];
+        self.indexDefaults = indexDefaults;
         [self createItem:self.titleList];
     }
     return self;
