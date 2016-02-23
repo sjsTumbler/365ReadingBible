@@ -38,13 +38,13 @@
         //设置
         buttonItem.tag = i+100;
         [buttonItem setTitle:temp forState:UIControlStateNormal];
-        [buttonItem setTitleColor:iColorWithHex(segmentColor) forState:UIControlStateNormal];
+        [buttonItem setTitleColor:iColorWithHex(segmentNormalColor) forState:UIControlStateNormal];
         [buttonItem addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:buttonItem];
         //第一个按钮默认被选中
         if (i == _indexDefaults) {
             CGFloat firstX = buttonX;
-            [buttonItem setTitleColor:iColorWithHex(segmentColor) forState:UIControlStateNormal];
+            [buttonItem setTitleColor:iColorWithHex(segmentSelectColor) forState:UIControlStateNormal];
             [self creatBanner:firstX];
         }
         buttonX += marginX;
@@ -54,17 +54,16 @@
 -(void)creatBanner:(CGFloat)firstX{
     //初始化
     CALayer *LGLayer = [[CALayer alloc]init];
-    LGLayer.backgroundColor = iColorWithHex(segmentColor).CGColor;
+    LGLayer.backgroundColor = iColorWithHex(segmentSelectColor ).CGColor;
     LGLayer.frame = CGRectMake(firstX, segmentHeight - 6, segmentButtonwidth, 5);
     // 设定它的frame
     LGLayer.cornerRadius = 4;// 圆角处理
     [self.layer addSublayer:LGLayer]; // 增加到UIView的layer上面
     self.LGLayer = LGLayer;
-    
 }
 
 -(void)buttonClick:(UIButton *)clickButton {
-    [clickButton setTitleColor:iColorWithHex(segmentColor) forState:UIControlStateNormal];
+    [clickButton setTitleColor:iColorWithHex(segmentSelectColor) forState:UIControlStateNormal];
     CGFloat bannerX = clickButton.center.x;
     [self bannerMoveTo:bannerX];
     [self didSelectButton:clickButton];
@@ -94,11 +93,14 @@
 }
 //点击按钮后改变字体颜色
 -(void)didSelectButton:(UIButton*)Button {
+    //保存操作动作
+    [[PublicFunctions sharedPublicFunctions]NSUserDefaults_SaveEditWithValue:[NSString stringWithFormat:@"%ld",Button.tag-100] Key:Old_New_Bible];
+    
     for (int i = 0; i< self.titleList.count; i++) {
         if (i == Button.tag-100) {
-            [Button setTitleColor:iColorWithHex(segmentColor) forState:UIControlStateNormal];
+            [Button setTitleColor:iColorWithHex(segmentSelectColor) forState:UIControlStateNormal];
         }else{
-            [((UIButton *)[self viewWithTag:i+100]) setTitleColor:iColorWithHex(segmentColor) forState:UIControlStateNormal];
+            [((UIButton *)[self viewWithTag:i+100]) setTitleColor:iColorWithHex(segmentNormalColor) forState:UIControlStateNormal];
         }
     }
 }

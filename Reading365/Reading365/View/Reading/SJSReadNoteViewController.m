@@ -65,7 +65,7 @@
     _bibleTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight, viewWidth, viewHeight-navigationBarHight)];
     _bibleTable.delegate = self;
     _bibleTable.dataSource = self;
-    _bibleTable.tableFooterView=[[UIView alloc]init];
+    _bibleTable.tableFooterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight/2)];
     [self.view addSubview:_bibleTable];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

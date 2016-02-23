@@ -27,7 +27,7 @@
 #define cellHeight 45.0
 #define labelHeight 21.0
 #define sectionHeight 30.0
-#define edages 15.0
+#define edages 10.0
 #define listNumWH   (viewWidth-20)/6 //章——矩阵宽度、高度
 #define rootListWH  viewWidth/6 //简称--矩阵宽度、高度
 #define segmentButtonwidth 60.0 //分段控制器的按钮宽度
@@ -49,12 +49,13 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 
 #define navColor 0x199fff
 #define sectionColor 0xdddddd
-#define segmentColor 0x199fff //分段控制器颜色
+#define segmentSelectColor 0x199fff //分段控制器选中颜色
+#define segmentNormalColor 0xcccccc //分段控制器未选中颜色
 
 #define tabbarColor iColorWithRGB(5, 178, 215)
 #define tabbarFrame CGRectMake(0, viewHeight-tabbarHeight, viewWidth, tabbarHeight)
 #define tabbarSelectTextColor iColorWithHex(0xcccccc)
-#define cellFont [UIFont systemFontOfSize:15]
+#define cellFont [UIFont systemFontOfSize:17]
 
 #define oldNumber 39 //旧约卷数
 #define newNumber 27 //新约卷数

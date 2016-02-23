@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DefineUI.h"
+#import "PublicFunctions.h"
+#import "DefineNSUserDefaults.h"
 
 @protocol SegmentDelegate <NSObject>
 @optional

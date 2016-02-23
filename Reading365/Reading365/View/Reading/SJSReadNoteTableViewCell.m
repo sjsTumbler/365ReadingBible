@@ -20,7 +20,7 @@
     // Initialization code
     self.iContentView = [[UIView alloc]initWithFrame:self.bounds];
     self.iContentView.backgroundColor = [UIColor whiteColor];
-    self.iContentLabel = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth- edages, self.bounds.size.height)];
+    self.iContentLabel = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth- edages*2, self.bounds.size.height)];
     self.iContentLabel.font = cellFont;
     self.iContentLabel.adjustsFontSizeToFitWidth = YES;
     self.iContentLabel.numberOfLines = 0;

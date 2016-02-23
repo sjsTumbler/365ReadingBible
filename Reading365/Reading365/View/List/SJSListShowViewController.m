@@ -203,6 +203,7 @@
         _collection.hidden = NO;
     }
     if (view.open) {//之前处于打开状态
+        open = NO;
         for(int i = 0;i<[_tableArray count];i++)
         {
             HeadView *head = [_tableArray objectAtIndex:i];

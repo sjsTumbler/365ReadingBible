@@ -141,8 +141,9 @@
 #pragma mark - UIScrollViewDelegate
 //实现LGSegment代理方法
 -(void)scrollToPage:(int)Page {
+    
     CGPoint offset = _baseScrollView.contentOffset;
-    offset.x = self.view.frame.size.width * Page;
+    offset.x = viewWidth * Page;
     [UIView animateWithDuration:0.3 animations:^{
         _baseScrollView.contentOffset = offset;
     }];
