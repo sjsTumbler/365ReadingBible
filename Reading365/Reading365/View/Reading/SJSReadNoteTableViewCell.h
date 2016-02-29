@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DefineUI.h"
+//#import "DefineUI.h"
 
 @protocol ReadNoteTableViewCellDelegate <NSObject>
 
@@ -26,7 +26,14 @@
 @property (nonatomic,strong) UIView * iContentView;
 @property (nonatomic,strong) UILabel * iContentLabel;
 
+//选中
+@property (nonatomic,assign) BOOL iSelected;
+
+
 -(void)hideMenuView:(BOOL)aHide Animated:(BOOL)aAnimate;
 -(void)addControl;
 -(void)frameToFitSize:(CGFloat)height;
+
+//选中cell
+- (void)changeSelectedColor:(BOOL)select;
 @end

@@ -39,4 +39,16 @@
 }
 */
 
+-(void)SJSNavigationLeftAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:NO];
+
+}
+
+- (void)SJSNavigationRightAction:(UIButton *)sender{
+
+    NSLog(@"右侧按钮被点击");
+}
+
+
+
 @end

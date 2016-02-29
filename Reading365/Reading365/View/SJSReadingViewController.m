@@ -63,12 +63,12 @@
 - (void)SJSNavigationLeftAction:(UIButton *)sender {
     SJSListViewController * LIST = [[SJSListViewController alloc]init];
     [self.navigationController pushViewController:LIST animated:NO];
-    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
+//    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
 }
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     SJSStatistricsViewController *STA = [[SJSStatistricsViewController alloc]init];
     [self.navigationController pushViewController:STA animated:NO];
-    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
+//    [[NSNotificationCenter defaultCenter]postNotificationName:HideTabbar object:nil];
 }
 - (void)setTable {
     _daysListTable = [[UITableView alloc]initWithFrame:CGRectMake(0, navigationBarHight, viewWidth, viewHeight-navigationBarHight-tabbarHeight)];
@@ -147,7 +147,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SJSReadNoteViewController * readNote = [[SJSReadNoteViewController alloc]init];
 //    readNote.viewTitle = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    readNote.readType = plan;
+    readNote.readType = Plan;
     readNote.dataDic = [self.dayData objectAtIndex:indexPath.row];
     switch (indexPath.row) {
         case 0:{

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ModelHeader.h"
+//#import "ModelHeader.h"
 #import "DataFactory.h"
 #import "PublicFunctions.h"
 #import "ReadPlistManager.h"
@@ -19,6 +19,8 @@
 - (NSMutableArray *)getAutoCellHeightByModels:(NSMutableArray *)modelArry Type:(FSO)type;
 //根据经文字典从数据库中找到对应的经文并返回
 - (NSMutableArray *)searchBibleByDataDic:(NSDictionary *)searchDic DBType:(FSO)type;
-//根据k_id从数据库中找到对应的经文并返回
-- (NSMutableArray *)searchBibleByk_id:(NSString *)k_id DBType:(FSO)type;
+//根据chapterNumber从数据库中找到对应的经文并返回
+- (NSMutableArray *)searchBibleBychapterNumber:(NSString *)chapterNumber DBType:(FSO)type;
+//收藏经文
+- (BOOL)saveBibleWithType:(int)type orderid:(NSString *)orderid;
 @end

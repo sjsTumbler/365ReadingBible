@@ -21,14 +21,14 @@ const static NSString* tablename = @"old_ncv";//表名
 @end
 
 @implementation old_ncvModel
-//@synthesize Col001;
-//@synthesize Col002;
-//@synthesize Col003;
-//@synthesize col_004;
-//@synthesize col_005;
-//@synthesize col_006;
-//@synthesize o_id;
-//@synthesize k_id;
+//@synthesize abbre;
+//@synthesize chapterSection;
+//@synthesize content;
+//@synthesize chapter;
+//@synthesize section;
+//@synthesize bibleNumber;
+//@synthesize orderid;
+//@synthesize chapterNumber;
 
 
 -(id)init
@@ -36,7 +36,7 @@ const static NSString* tablename = @"old_ncv";//表名
     self = [super init];
     if (self)
     {
-        self.primaryKey = @"o_id";//主健
+        self.primaryKey = @"orderid";//主健
     }
     return self;
 }
@@ -45,28 +45,26 @@ const static NSString* tablename = @"old_ncv";//表名
     self = [super init];
     if (self)
     {
-        _Col001       =  [dic objectForKey:@"Col001"];
-        _Col002       =  [dic objectForKey:@"Col002"];
-        _Col003       =  [dic objectForKey:@"Col003"];
-        _col_004      =  [dic objectForKey:@"col004"];
-        _col_005      =  [dic objectForKey:@"col005"];
-        _col_006      =  [dic objectForKey:@"col006"];
-        _o_id         =  [dic objectForKey:@"o_id"];
-        _k_id         =  [dic objectForKey:@"k_id"];
+        _abbre            =  [dic objectForKey:@"abbre"];
+        _chapterSection   =  [dic objectForKey:@"chapterSection"];
+        _content          =  [dic objectForKey:@"content"];
+        _chapter          =  [[dic objectForKey:@"chapter"]intValue];
+        _section          =  [[dic objectForKey:@"section"]intValue];
+        _bibleNumber      =  [dic objectForKey:@"bibleNumber"];
+        _orderid          =  [dic objectForKey:@"orderid"];
+        _chapterNumber    =  [dic objectForKey:@"chapterNumber"];
     }
     return self;
 }
 -(void)dealloc
 {
-    [_Col001   release];
-    [_Col002   release];
-    [_Col003   release];
-    [_col_004  release];
-    [_col_005  release];
-    [_col_006  release];
-    [_o_id     release];
-    [_k_id     release];
-    [super     dealloc];
+    [_abbre            release];
+    [_chapterSection   release];
+    [_content          release];
+    [_bibleNumber      release];
+    [_orderid          release];
+    [_chapterNumber    release];
+    [super             dealloc];
 }
 
 @end

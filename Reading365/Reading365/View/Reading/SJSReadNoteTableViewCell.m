@@ -16,21 +16,25 @@
     CGFloat _startLocation;
     BOOL    _hideMenuView;
 }
-- (void)awakeFromNib {
-    // Initialization code
-    self.iContentView = [[UIView alloc]initWithFrame:self.bounds];
-    self.iContentView.backgroundColor = [UIColor whiteColor];
-    self.iContentLabel = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth- edages*2, self.bounds.size.height)];
-    self.iContentLabel.font = cellFont;
-    self.iContentLabel.adjustsFontSizeToFitWidth = YES;
-    self.iContentLabel.numberOfLines = 0;
-    self.iContentLabel.textColor = [UIColor orangeColor];
-    self.iContentLabel.textAlignment = NSTextAlignmentLeft;
-    [self.iContentView addSubview:self.iContentLabel];
-    [self.contentView addSubview:self.iContentView];
-    [self addControl];
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.iContentView = [[UIView alloc]initWithFrame:self.bounds];
+        self.iContentView.backgroundColor = [UIColor whiteColor];
+        self.iContentLabel = [[UILabel alloc]initWithFrame:CGRectMake(edages, 0, viewWidth- edages*2, self.bounds.size.height)];
+        self.iContentLabel.font = cellFont;
+        self.iContentLabel.adjustsFontSizeToFitWidth = YES;
+        self.iContentLabel.numberOfLines = 0;
+        self.iContentLabel.textColor = [UIColor orangeColor];
+        self.iContentLabel.textAlignment = NSTextAlignmentLeft;
+        [self.iContentView addSubview:self.iContentLabel];
+        [self.contentView addSubview:self.iContentView];
+        [self addControl];
+    }
+    return self;
 }
-
 -(void)addControl{
     
     UIView *menuContetnView = [[UIView alloc] init];
@@ -177,8 +181,8 @@
         vOriginX = MIN(0 + BOUNENCE, vOriginX);
         self.iContentView.frame = CGRectMake(vOriginX, vCurrentRect.origin.y, vCurrentRect.size.width, vCurrentRect.size.height);
         CGFloat direction = [sender velocityInView:self.contentView].x;
-        NSLog(@"direction:%f",direction);
-        NSLog(@"vOriginX:%f",vOriginX);
+//        NSLog(@"direction:%f",direction);
+//        NSLog(@"vOriginX:%f",vOriginX);
         if (direction < -40.0 || vOriginX <  - (0.5 * [self getMaxMenuWidth])) {
             _hideMenuView = NO;
             UIView *vMenuView = [self.contentView viewWithTag:100];
@@ -215,4 +219,14 @@
     self.iContentView.frame = viewRect;
     self.iContentLabel.frame = labelRect;
 }
+//选中cell
+- (void)changeSelectedColor:(BOOL)select {
+    if (select) {
+        //测试颜色
+        self.iContentView.backgroundColor = [UIColor yellowColor];
+    }else {
+        self.iContentView.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 @end

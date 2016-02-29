@@ -13,7 +13,7 @@
 {
     return [IndexingModel class];//返回model实体
 }
-const static NSString* tablename = @"t_CH_EN";//表名
+const static NSString* tablename = @"indexing";//表名
 +(const NSString *)getTableName
 {
     return tablename;
@@ -26,7 +26,7 @@ const static NSString* tablename = @"t_CH_EN";//表名
     self = [super init];
     if (self)
     {
-        self.primaryKey = @"b_id";//主健
+        self.primaryKey = @"bibleid";//主健
     }
     return self;
 }
@@ -35,28 +35,23 @@ const static NSString* tablename = @"t_CH_EN";//表名
     self = [super init];
     if (self)
     {
-        _b_id     = [dic objectForKey:@"b_id"];
-        _EN       = [dic objectForKey:@"EN"];
-        _CH       = [dic objectForKey:@"CH"];
-        _CHT      = [dic objectForKey:@"CHT"];
-        _TOTALNUM = [dic objectForKey:@"TOTALNUM"];
-        _CH_Abbre = [dic objectForKey:@"CH_Abbre"];
-        _EN_Abbre = [dic objectForKey:@"EN_Abbre"];
-        _CHT_Abbre= [dic objectForKey:@"CHT_Abbre"];
+        _bibleid      = [dic objectForKey:@"bibleid"];
+        _english      = [dic objectForKey:@"english"];
+        _chinese      = [dic objectForKey:@"chinese"];
+        _totalNumber  = [[dic objectForKey:@"totalNumber"]intValue];
+        _chineseAbbre = [dic objectForKey:@"chineseAbbre"];
+        _englishAbbre = [dic objectForKey:@"englishAbbre"];
     }
     return self;
 }
 -(void)dealloc
 {
-    [_b_id         release];
-    [_EN           release];
-    [_CH           release];
-    [_CHT          release];
-    [_TOTALNUM     release];
-    [_CH_Abbre     release];
-    [_EN_Abbre     release];
-    [_CHT_Abbre    release];
-    [super         dealloc];
+    [_bibleid       release];
+    [_english       release];
+    [_chinese       release];
+    [_chineseAbbre  release];
+    [_englishAbbre  release];
+    [super          dealloc];
 }
 @end
 

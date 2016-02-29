@@ -118,7 +118,6 @@ typedef struct {
         
         self.dataSource = nil;
         self.delegate = nil;
-        
         self.calendarLogic = [[JBCalendarLogic alloc] init];
         
         self.monthTileViews = [[NSMutableArray alloc] init];

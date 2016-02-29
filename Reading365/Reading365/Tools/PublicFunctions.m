@@ -256,7 +256,7 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
         return [[[editArray objectAtIndex:0]componentsSeparatedByString:@"年"]lastObject];
     }
 }
-//将时间戳转换成时间 -- 已经处理了与服务器的时间戳偏差
+//将时间戳转换成时间
 -(NSString *)dateTimeToString:(double)dateTime Type:(int)type{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -266,7 +266,7 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
             [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             break;
         case 1:
-            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [formatter setDateFormat:@"MM-dd HH:mm"];
             break;
         case 2:
             [formatter setDateFormat:@"HH:mm"];
@@ -276,8 +276,8 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
      // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
     NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
     [formatter setTimeZone:timeZone];
-    double ddd = (dateTime*24*3600*1000-2209190400000)/1000;
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:ddd];
+//    double ddd = (dateTime*24*3600*1000-2209190400000)/1000;
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:dateTime];
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     return confromTimespStr;
 }
@@ -399,7 +399,7 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
     return  imageButton;
 }
 
-#pragma mark  017 集成NSUserDefaults使用方法
+#pragma mark  018 集成NSUserDefaults使用方法
 
 /**
  @author Jesus      , 16-02-13 09:02:05
@@ -427,7 +427,17 @@ REGULAREXPRESSION(URLRegularExpression,@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]
     return [ud objectForKey:key];
 }
 
-
+#pragma mark   19 获取当前时间戳
+/**
+ @author Jesus        , 16-02-25 22:02:46
+ 
+ @brief 19 获取当前时间戳
+ 
+ @return double
+ */
+- (double)getDateTime_Now {
+    return [[NSDate date]timeIntervalSince1970];
+}
 
 
 

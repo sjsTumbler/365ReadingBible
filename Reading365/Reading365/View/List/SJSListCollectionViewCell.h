@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DefineUI.h"
+//#import "DefineUI.h"
 
 @interface SJSListCollectionViewCell : UICollectionViewCell
 @property (strong,nonatomic) UILabel * numberLabel;

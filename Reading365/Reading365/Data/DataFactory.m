@@ -7,8 +7,6 @@
 //
 
 #import "DataFactory.h"
-#import "ModelHeader.h"
-#import "DefineUI.h"
 
 static FMDatabaseQueue* queue;
 @implementation DataFactory
@@ -46,6 +44,7 @@ static FMDatabaseQueue* queue;
     
     [[[StatusModelBase alloc]initWithDBQueue:queue]autorelease];
     [[[IndexingModelBase alloc]initWithDBQueue:queue]autorelease];
+    [[[CollectionModelBase alloc]initWithDBQueue:queue]autorelease];
 }
 -(id)Factory:(FSO)type
 {
@@ -74,8 +73,11 @@ static FMDatabaseQueue* queue;
         case status:
             result=[[[StatusModelBase alloc]initWithDBQueue:queue]autorelease];
             break;
-        case t_CH_EN:
+        case indexing:
             result=[[[IndexingModelBase alloc]initWithDBQueue:queue]autorelease];
+            break;
+        case collection:
+            result=[[[CollectionModelBase alloc]initWithDBQueue:queue]autorelease];
             break;
         default:
             break;
@@ -120,6 +122,7 @@ static FMDatabaseQueue* queue;
          NSLog(@"删除成功");
      }];
 }
+
 -(void)searchWhere:(NSDictionary *)where orderBy:(NSString *)columeName offset:(int)offset count:(int)count Classtype:(FSO)type callback:(void(^)(NSArray *))result
 {
     self.classValues=[self Factory:type];
@@ -128,6 +131,8 @@ static FMDatabaseQueue* queue;
          result(array);
      }];
 }
+
+
 -(void)dealloc
 {
     [classValues release];

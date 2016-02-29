@@ -27,19 +27,26 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    self.tabBarController.tabBar.hidden = YES;
     //解决cell还原问题
     NSArray *cells = [_bibleTable visibleCells];
     for (SJSReadNoteTableViewCell * cell in cells) {
         [cell hideMenuView:YES Animated:YES];
     }
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+
+}
 - (void)initData {
     self.dataArray = [[NSMutableArray alloc]init];
-    if (self.readType == 0) {
+    if (self.readType == Plan) {
         self.dataArray =  [[SJSReadNoteManager sharedReadNoteManager]searchBibleByDataDic:_dataDic DBType:_dataType];
         
     }else{
-        self.dataArray = [[SJSReadNoteManager sharedReadNoteManager]searchBibleByk_id:self.k_id DBType:self.dataType];
+        self.dataArray = [[SJSReadNoteManager sharedReadNoteManager]searchBibleBychapterNumber:self.chapterNumber DBType:self.dataType];
     }
     _cellHeightArray = [[NSMutableArray alloc]initWithArray:[[SJSReadNoteManager sharedReadNoteManager]getAutoCellHeightByModels:self.dataArray Type:_dataType]];
 }
@@ -49,12 +56,12 @@
     [self.SNavigationBar setRightBtnImage:@"statistrics_nav"];
     //应该在选中时出现一个下拉的选择框:复制、note、收藏
 }
-- (void)SJSNavigationLeftAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:NO];
-    if (self.readType == 0) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
-    }
-}
+//- (void)SJSNavigationLeftAction:(UIButton *)sender {
+//    [self.navigationController popViewControllerAnimated:NO];
+//    if (self.readType == 0) {
+////        [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+//    }
+//}
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     CGPoint point = CGPointMake(1, 0);
     [SJSReadNotePopView configCustomPopViewWithFrame:CGRectMake(viewWidth-edages-130, navigationBarHight, 130, 200) imagesArr:@[@"saoyisao.png",@"jiahaoyou.png",@"taolun.png",@"diannao.png",@"diannao.png",@"shouqian.png"] dataSourceArr:@[@"扫一扫",@"加好友",@"创建讨论组",@"发送到电脑",@"面对面快传",@"收钱"] anchorPoint:point seletedRowForIndex:^(NSInteger index) {
@@ -98,39 +105,39 @@
     static NSString *cellName = @"contentCell";
     SJSReadNoteTableViewCell *cell = (SJSReadNoteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"SJSReadNoteTableViewCell" owner:self options:nil]lastObject];
-        cell.backgroundColor = [UIColor whiteColor];
+        cell = [[SJSReadNoteTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+        
     }
     NSString * bibleContent = @"";
     switch (_dataType) {
         case new_cuv:{
             new_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         case new_ncv:{
             new_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         case new_niv:{
             new_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         case old_cuv:{
             old_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         case old_ncv:{
             old_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         case old_niv:{
             old_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
-            bibleContent = [NSString stringWithFormat:@"%@:%@ %@",model.col_004,model.col_005,model.Col003];
+            bibleContent = [NSString stringWithFormat:@"%d:%d %@",model.chapter,model.section,model.content];
         }
             break;
         default:
@@ -142,7 +149,14 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SJSReadNoteTableViewCell * cell = (SJSReadNoteTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (cell.iSelected) {
+        cell.iSelected = NO;
+    }else{
+        cell.iSelected = YES;
+    }
+    [cell changeSelectedColor:cell.iSelected];
 }
 #pragma  mark SJSReadNoteTableViewCellDelegate 滑动收藏笔记
 /**
@@ -186,9 +200,43 @@
  */
 -(void)didCellClickedSaveButton:(SJSReadNoteTableViewCell*)aSender{
     [aSender hideMenuView:YES Animated:YES];
-    NSLog(@"收藏");
-//    self.indexPath = [_bibleTable indexPathForCell:aSender];
     self.canCustomEdit = NO;
+    NSIndexPath * indexPath = [_bibleTable indexPathForCell:aSender];
+    switch (self.dataType) {
+        case old_cuv:{
+            old_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:1 orderid:model.orderid];
+        }
+            break;
+        case old_ncv:{
+            old_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:2 orderid:model.orderid];
+        }
+            break;
+        case old_niv:{
+            old_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:3 orderid:model.orderid];
+        }
+            break;
+        case new_cuv:{
+            new_cuvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:4 orderid:model.orderid];
+        }
+            break;
+        case new_ncv:{
+            new_ncvModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:5 orderid:model.orderid];
+        }
+            break;
+        case new_niv:{
+            new_nivModel * model = [self.dataArray objectAtIndex:indexPath.row];
+            [[SJSReadNoteManager sharedReadNoteManager]saveBibleWithType:6 orderid:model.orderid];
+        }
+            break;
+        default:
+            break;
+    }
+    
 }
 
 #pragma mark 点击笔记

@@ -1,0 +1,139 @@
+//
+//  PrefixHeader.pch
+//  Reading365
+//
+//  Created by ccSunday on 16/2/24.
+//  Copyright © 2016年 SunJishuai. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+#define GetColor(color) [UIColor color]
+#define GetImage(imageName)  [UIImage imageNamed:imageName]
+#define GetFont(x) [UIFont systemFontOfSize:x]
+#define GetBoldFont(x) [UIFont boldSystemFontOfSize:x]
+
+
+#define  IOS7_Later      ([[[UIDevice currentDevice] systemVersion]floatValue] >= 7.0)
+#define  IOS9_Later      ([[[UIDevice currentDevice] systemVersion]floatValue] >= 9.0)
+
+#pragma mark - 判断iPhone设备
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+frame.h"
+#import "NSString+SizeString.h"
+
+//model
+#import "new_cuvModel.h"
+#import "new_ncvModel.h"
+#import "new_nivModel.h"
+#import "old_cuvModel.h"
+#import "old_ncvModel.h"
+#import "old_nivModel.h"
+#import "CommonModel.h"
+#import "StatusModel.h"
+#import "IndexingModel.h"
+#import "CollectionModel.h"
+
+//公用文件
+#import "DataFactory.h"
+#import "PublicFunctions.h"
+
+/**
+ *  DefineUI
+ */
+
+//尺寸
+#define navigationBarHight 64.0
+#define viewWidth [[UIScreen mainScreen] bounds].size.width
+#define viewHeight [[UIScreen mainScreen] bounds].size.height
+#define titleFontOfSize 20.0
+#define btnFontOfSize 15.0
+#define tabbarHeight  49.0
+#define moreListSectionHeight 45.0
+#define cellHeight 45.0
+#define labelHeight 21.0
+#define sectionHeight 30.0
+#define edages 10.0
+#define listNumWH   (viewWidth-20)/6 //章——矩阵宽度、高度
+#define rootListWH  viewWidth/6 //简称--矩阵宽度、高度
+#define segmentButtonwidth 60.0 //分段控制器的按钮宽度
+#define segmentHeight   40.0
+//按钮的Tag值
+#define nav_right_tag 101
+#define nav_left_tag  102
+
+
+// 颜色
+// 参数格式为：0xFFFFFF
+#define iColorWithHex(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+// 参数格式为：222,222,222
+#define iColorWithRGB(r, g, b) [UIColor colorWithRed:(r) / 255.f green:(g) / 255.f blue:(b) / 255.f alpha:1.0f]
+
+#define navColor 0x199fff
+#define sectionColor 0xdddddd
+#define segmentSelectColor 0x199fff //分段控制器选中颜色
+#define segmentNormalColor 0xcccccc //分段控制器未选中颜色
+
+#define tabbarColor iColorWithRGB(5, 178, 215)
+#define tabbarFrame CGRectMake(0, viewHeight-tabbarHeight, viewWidth, tabbarHeight)
+#define tabbarSelectTextColor iColorWithHex(0xcccccc)
+#define cellFont [UIFont systemFontOfSize:17]
+
+#define oldNumber 39 //旧约卷数
+#define newNumber 27 //新约卷数
+/**
+ *
+    DefineNSUserDefaults
+ */
+
+//新约还是旧约，旧约——0，新约——1
+#define Old_New_Bible @"oldOrNew"
+//目录，列表——0，矩阵——1
+#define List_Table_Collection @"list_TableOrCollection"
+
+/**
+ *
+     DefineManager
+ */
+
+#define DATABASE_FILE_NAME @"HolyBible.db"
+#define PlistName @"Reading365List"
+//状态
+#define ReadStatusPlistPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0] stringByAppendingPathComponent:@"ReadStatus.plist"]
+
+#define DBPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"HolyBible.db"]
+
+//自定义Log
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"<%s:%d> %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+
+#endif
+ /* PrefixHeader_pch */
+
+

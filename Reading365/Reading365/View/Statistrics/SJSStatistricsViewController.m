@@ -14,6 +14,18 @@
 
 @implementation SJSStatistricsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+    
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -26,6 +38,10 @@
     
     //  Example 1.1:
         self.unitView = [[JBUnitView alloc] initWithFrame:calenderRect UnitType:UnitTypeMonth SelectedDate:[NSDate date] AlignmentRule:JBAlignmentRuleTop Delegate:self DataSource:self];
+
+//        self.view.backgroundColor = GetColor(redColor);
+    
+    
         [self.view addSubview:self.unitView];
     
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, self.unitView.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.unitView.bounds.size.height) style:UITableViewStylePlain];
@@ -64,10 +80,7 @@
     [self.SNavigationBar setTitle:@"统计"];
     [self.SNavigationBar setLeftBtn_parentName:@"读经"];
 }
-- (void)SJSNavigationLeftAction:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
-    [self.navigationController popViewControllerAnimated:NO];
-}
+
 #pragma mark -
 #pragma mark - Class Extensions
 - (void)selectorForButton

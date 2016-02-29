@@ -31,8 +31,8 @@
 - (IndexingModel *)getBibleByIndex:(int)index {
     __block IndexingModel * model ;
     NSMutableDictionary * search = [NSMutableDictionary dictionary];
-    [search setValue:@(index) forKey:@"b_id"];
-    [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:t_CH_EN callback:^(NSArray *resultArray) {
+    [search setValue:[NSString stringWithFormat:@"%d",index] forKey:@"bibleid"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:indexing callback:^(NSArray *resultArray) {
         if (resultArray.count > 0) {
             model = [resultArray firstObject];
         }

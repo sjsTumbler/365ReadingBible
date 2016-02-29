@@ -7,18 +7,18 @@
 //
 
 #import "RootViewController.h"
-#import "ModelHeader.h"
+//#import "ModelHeader.h"
 #import "SJSReadNoteManager.h"
 #import "SJSReadNotePopView.h"
 #import "SJSReadNoteTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, readType){
-    plan     = 0 ,//计划读经
-    indexing = 1 ,//索引读经
+    Plan     = 0 ,//计划读经
+    Index  = 1 ,//索引读经
 };
 
 @interface SJSReadNoteViewController : RootViewController
-<SJSNavigationDelegate,
+<
 UITableViewDelegate,
 UITableViewDataSource,
 ReadNoteTableViewCellDelegate>
@@ -28,6 +28,6 @@ ReadNoteTableViewCellDelegate>
 @property(nonatomic,assign) FSO  dataType;
 @property(nonatomic,assign) BOOL canCustomEdit;
 @property(nonatomic,assign) readType readType;
-@property(nonatomic,strong) NSString * k_id;
+@property(nonatomic,strong) NSString * chapterNumber;
 @property(nonatomic,strong) NSString * sectionName;
 @end

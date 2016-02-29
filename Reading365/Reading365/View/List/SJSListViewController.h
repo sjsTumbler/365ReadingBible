@@ -12,13 +12,12 @@
 #import "SJSReadNoteViewController.h"
 #import "SJSListTableViewCell.h"
 #import "SJSListRootCollectionViewCell.h"
-#import "DefineNSUserDefaults.h"
+//#import "DefineNSUserDefaults.h"
 #import "SJSSegment.h"
 #import "SJSListShowViewController.h"
 
 @interface SJSListViewController : RootViewController
 <
-SJSNavigationDelegate,
 UIScrollViewDelegate,
 SegmentDelegate,
 ShowListDelegate

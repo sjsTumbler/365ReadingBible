@@ -27,7 +27,7 @@
     switch (type) {
         case new_cuv:{
             for(new_cuvModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -35,7 +35,7 @@
             break;
         case new_ncv:{
             for(new_ncvModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -43,7 +43,7 @@
             break;
         case new_niv:{
             for(new_nivModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -51,7 +51,7 @@
             break;
         case old_cuv:{
             for(old_cuvModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -59,7 +59,7 @@
             break;
         case old_ncv:{
             for(old_ncvModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -67,7 +67,7 @@
             break;
         case old_niv:{
             for(old_nivModel * model in modelArry) {
-                bibleContent = model.Col003;
+                bibleContent = model.content;
                 CGSize contentSize = [[PublicFunctions sharedPublicFunctions]getHeightByWidth:viewWidth-edages*2 Font: cellFont Text:bibleContent LineBreakMode:NSLineBreakByWordWrapping];
                 [cellHeightArray addObject:[NSString stringWithFormat:@"%f",contentSize.height+labelHeight]];
             }
@@ -132,7 +132,7 @@
     NSMutableArray * result = [[NSMutableArray alloc]init];
     for (long i = start; i <= end; i++) {
         NSMutableDictionary * search = [NSMutableDictionary dictionary];
-        [search setValue:[NSString stringWithFormat:@"%lu",i] forKey:@"o_id"];
+        [search setValue:[NSString stringWithFormat:@"%lu",i] forKey:@"orderid"];
         [[DataFactory shardDataFactory]searchWhere:search orderBy:nil offset:0 count:10 Classtype:type callback:^(NSArray *resultArray) {
             if (resultArray.count > 0) {
                 [result addObject:[resultArray firstObject]];
@@ -141,26 +141,46 @@
     }
     return result;
 }
-#pragma mark   根据k_id从数据库中找到对应的经文并返回
+#pragma mark   根据chapterNumber从数据库中找到对应的经文并返回
 /**
  @author Jesus       , 16-02-11 18:02:49
  
- @brief 根据k_id从数据库中找到对应的经文并返回
+ @brief 根据chapterNumber从数据库中找到对应的经文并返回
  
- @param k_id 经文卷章
+ @param chapterNumber 经文卷章
  @param type 数据库类型
  
  @return models
  */
-- (NSMutableArray *)searchBibleByk_id:(NSString *)k_id DBType:(FSO)type {
+- (NSMutableArray *)searchBibleBychapterNumber:(NSString *)chapterNumber DBType:(FSO)type {
     NSMutableArray * result = [[NSMutableArray alloc]init];
     NSMutableDictionary * search = [NSMutableDictionary dictionary];
-    [search setValue:k_id forKey:@"k_id"];
-    [[DataFactory shardDataFactory]searchWhere:search orderBy:@"col_005" offset:0 count:100 Classtype:type callback:^(NSArray *resultArray) {
+    [search setValue:chapterNumber forKey:@"chapterNumber"];
+    [[DataFactory shardDataFactory]searchWhere:search orderBy:@"section" offset:0 count:200 Classtype:type callback:^(NSArray *resultArray) {
         if (resultArray.count > 0) {
             [result addObjectsFromArray:resultArray];
         }
     }];
     return result;
+}
+#pragma mark     收藏经文
+/**
+ @author Jesus     , 16-02-25 21:02:59
+ 
+ @brief  收藏经文
+ 
+ @param type    经文表
+ @param orderid 经文唯一字段
+ 
+ @return 是否保存成功
+ */
+- (BOOL)saveBibleWithType:(int)type orderid:(NSString *)orderid {
+    CollectionModel * model = [[CollectionModel alloc]init];
+    model.bibleType = type;
+    model.orderid = orderid;
+    model.collectionid = [NSString stringWithFormat:@"%d%@",type,orderid];
+    model.dateTime = [[PublicFunctions sharedPublicFunctions]getDateTime_Now];
+    [[DataFactory shardDataFactory]insertToDB:model Classtype:collection];
+    return YES;
 }
 @end

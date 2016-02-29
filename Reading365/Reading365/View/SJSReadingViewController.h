@@ -15,7 +15,7 @@
 #import "DefineNotification.h"
 
 @interface SJSReadingViewController : RootViewController
-<SJSNavigationDelegate,
+<
 UITableViewDelegate,
 UITableViewDataSource,
 HeadViewDelegate

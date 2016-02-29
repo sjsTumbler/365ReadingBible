@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DefineManager.h"
+//#import "DefineManager.h"
 #import "DataFactory.h"
-#import "ModelHeader.h"
+//#import "ModelHeader.h"
 #import "DefineNotification.h"
 
 

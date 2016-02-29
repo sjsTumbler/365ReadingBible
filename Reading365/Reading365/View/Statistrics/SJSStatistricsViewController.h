@@ -13,7 +13,7 @@
 #import "JBUnitGridView.h"
 #import "JBSXRCUnitTileView.h"
 @interface SJSStatistricsViewController : RootViewController
-<SJSNavigationDelegate,
+<
 JBUnitGridViewDelegate,
 JBUnitGridViewDataSource,
 JBUnitViewDelegate,

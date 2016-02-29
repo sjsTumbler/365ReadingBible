@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DefineUI.h"
+//#import "DefineUI.h"
 #import "SJSListCollectionViewCell.h"
 #import "IndexingModel.h"
 

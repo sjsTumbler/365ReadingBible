@@ -19,7 +19,7 @@
 
 @protocol ShowListDelegate <NSObject>
 @optional
-- (void)didSelectedShowListCollectionWithTitle:(NSString *)title DataType:(FSO)type SectionName:(NSString *)sectionName k_id:(NSString *)k_id;
+- (void)didSelectedShowListCollectionWithTitle:(NSString *)title DataType:(FSO)type SectionName:(NSString *)sectionName chapterNumber:(NSString *)chapterNumber;
 @end
 
 @interface SJSListShowViewController : UIViewController
@@ -29,7 +29,6 @@ UITableViewDataSource,
 UITableViewDelegate,
 UICollectionViewDelegate,
 UICollectionViewDataSource,
-SJSNavigationDelegate,
 IndexingReadingDelegate
 >
 

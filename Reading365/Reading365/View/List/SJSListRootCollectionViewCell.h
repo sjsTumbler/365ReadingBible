@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DefineUI.h"
+//#import "DefineUI.h"
 
 @interface SJSListRootCollectionViewCell : UICollectionViewCell
 @property (strong,nonatomic) UILabel * abbreLabel;

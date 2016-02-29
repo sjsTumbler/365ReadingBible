@@ -30,6 +30,19 @@
     [self setSegmnet];
     [self setScroll];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+
+}
+
 - (void)initData {
     //加载默认的经文卷和展示方式
     NSString * oldOrNew = [[PublicFunctions sharedPublicFunctions]NSUserDefaults_ReadWithKey:Old_New_Bible];
@@ -59,10 +72,11 @@
     }
     [self.SNavigationBar setRightBtnTitle:rightTitle];
 }
-- (void)SJSNavigationLeftAction:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
-    [self.navigationController popViewControllerAnimated:NO];
-}
+//- (void)SJSNavigationLeftAction:(UIButton *)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:ShowTabbar object:nil];
+//    [self.navigationController popViewControllerAnimated:NO];
+//}
+
 - (void)SJSNavigationRightAction:(UIButton *)sender {
     if (_tableOrCollection == 0) {//显示矩阵，隐藏列表
         
@@ -93,13 +107,13 @@
  
  @param index collection
  */
-- (void)didSelectedShowListCollectionWithTitle:(NSString *)title DataType:(FSO)type SectionName:(NSString *)sectionName k_id:(NSString *)k_id {
+- (void)didSelectedShowListCollectionWithTitle:(NSString *)title DataType:(FSO)type SectionName:(NSString *)sectionName chapterNumber:(NSString *)chapterNumber {
         SJSReadNoteViewController * rnvc = [[SJSReadNoteViewController alloc]init];
-        rnvc.readType = indexing;
+        rnvc.readType = Index;
         rnvc.viewTitle = title;
         rnvc.dataType = type;
         rnvc.sectionName = sectionName;
-        rnvc.k_id = k_id;
+        rnvc.chapterNumber = chapterNumber;
         [self.navigationController pushViewController:rnvc animated:NO];
 }
 
@@ -144,6 +158,7 @@
     offset.x = viewWidth * Page;
     [UIView animateWithDuration:0.3 animations:^{
         _baseScrollView.contentOffset = offset;
+
     }];
 }
 // 只要滚动UIScrollView就会调用

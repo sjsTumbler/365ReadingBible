@@ -885,325 +885,293 @@
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>19001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101039001</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101039023</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101040001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
+			<real>101040023</real>
 			<key>startNumber2</key>
-			<integer>101007001</integer>
+			<real>101041001</real>
 			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101041016</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记39:1-41:16</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>19002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201012046</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
+			<real>201012050</real>
 			<key>startNumber1</key>
-			<real>201004001</real>
+			<real>201013001</real>
 			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201013023</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音12:46-13:23</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>19003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119017001</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119017015</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇17:1-15</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>19004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120003033</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120003035</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言3:33-35</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>20001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101041017</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101041057</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101042001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
-			<key>startNumber2</key>
-			<integer>101007001</integer>
-			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101042017</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记41:17-42:17</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>20002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201013024</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
-			<key>startNumber1</key>
-			<real>201004001</real>
-			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201013046</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音13:24-46</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>20003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119018001</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119018015</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇18:1-15</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>20004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120004001</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120004006</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言4:1-6</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>21001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101042018</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101042038</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101043001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
-			<key>startNumber2</key>
-			<integer>101007001</integer>
-			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101043034</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记42:18-43:34</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>21002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201013047</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
+			<real>201013058</real>
 			<key>startNumber1</key>
-			<real>201004001</real>
+			<real>201014001</real>
 			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201014012</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音13:47-14:12</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>21003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119018016</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119018036</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇18:16-36</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>21004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120004007</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120004010</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言4:7-10</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>22001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101044001</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101044034</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101045001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
-			<key>startNumber2</key>
-			<integer>101007001</integer>
-			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101045028</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记44:1-45:28</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>22002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201014013</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
-			<key>startNumber1</key>
-			<real>201004001</real>
-			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201014036</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音14:13-36</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>22003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119018037</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119018050</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇18:37-50</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>22004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120004011</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120004013</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言4:11-13</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>23001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101046001</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101046034</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101047001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
-			<key>startNumber2</key>
-			<integer>101007001</integer>
-			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101047031</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记46:1-47:31</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>23002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201015001</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
-			<key>startNumber1</key>
-			<real>201004001</real>
-			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201015028</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音15:1-28</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>23003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119019001</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119019014</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇19:1-14</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>23004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120004014</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120004019</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言4:14-19</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3001</integer>
+			<real>24001</real>
 			<key>startNumber0</key>
-			<real>101005001</real>
+			<real>101048001</real>
 			<key>endNumber0</key>
-			<real>101005032</real>
+			<real>101048022</real>
 			<key>startNumber1</key>
-			<real>101006001</real>
+			<real>101049001</real>
 			<key>endNumber1</key>
-			<real>101006022</real>
-			<key>startNumber2</key>
-			<integer>101007001</integer>
-			<key>endNumber2</key>
-			<integer>101007024</integer>
+			<real>101049033</real>
 			<key>title</key>
-			<string>创世纪5:1-7:24</string>
+			<string>创世记48:1-49:33</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3002</integer>
+			<real>24002</real>
 			<key>startNumber0</key>
-			<real>201003007</real>
+			<real>201015029</real>
 			<key>endNumber0</key>
-			<real>201003017</real>
+			<real>201015039</real>
 			<key>startNumber1</key>
-			<real>201004001</real>
+			<real>201016001</real>
 			<key>endNumber1</key>
-			<real>201004011</real>
+			<real>201016012</real>
 			<key>title</key>
-			<string>马太福音3:7-4:11</string>
+			<string>马太福音15:29-16:12</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3003</integer>
+			<real>24003</real>
 			<key>startNumber0</key>
-			<real>119003001</real>
+			<real>119020001</real>
 			<key>endNumber0</key>
-			<real>119003008</real>
+			<real>119020009</real>
 			<key>title</key>
-			<string>诗篇3:1-8</string>
+			<string>诗篇20:1-9</string>
 		</dict>
 		<dict>
 			<key>onlyTag</key>
-			<integer>3004</integer>
+			<real>24004</real>
 			<key>startNumber0</key>
-			<real>120001010</real>
+			<real>120004020</real>
 			<key>endNumber0</key>
-			<real>120001019</real>
+			<real>120004027</real>
 			<key>title</key>
-			<string>箴言1:10-19</string>
+			<string>箴言4:20-27</string>
 		</dict>
 	</array>
 	<array>

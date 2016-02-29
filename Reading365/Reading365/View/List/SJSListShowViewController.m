@@ -25,7 +25,7 @@
 
 - (id)initWithFrame:(CGRect)frame Old_new:(int)old_new Table_collection:(int)table_collection{
     self.old_new = old_new;
-    self.table_collection = 1;//table_collection;
+    self.table_collection = table_collection;
     self = [super init];
     if (self) {
         self.view.frame = frame;
@@ -57,10 +57,11 @@
             headview.section = i;
             IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:i];
             if (model != nil) {
-                [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
+                [headview.backBtn setTitle:model.chinese forState:UIControlStateNormal];
             }
             [_tableArray addObject:headview];
-            [_collectionArray addObject:model.CH_Abbre];
+#warning 崩溃 model为nil---- 数据库没有完整的拷贝到app的文件夹里-- 数据库拷贝问题需要谨慎一点啦
+            [_collectionArray addObject:model.chineseAbbre];
         }
     }else if (self.old_new == 1){//new
         //201-227
@@ -70,10 +71,10 @@
             headview.section = j;
             IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:j];
             if (model != nil) {
-                [headview.backBtn setTitle:model.CH forState:UIControlStateNormal];
+                [headview.backBtn setTitle:model.chinese forState:UIControlStateNormal];
             }
             [_tableArray addObject:headview];
-            [_collectionArray addObject:model.CH_Abbre];
+            [_collectionArray addObject:model.chineseAbbre];
         }
     }
     _showArray = [[NSMutableArray alloc]initWithArray:_tableArray];
@@ -132,7 +133,7 @@
 {
     HeadView* headView  = [_showArray objectAtIndex:indexPath.section];
     IndexingModel *model = [[SJSListManager sharedListManager]getBibleByIndex:(int)headView.section];
-    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]%6)?1:0);
+    int lines = model.totalNumber/6+ ((model.totalNumber%6)?1:0);
     return headView.open?lines*listNumWH:0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -161,7 +162,7 @@
 #pragma mark IndexingReadingDelegate
 - (void)didSelectedCollectionIndex:(NSIndexPath *)indexPath {
     HeadView* headView = [_showArray objectAtIndex:indexPath.section];
-    [self.delegate didSelectedShowListCollectionWithTitle:headView.backBtn.titleLabel.text DataType:self.old_new==0?old_cuv:new_ncv SectionName:[NSString stringWithFormat:@"第%ld章",indexPath.row+1] k_id:[NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1]];
+    [self.delegate didSelectedShowListCollectionWithTitle:headView.backBtn.titleLabel.text DataType:self.old_new==0?old_cuv:new_ncv SectionName:[NSString stringWithFormat:@"第%ld章",indexPath.row+1] chapterNumber:[NSString stringWithFormat:@"%lu",headView.section*1000+indexPath.row+1]];
 }
 #pragma mark collectionVew的代理方法
 // 设置有多少个分组

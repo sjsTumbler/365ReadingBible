@@ -14,14 +14,14 @@
 
 @interface old_cuvModel:LKModelBase
 
-@property(copy,nonatomic)    NSString   * Col001;   //简称
-@property(copy,nonatomic)    NSString   * Col002;   //章节
-@property(copy,nonatomic)    NSString   * Col003;   //经文
-@property(copy,nonatomic)    NSString   * col_004;  //章编号
-@property(copy,nonatomic)    NSString   * col_005;  //节编号
-@property(copy,nonatomic)    NSString   * col_006;  //书编号(3位，旧约以1开头，新约以2开头)
-@property(copy,nonatomic)    NSString   * o_id;     //书章节编号（9位，每三位对应书、章、节）
-@property(copy,nonatomic)    NSString   * k_id;     //书章编号（6位，每三位对应书章）
+@property(copy,nonatomic)    NSString   * abbre;   //简称
+@property(copy,nonatomic)    NSString   * chapterSection;   //章节
+@property(copy,nonatomic)    NSString   * content;   //经文
+@property(assign,nonatomic)    int        chapter;  //章编号
+@property(assign,nonatomic)    int        section;  //节编号
+@property(copy,nonatomic)    NSString   * bibleNumber;  //书编号(3位，旧约以1开头，新约以2开头)
+@property(copy,nonatomic)    NSString   * orderid;     //书章节编号（9位，每三位对应书、章、节）
+@property(copy,nonatomic)    NSString   * chapterNumber;     //书章编号（6位，每三位对应书章）
 
 - (id)init;
 - (id)initWithJsonDictionary:(NSDictionary*)dic;

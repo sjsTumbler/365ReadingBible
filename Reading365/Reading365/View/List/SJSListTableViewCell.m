@@ -17,10 +17,9 @@
     
 }
 - (void)setCellByModel:(IndexingModel *)model {
-    
     [[self.contentView viewWithTag:10089]removeFromSuperview];
     _indexModel = model;
-    int lines = [model.TOTALNUM intValue]/6+ (([model.TOTALNUM intValue]%6)?1:0);
+    int lines = model.totalNumber/6+ ((model.totalNumber%6)?1:0);
     // 1.实例化布局模式
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     // 2.设置item大小
@@ -52,7 +51,7 @@
 // 设置一个分组中有多少item
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [_indexModel.TOTALNUM intValue];
+    return _indexModel.totalNumber;
 }
 
 // item方法

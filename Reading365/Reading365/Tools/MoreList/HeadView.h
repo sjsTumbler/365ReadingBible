@@ -5,8 +5,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DefineUI.h"
-@protocol HeadViewDelegate; 
+//#import "DefineUI.h"
+@protocol HeadViewDelegate;
 
 @interface HeadView : UIView
 
